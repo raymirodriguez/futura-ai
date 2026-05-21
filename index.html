@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Futura AI — Operational Intelligence</title>
+  <meta name="description" content="Futura AI helps companies simplify their digital stack, automate operations, and make smarter decisions — without building software from scratch." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500&family=Barlow:wght@200;300;400&display=swap" rel="stylesheet" />
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0B0F14;
+      --bg-card:   #131C26;
+      --bg-alt:    #101720;
+      --border:    rgba(120, 160, 200, 0.12);
+      --teal:      #19D3C5;
+      --teal-dim:  rgba(25, 211, 197, 0.10);
+      --teal-glow: rgba(25, 211, 197, 0.25);
+      --white:     #E8EDF2;
+      --muted:     #93A4B7;
+      --label:     #5E7188;
+      --font-head: 'Barlow Condensed', sans-serif;
+      --font-body: 'Barlow', sans-serif;
+      --radius:    10px;
+      --max-w:     1160px;
+      --nav-h:     72px;
+    }
+
+    html { scroll-behavior: smooth; font-size: 18.4px; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ─── Reveal animation ─────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── Section labels ───────────────────────────────────────── */
+    .section-label {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      font-weight: 200;
+      color: var(--muted);
+      max-width: 580px;
+      line-height: 1.75;
+    }
+
+    /* ─── Navigation ───────────────────────────────────────────── */
+    #nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--nav-h);
+      padding: 0;
+      background: rgba(11, 15, 20, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(120, 160, 200, 0.10);
+      transition: background 0.3s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      max-width: 100% !important;
+      padding: 0 32px;
+    }
+
+    .nav-logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+      margin-left: 48px;
+    }
+
+    .nav-links a {
+      position: relative;
+      font-size: 13px;
+      font-weight: 500;
+      color: #7B8A9A;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #19D3C5;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { opacity: 0.6; }
+    .nav-links a.active { color: #19D3C5; }
+    .nav-links a.active::after { opacity: 1; }
+
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      height: 44px;
+      padding: 0 24px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #19D3C5, #17BFAE);
+      color: #061014;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 28px rgba(25, 211, 197, 0.18);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    }
+    .btn-nav:hover { background: linear-gradient(135deg, #2AF0E0, #19D3C5); box-shadow: 0 10px 36px rgba(25, 211, 197, 0.28); transform: translateY(-1px); }
+    .btn-nav .ti-message-circle { font-size: 16px; margin-right: 2px; }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: auto;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav drawer */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 28px 28px;
+      z-index: 99;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .mobile-menu a:hover { color: var(--white); }
+    .mobile-menu .btn-nav { align-self: flex-start; margin-top: 4px; }
+
+    /* ─── Language dropdown ─────────────────────────────────────── */
+    .lang-dropdown {
+      position: relative;
+    }
+
+    .lang-dropdown-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(25, 211, 197, 0.04);
+      border: 1px solid rgba(120, 160, 200, 0.14);
+      color: #93A4B7;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .lang-dropdown-btn:hover,
+    .lang-dropdown.open .lang-dropdown-btn {
+      background: rgba(25, 211, 197, 0.08);
+      border-color: rgba(25, 211, 197, 0.30);
+      color: #E8EDF2;
+    }
+
+    .lang-chevron {
+      font-size: 0.7rem;
+      transition: transform 0.2s;
+      opacity: 0.6;
+    }
+    .lang-dropdown.open .lang-chevron {
+      transform: rotate(180deg);
+    }
+
+    .lang-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 160px;
+      background: var(--bg-card);
+      border: 1px solid rgba(120, 160, 200, 0.14);
+      border-radius: 8px;
+      padding: 5px;
+      list-style: none;
+      display: none;
+      z-index: 200;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.55);
+    }
+    .lang-dropdown.open .lang-dropdown-menu {
+      display: block;
+    }
+
+    .lang-dropdown-menu li {
+      padding: 9px 13px;
+      border-radius: 5px;
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .lang-dropdown-menu li:hover {
+      background: rgba(25, 211, 197, 0.07);
+      color: var(--white);
+    }
+    .lang-dropdown-menu li.lang-active {
+      color: var(--teal);
+    }
+    .lang-code-badge {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      opacity: 0.55;
+    }
+    .lang-active .lang-code-badge {
+      opacity: 1;
+    }
+
+    /* Footer dropdown variant */
+    .footer-lang-dropdown .lang-dropdown-btn {
+      padding: 4px 10px;
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--label);
+      border-radius: 4px;
+    }
+    .footer-lang-dropdown .lang-dropdown-btn:hover,
+    .footer-lang-dropdown.open .lang-dropdown-btn {
+      background: transparent;
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+    .footer-lang-dropdown .lang-dropdown-menu {
+      bottom: calc(100% + 8px);
+      top: auto;
+    }
+
+    /* Mobile menu dropdown variant */
+    .mobile-lang-dropdown {
+      align-self: flex-start;
+    }
+    .mobile-lang-dropdown .lang-dropdown-btn {
+      font-size: 0.85rem;
+    }
+    .mobile-lang-dropdown .lang-dropdown-menu {
+      left: 0;
+      right: auto;
+    }
+
+    /* ─── Hero ─────────────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      min-height: calc(100vh - var(--nav-h));
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 0;
+    }
+
+    /* Dot-grid background */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px);
+      background-size: 36px 36px;
+      pointer-events: none;
+    }
+    /* Gradient fade over grid */
+    .hero-grid::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 40%, transparent 30%, var(--bg) 100%);
+    }
+
+    /* Decorative background hex/logo mark */
+    .hero-bg-mark {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: min(55vw, 640px);
+      opacity: 0.035;
+      pointer-events: none;
+      user-select: none;
+      filter: grayscale(1) blur(0.2px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      padding: 80px 0;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--teal);
+    }
+
+    .hero-title {
+      font-family: var(--font-head);
+      font-size: clamp(2.8rem, 6.5vw, 5rem);
+      font-weight: 200;
+      line-height: 1.06;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--teal);
+    }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+      font-weight: 200;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 560px;
+      margin-bottom: 44px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      background: linear-gradient(135deg, #19D3C5, #17BFAE);
+      color: #061014;
+      border-radius: 7px;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 30px rgba(25, 211, 197, 0.18);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: linear-gradient(135deg, #2AF0E0, #19D3C5); box-shadow: 0 10px 40px rgba(25, 211, 197, 0.28); transform: translateY(-1px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 24px;
+      background: rgba(25, 211, 197, 0.06);
+      border: 1px solid rgba(25, 211, 197, 0.25);
+      color: #BDEFEA;
+      border-radius: 7px;
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { background: rgba(25, 211, 197, 0.10); border-color: rgba(25, 211, 197, 0.40); color: #BDEFEA; }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      background: linear-gradient(135deg, #19D3C5, #17BFAE);
+      color: #061014;
+      border-radius: 7px;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 30px rgba(25, 211, 197, 0.18);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    }
+    .btn-whatsapp .ti { font-size: 18px; color: #32E875; }
+    .btn-whatsapp:hover { background: linear-gradient(135deg, #2AF0E0, #19D3C5); box-shadow: 0 10px 40px rgba(25, 211, 197, 0.28); transform: translateY(-1px); }
+
+    /* ─── USP Strip ────────────────────────────────────────────── */
+    #usp {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-alt);
+      padding: 22px 0;
+    }
+
+    .usp-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .usp-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      min-width: 160px;
+      justify-content: center;
+    }
+
+    .usp-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--teal-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .usp-icon i { color: var(--teal); font-size: 1rem; }
+
+    .usp-label {
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    /* ─── Services ─────────────────────────────────────────────── */
+    #services {
+      padding: 110px 0;
+    }
+
+    .section-header {
+      margin-bottom: 60px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 30px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+    .service-card:hover {
+      border-color: rgba(25, 211, 197, 0.25);
+      box-shadow: 0 0 0 1px rgba(25, 211, 197, 0.08), 0 16px 50px rgba(0, 0, 0, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      background: var(--teal-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+    .card-icon i { color: var(--teal); font-size: 1.25rem; }
+
+    .card-title {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 10px;
+      letter-spacing: 0.06em;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      font-weight: 200;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ─── Solutions ────────────────────────────────────────────── */
+    #solutions {
+      padding: 110px 0;
+      background: var(--bg-alt);
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 60px;
+    }
+
+    /* Last row: 2 tiles centered */
+    .solutions-grid .solution-tile:nth-child(4),
+    .solutions-grid .solution-tile:nth-child(5) {
+      grid-column: auto;
+    }
+
+    .solutions-row-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: calc((var(--max-w) - 56px) * 2 / 3 + 16px);
+      margin-top: 16px;
+    }
+
+    .solution-tile {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .solution-tile:hover { border-color: rgba(25, 211, 197, 0.25); box-shadow: 0 0 0 1px rgba(25, 211, 197, 0.08), 0 16px 50px rgba(0, 0, 0, 0.3); }
+
+    .sol-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sol-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--teal-dim);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .sol-icon i { color: var(--teal); font-size: 1rem; }
+
+    .sol-title {
+      font-family: var(--font-head);
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: 0.06em;
+    }
+
+    .sol-desc {
+      font-size: 0.85rem;
+      font-weight: 200;
+      color: var(--muted);
+      line-height: 1.7;
+      padding-left: 50px;
+    }
+
+    /* ─── How We Work ──────────────────────────────────────────── */
+    #process {
+      padding: 110px 0;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    /* Connecting line */
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: calc(12.5% + 14px);
+      right: calc(12.5% + 14px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--border) 100%);
+      pointer-events: none;
+    }
+
+    .step {
+      padding: 0 18px;
+      padding-top: 80px;
+      position: relative;
+    }
+
+    .step-num {
+      position: absolute;
+      top: 0;
+      left: 18px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+    }
+    .step:first-child .step-num {
+      background: linear-gradient(135deg, #19D3C5, #17BFAE);
+      color: #061014;
+      border-color: var(--teal);
+    }
+
+    .step-title {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 10px;
+      letter-spacing: 0.06em;
+    }
+
+    .step-desc {
+      font-size: 0.85rem;
+      font-weight: 200;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ─── Why Futura ───────────────────────────────────────────── */
+    #why {
+      padding: 110px 0;
+      background: var(--bg-alt);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 60px;
+    }
+
+    .why-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .why-card:hover { border-color: rgba(25, 211, 197, 0.25); box-shadow: 0 0 0 1px rgba(25, 211, 197, 0.08), 0 16px 50px rgba(0, 0, 0, 0.3); }
+
+    .why-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 9px;
+      background: var(--teal-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .why-icon i { color: var(--teal); font-size: 1.1rem; }
+
+    .why-text .card-title { margin-bottom: 8px; }
+    .why-text .card-desc { font-size: 0.875rem; }
+
+    /* ─── Contact ──────────────────────────────────────────────── */
+    #contact {
+      padding: 110px 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-left .section-sub {
+      margin-top: 0;
+      margin-bottom: 32px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+    .contact-detail i { color: var(--teal); font-size: 1rem; }
+
+    /* Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.68rem;
+      font-weight: 300;
+      color: var(--label);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: #0E141C;
+      border: 1px solid rgba(130, 170, 210, 0.16);
+      border-radius: 7px;
+      padding: 12px 14px;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(147, 164, 183, 0.55); }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: #19D3C5; box-shadow: 0 0 0 4px rgba(25, 211, 197, 0.12); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 26px;
+      background: linear-gradient(135deg, #19D3C5, #17BFAE);
+      color: #061014;
+      border-radius: 7px;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 30px rgba(25, 211, 197, 0.18);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-submit:hover { background: linear-gradient(135deg, #2AF0E0, #19D3C5); box-shadow: 0 10px 40px rgba(25, 211, 197, 0.28); transform: translateY(-1px); }
+
+    .form-success {
+      display: none;
+      background: var(--bg-card);
+      border: 1px solid var(--teal-glow);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .form-success.visible { display: block; }
+    .form-success i { font-size: 2rem; color: var(--teal); margin-bottom: 14px; }
+    .form-success p { color: var(--muted); font-size: 0.95rem; }
+    .form-success strong { color: var(--white); display: block; font-family: var(--font-head); font-size: 1.1rem; font-weight: 300; letter-spacing: 0.06em; margin-bottom: 6px; }
+
+    .field-error {
+      font-size: 0.65rem;
+      color: #f87171;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 5px;
+      display: none;
+    }
+    .form-group.invalid .field-error { display: block; }
+    .form-group.invalid input,
+    .form-group.invalid textarea {
+      border-color: rgba(248, 113, 113, 0.55);
+      box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.09);
+    }
+
+    /* ─── Footer ───────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo img {
+      height: 24px;
+      width: auto;
+    }
+
+    .footer-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--label);
+    }
+    .footer-meta a { color: var(--label); transition: color 0.2s; }
+    .footer-meta a:hover { color: var(--white); }
+
+    /* ─── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav-links, .nav-actions { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-bg-mark { display: none; }
+      .hero-content { padding: 60px 0; }
+
+      .usp-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .usp-item { justify-content: flex-start; }
+
+      .services-grid { grid-template-columns: 1fr; }
+
+      .solutions-grid { grid-template-columns: 1fr; }
+      .solutions-row-2 { grid-template-columns: 1fr; max-width: 100%; margin-top: 0; }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .steps-grid::before { display: none; }
+      .step { padding: 0 0 0 70px; }
+      .step-num { left: 0; }
+
+      .why-grid { grid-template-columns: 1fr; }
+
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 640px) {
+      #lang-dropdown-nav { display: none; }
+    }
+
+    /* ─── Divider utility ──────────────────────────────────────── */
+    .teal-line {
+      display: block;
+      width: 36px;
+      height: 3px;
+      background: var(--teal);
+      border-radius: 2px;
+      margin-bottom: 22px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- NAV -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo" aria-label="Futura AI home">
+        <img src="FuturaLogo_White.png" alt="Futura AI" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#solutions" data-i18n="nav.solutions">Solutions</a></li>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#process" data-i18n="nav.process">How We Work</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="lang-dropdown" id="lang-dropdown-nav">
+          <button class="lang-dropdown-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+            <i class="ti ti-world"></i>
+            <span class="lang-current-label">EN</span>
+            <i class="ti ti-chevron-down lang-chevron"></i>
+          </button>
+          <ul class="lang-dropdown-menu" role="listbox" aria-label="Language">
+            <li role="option" data-lang="en" class="lang-active">English <span class="lang-code-badge">EN</span></li>
+            <li role="option" data-lang="es">Español <span class="lang-code-badge">ES</span></li>
+            <li role="option" data-lang="pt">Português <span class="lang-code-badge">PT</span></li>
+          </ul>
+        </div>
+        <a href="#contact" class="btn-nav" data-i18n="nav.cta"><i class="ti ti-message-circle"></i> Let's talk</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <a href="#solutions" data-i18n="nav.solutions">Solutions</a>
+    <a href="#services" data-i18n="nav.services">Services</a>
+    <a href="#process" data-i18n="nav.process">How We Work</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+    <a href="#contact" class="btn-nav" data-i18n="nav.cta">Let's talk</a>
+    <div class="lang-dropdown mobile-lang-dropdown" id="lang-dropdown-mobile">
+      <button class="lang-dropdown-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+        <i class="ti ti-world"></i>
+        <span class="lang-current-label">EN</span>
+        <i class="ti ti-chevron-down lang-chevron"></i>
+      </button>
+      <ul class="lang-dropdown-menu" role="listbox" aria-label="Language">
+        <li role="option" data-lang="en" class="lang-active">English <span class="lang-code-badge">EN</span></li>
+        <li role="option" data-lang="es">Español <span class="lang-code-badge">ES</span></li>
+        <li role="option" data-lang="pt">Português <span class="lang-code-badge">PT</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- HERO -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section id="hero" aria-label="Hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <img class="hero-bg-mark" src="FuturaLogo_White.png" alt="" aria-hidden="true" />
+
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-eyebrow" data-i18n="hero.eyebrow">Operational AI</p>
+          <h1 class="hero-title" data-i18n="hero.title">
+            AI that works for your business,<br /><em>not around it</em>
+          </h1>
+          <p class="hero-sub" data-i18n="hero.sub">
+            We help companies simplify their digital stack, automate operations, and make smarter decisions — without building software from scratch.
+          </p>
+          <div class="hero-ctas">
+            <a href="https://wa.me/523224003407" class="btn-whatsapp" target="_blank" rel="noopener" data-i18n="hero.cta0">
+              <i class="ti ti-brand-whatsapp"></i>
+              Chat on WhatsApp
+            </a>
+            <a href="#process" class="btn-ghost" data-i18n="hero.cta2">
+              See how we work
+              <i class="ti ti-chevron-down"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- USP STRIP -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section id="usp" aria-label="Trust signals">
+      <div class="container">
+        <div class="usp-grid">
+
+          <div class="usp-item reveal">
+            <div class="usp-icon" aria-hidden="true">
+              <i class="ti ti-world"></i>
+            </div>
+            <span class="usp-label" data-i18n="usp.multilingual">Trilingual EN · ES · PT</span>
+          </div>
+
+          <div class="usp-item reveal reveal-delay-1">
+            <div class="usp-icon" aria-hidden="true">
+              <i class="ti ti-bolt"></i>
+            </div>
+            <span class="usp-label" data-i18n="usp.delivery">Rapid delivery</span>
+          </div>
+
+          <div class="usp-item reveal reveal-delay-2">
+            <div class="usp-icon" aria-hidden="true">
+              <i class="ti ti-key"></i>
+            </div>
+            <span class="usp-label" data-i18n="usp.exclusive">Exclusive per region</span>
+          </div>
+
+          <div class="usp-item reveal reveal-delay-3">
+            <div class="usp-icon" aria-hidden="true">
+              <i class="ti ti-chart-bar"></i>
+            </div>
+            <span class="usp-label" data-i18n="usp.ops">Ops intelligence background</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- SOLUTIONS -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section id="solutions" aria-labelledby="solutions-title">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-label" data-i18n="solutions.label">What we solve</span>
+          <span class="teal-line"></span>
+          <h2 class="section-title" id="solutions-title" data-i18n="solutions.title">Solutions</h2>
+          <p class="section-sub" data-i18n="solutions.sub">We target the operational bottlenecks with the clearest path to ROI.</p>
+        </div>
+
+        <div class="solutions-grid">
+
+          <div class="solution-tile reveal reveal-delay-1">
+            <div class="sol-header">
+              <div class="sol-icon" aria-hidden="true"><i class="ti ti-database-check"></i></div>
+              <h3 class="sol-title" data-i18n="sol.1.title">Data cleanup &amp; visibility</h3>
+            </div>
+            <p class="sol-desc" data-i18n="sol.1.desc">Turn fragmented, unreliable data into a single source of truth.</p>
+          </div>
+
+          <div class="solution-tile reveal reveal-delay-2">
+            <div class="sol-header">
+              <div class="sol-icon" aria-hidden="true"><i class="ti ti-trending-up"></i></div>
+              <h3 class="sol-title" data-i18n="sol.2.title">Data-driven decision making</h3>
+            </div>
+            <p class="sol-desc" data-i18n="sol.2.desc">Replace gut-feel and manual reports with real-time operational intelligence.</p>
+          </div>
+
+          <div class="solution-tile reveal reveal-delay-3">
+            <div class="sol-header">
+              <div class="sol-icon" aria-hidden="true"><i class="ti ti-cpu"></i></div>
+              <h3 class="sol-title" data-i18n="sol.3.title">AI-powered business &amp; ops insights</h3>
+            </div>
+            <p class="sol-desc" data-i18n="sol.3.desc">Surface patterns and anomalies your team doesn't have time to find manually.</p>
+          </div>
+
+        </div>
+
+        <!-- Row 2 — 2 tiles centered -->
+        <div class="solutions-row-2">
+
+          <div class="solution-tile reveal reveal-delay-1">
+            <div class="sol-header">
+              <div class="sol-icon" aria-hidden="true"><i class="ti ti-route"></i></div>
+              <h3 class="sol-title" data-i18n="sol.4.title">Workflow streamlining</h3>
+            </div>
+            <p class="sol-desc" data-i18n="sol.4.desc">Automate repetitive coordination so your team focuses on higher-value work.</p>
+          </div>
+
+          <div class="solution-tile reveal reveal-delay-2">
+            <div class="sol-header">
+              <div class="sol-icon" aria-hidden="true"><i class="ti ti-settings-automation"></i></div>
+              <h3 class="sol-title" data-i18n="sol.5.title">Leaner operations through automation</h3>
+            </div>
+            <p class="sol-desc" data-i18n="sol.5.desc">Reduce the manual overhead that grows with your business — without growing headcount.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- SERVICES -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section id="services" aria-labelledby="services-title">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-label" data-i18n="services.label">What we build</span>
+          <span class="teal-line"></span>
+          <h2 class="section-title" id="services-title" data-i18n="services.title">Services</h2>
+          <p class="section-sub" data-i18n="services.sub">End-to-end delivery across what your business actually needs.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card reveal reveal-delay-1">
+            <div class="card-icon" aria-hidden="true">
+              <i class="ti ti-device-mobile"></i>
+            </div>
+            <h3 class="card-title" data-i18n="services.card1.title">Web &amp; Mobile Apps</h3>
+            <p class="card-desc" data-i18n="services.card1.desc">Custom applications built for your workflows — fast, reliable, and AI-ready from day one.</p>
+          </div>
+
+          <div class="service-card reveal reveal-delay-2">
+            <div class="card-icon" aria-hidden="true">
+              <i class="ti ti-browser"></i>
+            </div>
+            <h3 class="card-title" data-i18n="services.card2.title">Websites</h3>
+            <p class="card-desc" data-i18n="services.card2.desc">High-performance marketing and product sites designed to convert, in English, Spanish, and Portuguese.</p>
+          </div>
+
+          <div class="service-card reveal reveal-delay-3">
+            <div class="card-icon" aria-hidden="true">
+              <i class="ti ti-arrows-transfer-up"></i>
+            </div>
+            <h3 class="card-title" data-i18n="services.card3.title">Systems &amp; Data Integration</h3>
+            <p class="card-desc" data-i18n="services.card3.desc">Connect your tools, consolidate your data, and eliminate the manual handoffs slowing your team down.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- HOW WE WORK -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section id="process" aria-labelledby="process-title">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-label" data-i18n="process.label">Our process</span>
+          <span class="teal-line"></span>
+          <h2 class="section-title" id="process-title" data-i18n="process.title">How we work</h2>
+          <p class="section-sub" data-i18n="process.sub">No lengthy discovery phases. We start narrow, prove value fast, then you decide whether to scale.</p>
+        </div>
+
+        <div class="steps-grid">
+
+          <div class="step reveal reveal-delay-1">
+            <div class="step-num" aria-hidden="true">01</div>
+            <h3 class="step-title" data-i18n="step.1.title">Short diagnostic</h3>
+            <p class="step-desc" data-i18n="step.1.desc">A focused call to identify 2–3 workflows with the highest impact potential.</p>
+          </div>
+
+          <div class="step reveal reveal-delay-2">
+            <div class="step-num" aria-hidden="true">02</div>
+            <h3 class="step-title" data-i18n="step.2.title">Pilot one initiative</h3>
+            <p class="step-desc" data-i18n="step.2.desc">2–4 weeks. One workflow. Agreed metrics. Existing data and tools wherever possible.</p>
+          </div>
+
+          <div class="step reveal reveal-delay-3">
+            <div class="step-num" aria-hidden="true">03</div>
+            <h3 class="step-title" data-i18n="step.3.title">Measure &amp; hand off</h3>
+            <p class="step-desc" data-i18n="step.3.desc">Simple metrics agreed upfront. Solutions are documented and fully handed off to your team.</p>
+          </div>
+
+          <div class="step reveal reveal-delay-4">
+            <div class="step-num" aria-hidden="true">04</div>
+            <h3 class="step-title" data-i18n="step.4.title">Scale or extend</h3>
+            <p class="step-desc" data-i18n="step.4.desc">You choose: internalize the solution, expand to new workflows, or engage Futura on an ongoing basis.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- WHY FUTURA -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section id="why" aria-labelledby="why-title">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-label" data-i18n="why.label">Why Futura</span>
+          <span class="teal-line"></span>
+          <h2 class="section-title" id="why-title" data-i18n="why.title">Built differently</h2>
+          <p class="section-sub" data-i18n="why.sub">We work as a dedicated partner — not a vendor.</p>
+        </div>
+
+        <div class="why-grid">
+
+          <div class="why-card reveal reveal-delay-1">
+            <div class="why-icon" aria-hidden="true">
+              <i class="ti ti-language"></i>
+            </div>
+            <div class="why-text">
+              <h3 class="card-title" data-i18n="why.1.title">Multilingual &amp; multicultural</h3>
+              <p class="card-desc" data-i18n="why.1.desc">Native fluency in English, Spanish, and Portuguese, with the cultural context to match any market.</p>
+            </div>
+          </div>
+
+          <div class="why-card reveal reveal-delay-2">
+            <div class="why-icon" aria-hidden="true">
+              <i class="ti ti-rocket"></i>
+            </div>
+            <div class="why-text">
+              <h3 class="card-title" data-i18n="why.2.title">Rapid delivery</h3>
+              <p class="card-desc" data-i18n="why.2.desc">Pilots in 2–4 weeks. Full builds at a pace most agencies can't match.</p>
+            </div>
+          </div>
+
+          <div class="why-card reveal reveal-delay-3">
+            <div class="why-icon" aria-hidden="true">
+              <i class="ti ti-shield-check"></i>
+            </div>
+            <div class="why-text">
+              <h3 class="card-title" data-i18n="why.3.title">Exclusive by design</h3>
+              <p class="card-desc" data-i18n="why.3.desc">One client per sector per region — your direct competitors simply can't hire us.</p>
+            </div>
+          </div>
+
+          <div class="why-card reveal reveal-delay-4">
+            <div class="why-icon" aria-hidden="true">
+              <i class="ti ti-circuit-board"></i>
+            </div>
+            <div class="why-text">
+              <h3 class="card-title" data-i18n="why.4.title">Ops intelligence roots</h3>
+              <p class="card-desc" data-i18n="why.4.desc">We come from industrial operations. Our AI implementations are practical, not theoretical.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- CONTACT -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+
+        <div class="contact-grid">
+
+          <div class="contact-left reveal">
+            <span class="section-label" data-i18n="contact.label">Get started</span>
+            <span class="teal-line"></span>
+            <h2 class="section-title" id="contact-title" data-i18n="contact.title">Let's find your first win</h2>
+            <p class="section-sub contact-left-sub" data-i18n="contact.sub">
+              Start with a short diagnostic call. No sales cycle — just a focused conversation about one or two workflows where AI can move the needle.
+            </p>
+            <div class="contact-detail">
+              <a href="https://wa.me/523224003407" class="btn-whatsapp" target="_blank" rel="noopener" data-i18n="hero.cta0">
+                <i class="ti ti-brand-whatsapp"></i>
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-right reveal reveal-delay-2">
+            <!-- Form -->
+            <form class="contact-form" id="contact-form" name="contact" data-netlify="true" novalidate>
+              <input type="hidden" name="form-name" value="contact" />
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="field-name" data-i18n="form.name">Name</label>
+                  <input type="text" id="field-name" name="name" placeholder="Jane Smith" />
+                  <span class="field-error" data-i18n="form.error.name">Name is required</span>
+                </div>
+                <div class="form-group">
+                  <label for="field-company" data-i18n="form.company">Company</label>
+                  <input type="text" id="field-company" name="company" placeholder="Acme Corp" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="field-email" data-i18n="form.email">Email</label>
+                <input type="email" id="field-email" name="email" placeholder="jane@acmecorp.com" />
+                <span class="field-error" data-i18n="form.error.email">A valid email is required</span>
+              </div>
+
+              <div class="form-group">
+                <label for="field-message" data-i18n="form.message">What are you working on? <span style="color:var(--label)">(optional)</span></label>
+                <textarea id="field-message" name="message" placeholder="Brief context on your team, a challenge you're facing, or a workflow you'd like to improve…"></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit" id="btn-submit">
+                <span data-i18n="form.submit">Let's talk</span>
+                <i class="ti ti-arrow-right"></i>
+              </button>
+
+            </form>
+
+            <!-- Success state -->
+            <div class="form-success" id="form-success" aria-live="polite">
+              <i class="ti ti-circle-check"></i>
+              <strong data-i18n="form.success.title">You're on the calendar.</strong>
+              <p data-i18n="form.success.sub">We'll be in touch within one business day.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- FOOTER -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="container footer-inner">
+      <a href="#" class="footer-logo" aria-label="Futura AI">
+        <img src="FuturaLogo_White.png" alt="Futura AI" />
+      </a>
+      <div class="footer-meta">
+        <span data-i18n="footer.copy">&copy; 2025 Futura AI</span>
+        <span aria-hidden="true">·</span>
+        <span style="display:inline-flex;align-items:center;gap:5px;"><i class="ti ti-map-pin" style="color:var(--teal);font-size:13px;"></i>Puerto Vallarta, México</span>
+      </div>
+      <div class="lang-dropdown footer-lang-dropdown" id="lang-dropdown-footer">
+        <button class="lang-dropdown-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+          <i class="ti ti-world"></i>
+          <span class="lang-current-label">EN</span>
+          <i class="ti ti-chevron-down lang-chevron"></i>
+        </button>
+        <ul class="lang-dropdown-menu" role="listbox" aria-label="Language">
+          <li role="option" data-lang="en" class="lang-active">English <span class="lang-code-badge">EN</span></li>
+          <li role="option" data-lang="es">Español <span class="lang-code-badge">ES</span></li>
+          <li role="option" data-lang="pt">Português <span class="lang-code-badge">PT</span></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ─── i18n strings ───────────────────────────────────────────── */
+    const strings = {
+      en: {
+        'nav.services':  'Services',
+        'nav.solutions': 'Solutions',
+        'nav.process':   'How We Work',
+        'nav.contact':   'Contact',
+        'nav.cta':       'Let\'s talk',
+
+        'hero.eyebrow':  'Operational AI',
+        'hero.title':    'AI that works for your business, not around it',
+        'hero.sub':      'We help companies simplify their digital stack, automate operations, and make smarter decisions — without building software from scratch.',
+        'hero.cta0':     'Chat on WhatsApp',
+        'hero.cta1':     'Book a diagnostic call',
+        'hero.cta2':     'See how we work',
+
+        'usp.multilingual': 'Trilingual EN · ES · PT',
+        'usp.delivery':  'Rapid delivery',
+        'usp.exclusive': 'Exclusive per region',
+        'usp.ops':       'Ops intelligence background',
+
+        'services.label': 'What we build',
+        'services.title': 'Services',
+        'services.sub':   'End-to-end delivery across what your business actually needs.',
+        'services.card1.title': 'Web & Mobile Apps',
+        'services.card1.desc':  'Custom applications built for your workflows — fast, reliable, and AI-ready from day one.',
+        'services.card2.title': 'Websites',
+        'services.card2.desc':  'High-performance marketing and product sites designed to convert, in English, Spanish, and Portuguese.',
+        'services.card3.title': 'Systems & Data Integration',
+        'services.card3.desc':  'Connect your tools, consolidate your data, and eliminate the manual handoffs slowing your team down.',
+
+        'solutions.label': 'What we solve',
+        'solutions.title': 'Solutions',
+        'solutions.sub':   'We target the operational bottlenecks with the clearest path to ROI.',
+        'sol.1.title': 'Data cleanup & visibility',
+        'sol.1.desc':  'Turn fragmented, unreliable data into a single source of truth.',
+        'sol.2.title': 'Data-driven decision making',
+        'sol.2.desc':  'Replace gut-feel and manual reports with real-time operational intelligence.',
+        'sol.3.title': 'AI-powered business & ops insights',
+        'sol.3.desc':  "Surface patterns and anomalies your team doesn't have time to find manually.",
+        'sol.4.title': 'Workflow streamlining',
+        'sol.4.desc':  'Automate repetitive coordination so your team focuses on higher-value work.',
+        'sol.5.title': 'Leaner operations through automation',
+        'sol.5.desc':  'Reduce the manual overhead that grows with your business — without growing headcount.',
+
+        'process.label': 'Our process',
+        'process.title': 'How we work',
+        'process.sub':   'No lengthy discovery phases. We start narrow, prove value fast, then you decide whether to scale.',
+        'step.1.title': 'Short diagnostic',
+        'step.1.desc':  'A focused call to identify 2–3 workflows with the highest impact potential.',
+        'step.2.title': 'Pilot one initiative',
+        'step.2.desc':  '2–4 weeks. One workflow. Agreed metrics. Existing data and tools wherever possible.',
+        'step.3.title': 'Measure & hand off',
+        'step.3.desc':  'Simple metrics agreed upfront. Solutions are documented and fully handed off to your team.',
+        'step.4.title': 'Scale or extend',
+        'step.4.desc':  'You choose: internalize the solution, expand to new workflows, or engage Futura on an ongoing basis.',
+
+        'why.label': 'Why Futura',
+        'why.title': 'Built differently',
+        'why.sub':   'We work as a dedicated partner — not a vendor.',
+        'why.1.title': 'Multilingual & multicultural',
+        'why.1.desc':  'Native fluency in English, Spanish, and Portuguese, with the cultural context to match any market.',
+        'why.2.title': 'Rapid delivery',
+        'why.2.desc':  "Pilots in 2–4 weeks. Full builds at a pace most agencies can't match.",
+        'why.3.title': 'Exclusive by design',
+        'why.3.desc':  "One client per sector per region — your direct competitors simply can't hire us.",
+        'why.4.title': 'Ops intelligence roots',
+        'why.4.desc':  'We come from industrial operations. Our AI implementations are practical, not theoretical.',
+
+        'contact.label': 'Get started',
+        'contact.title': "Let's find your first win",
+        'contact.sub':   "Start with a short diagnostic call. No sales cycle — just a focused conversation about one or two workflows where AI can move the needle.",
+        'form.name':     'Name',
+        'form.company':  'Company',
+        'form.email':    'Email',
+        'form.message':  'What are you working on? (optional)',
+        'form.submit':        'Let\'s talk',
+        'form.error.name':    'Name is required',
+        'form.error.email':   'A valid email is required',
+        'form.success.title': "You're on the calendar.",
+        'form.success.sub':   "We'll be in touch within one business day.",
+
+        'footer.copy': '© 2025 Futura AI',
+      },
+
+      es: {
+        'nav.services':  'Servicios',
+        'nav.solutions': 'Soluciones',
+        'nav.process':   'Cómo trabajamos',
+        'nav.contact':   'Contacto',
+        'nav.cta':       'Hablemos',
+
+        'hero.eyebrow':  'IA Operacional',
+        'hero.title':    'IA que trabaja para tu empresa, no al revés',
+        'hero.sub':      'Ayudamos a las empresas a simplificar su stack digital, automatizar operaciones y tomar decisiones más inteligentes — sin construir software desde cero.',
+        'hero.cta0':     'Chatea por WhatsApp',
+        'hero.cta1':     'Reserva una llamada diagnóstica',
+        'hero.cta2':     'Cómo trabajamos',
+
+        'usp.multilingual': 'Trilingüe EN · ES · PT',
+        'usp.delivery':  'Entrega rápida',
+        'usp.exclusive': 'Exclusivo por región',
+        'usp.ops':       'Raíces en inteligencia operacional',
+
+        'services.label': 'Lo que construimos',
+        'services.title': 'Servicios',
+        'services.sub':   'Entrega integral de lo que tu empresa realmente necesita.',
+        'services.card1.title': 'Apps Web y Móvil',
+        'services.card1.desc':  'Aplicaciones personalizadas para tus flujos de trabajo — rápidas, confiables y listas para IA desde el primer día.',
+        'services.card2.title': 'Sitios Web',
+        'services.card2.desc':  'Sitios de marketing y producto de alto rendimiento diseñados para convertir, en inglés, español y portugués.',
+        'services.card3.title': 'Integración de Sistemas y Datos',
+        'services.card3.desc':  'Conecta tus herramientas, consolida tus datos y elimina los traspasos manuales que frenan a tu equipo.',
+
+        'solutions.label': 'Lo que resolvemos',
+        'solutions.title': 'Soluciones',
+        'solutions.sub':   'Atacamos los cuellos de botella operacionales con el camino más claro hacia el ROI.',
+        'sol.1.title': 'Limpieza y visibilidad de datos',
+        'sol.1.desc':  'Convierte datos fragmentados y poco confiables en una única fuente de verdad.',
+        'sol.2.title': 'Toma de decisiones basada en datos',
+        'sol.2.desc':  'Reemplaza intuiciones y reportes manuales con inteligencia operacional en tiempo real.',
+        'sol.3.title': 'Perspectivas empresariales con IA',
+        'sol.3.desc':  'Detecta patrones y anomalías que tu equipo no tiene tiempo de encontrar manualmente.',
+        'sol.4.title': 'Optimización de flujos de trabajo',
+        'sol.4.desc':  'Automatiza la coordinación repetitiva para que tu equipo se enfoque en trabajo de mayor valor.',
+        'sol.5.title': 'Operaciones más eficientes con automatización',
+        'sol.5.desc':  'Reduce la carga manual que crece con tu empresa — sin aumentar el equipo.',
+
+        'process.label': 'Nuestro proceso',
+        'process.title': 'Cómo trabajamos',
+        'process.sub':   'Sin fases de descubrimiento interminables. Empezamos estrecho, demostramos valor rápido y luego tú decides si escalar.',
+        'step.1.title': 'Diagnóstico breve',
+        'step.1.desc':  'Una llamada enfocada para identificar 2–3 flujos de trabajo con mayor potencial de impacto.',
+        'step.2.title': 'Piloto de una iniciativa',
+        'step.2.desc':  '2–4 semanas. Un flujo de trabajo. Métricas acordadas. Datos y herramientas existentes donde sea posible.',
+        'step.3.title': 'Medir y transferir',
+        'step.3.desc':  'Métricas simples acordadas desde el inicio. Las soluciones están documentadas y completamente transferidas a tu equipo.',
+        'step.4.title': 'Escalar o extender',
+        'step.4.desc':  'Tú decides: internaliza la solución, expande a nuevos flujos o trabaja con Futura de forma continua.',
+
+        'why.label': 'Por qué Futura',
+        'why.title': 'Construidos diferente',
+        'why.sub':   'Trabajamos como un socio dedicado — no como un proveedor.',
+        'why.1.title': 'Multilingüe y multicultural',
+        'why.1.desc':  'Fluidez nativa en inglés, español y portugués, con el contexto cultural para cualquier mercado.',
+        'why.2.title': 'Entrega rápida',
+        'why.2.desc':  'Pilotos en 2–4 semanas. Builds completos a un ritmo que la mayoría de las agencias no puede igualar.',
+        'why.3.title': 'Exclusivo por diseño',
+        'why.3.desc':  'Un cliente por sector por región — tus competidores directos simplemente no pueden contratarnos.',
+        'why.4.title': 'Raíces en inteligencia operacional',
+        'why.4.desc':  'Venimos de operaciones industriales. Nuestras implementaciones de IA son prácticas, no teóricas.',
+
+        'contact.label': 'Empecemos',
+        'contact.title': 'Encontremos tu primera victoria',
+        'contact.sub':   'Comienza con una llamada diagnóstica breve. Sin ciclo de ventas — solo una conversación enfocada en uno o dos flujos de trabajo donde la IA puede marcar la diferencia.',
+        'form.name':     'Nombre',
+        'form.company':  'Empresa',
+        'form.email':    'Correo',
+        'form.message':  '¿En qué estás trabajando? (opcional)',
+        'form.submit':        'Hablemos',
+        'form.error.name':    'El nombre es obligatorio',
+        'form.error.email':   'Se requiere un correo válido',
+        'form.success.title': 'Estás en el calendario.',
+        'form.success.sub':   'Estaremos en contacto dentro de un día hábil.',
+
+        'footer.copy': '© 2025 Futura AI',
+      },
+
+      pt: {
+        'nav.services':  'Serviços',
+        'nav.solutions': 'Soluções',
+        'nav.process':   'Como trabalhamos',
+        'nav.contact':   'Contato',
+        'nav.cta':       'Vamos conversar',
+
+        'hero.eyebrow':  'IA Operacional',
+        'hero.title':    'IA que trabalha para o seu negócio, não ao redor dele',
+        'hero.sub':      'Ajudamos empresas a simplificar seu stack digital, automatizar operações e tomar decisões mais inteligentes — sem construir software do zero.',
+        'hero.cta0':     'Fale pelo WhatsApp',
+        'hero.cta1':     'Agendar uma chamada diagnóstica',
+        'hero.cta2':     'Veja como trabalhamos',
+
+        'usp.multilingual': 'Trilíngue EN · ES · PT',
+        'usp.delivery':  'Entrega rápida',
+        'usp.exclusive': 'Exclusivo por região',
+        'usp.ops':       'Experiência em inteligência operacional',
+
+        'services.label': 'O que construímos',
+        'services.title': 'Serviços',
+        'services.sub':   'Entrega completa do que seu negócio realmente precisa.',
+        'services.card1.title': 'Apps Web e Mobile',
+        'services.card1.desc':  'Aplicações personalizadas para seus fluxos de trabalho — rápidas, confiáveis e prontas para IA desde o primeiro dia.',
+        'services.card2.title': 'Sites',
+        'services.card2.desc':  'Sites de marketing e produto de alto desempenho, projetados para converter, em inglês, espanhol e português.',
+        'services.card3.title': 'Integração de Sistemas e Dados',
+        'services.card3.desc':  'Conecte suas ferramentas, consolide seus dados e elimine as transferências manuais que freiam sua equipe.',
+
+        'solutions.label': 'O que resolvemos',
+        'solutions.title': 'Soluções',
+        'solutions.sub':   'Focamos nos gargalos operacionais com o caminho mais claro para o ROI.',
+        'sol.1.title': 'Limpeza e visibilidade de dados',
+        'sol.1.desc':  'Transforme dados fragmentados e pouco confiáveis em uma única fonte de verdade.',
+        'sol.2.title': 'Tomada de decisão baseada em dados',
+        'sol.2.desc':  'Substitua intuições e relatórios manuais por inteligência operacional em tempo real.',
+        'sol.3.title': 'Insights de negócios com IA',
+        'sol.3.desc':  'Descubra padrões e anomalias que sua equipe não tem tempo de encontrar manualmente.',
+        'sol.4.title': 'Otimização de fluxos de trabalho',
+        'sol.4.desc':  'Automatize coordenações repetitivas para que sua equipe se concentre em trabalho de maior valor.',
+        'sol.5.title': 'Operações mais enxutas com automação',
+        'sol.5.desc':  'Reduza a sobrecarga manual que cresce com seu negócio — sem aumentar a equipe.',
+
+        'process.label': 'Nosso processo',
+        'process.title': 'Como trabalhamos',
+        'process.sub':   'Sem longos ciclos de descoberta. Começamos de forma focada, provamos valor rapidamente e você decide se quer escalar.',
+        'step.1.title': 'Diagnóstico breve',
+        'step.1.desc':  'Uma conversa focada para identificar 2–3 fluxos de trabalho com maior potencial de impacto.',
+        'step.2.title': 'Piloto de uma iniciativa',
+        'step.2.desc':  '2–4 semanas. Um fluxo de trabalho. Métricas acordadas. Dados e ferramentas existentes sempre que possível.',
+        'step.3.title': 'Medir e transferir',
+        'step.3.desc':  'Métricas simples acordadas antecipadamente. As soluções são documentadas e totalmente transferidas para sua equipe.',
+        'step.4.title': 'Escalar ou expandir',
+        'step.4.desc':  'Você escolhe: internalize a solução, expanda para novos fluxos ou trabalhe com a Futura de forma contínua.',
+
+        'why.label': 'Por que a Futura',
+        'why.title': 'Construídos de forma diferente',
+        'why.sub':   'Trabalhamos como um parceiro dedicado — não como um fornecedor.',
+        'why.1.title': 'Multilíngue e multicultural',
+        'why.1.desc':  'Fluência nativa em inglês, espanhol e português, com o contexto cultural para qualquer mercado.',
+        'why.2.title': 'Entrega rápida',
+        'why.2.desc':  'Pilotos em 2–4 semanas. Builds completos em um ritmo que a maioria das agências não consegue igualar.',
+        'why.3.title': 'Exclusivo por design',
+        'why.3.desc':  'Um cliente por setor por região — seus concorrentes diretos simplesmente não podem nos contratar.',
+        'why.4.title': 'Raízes em inteligência operacional',
+        'why.4.desc':  'Viemos de operações industriais. Nossas implementações de IA são práticas, não teóricas.',
+
+        'contact.label': 'Comece agora',
+        'contact.title': 'Vamos encontrar sua primeira vitória',
+        'contact.sub':   'Comece com uma chamada diagnóstica breve. Sem ciclo de vendas — apenas uma conversa focada em um ou dois fluxos de trabalho onde a IA pode fazer a diferença.',
+        'form.name':     'Nome',
+        'form.company':  'Empresa',
+        'form.email':    'E-mail',
+        'form.message':  'No que você está trabalhando? (opcional)',
+        'form.submit':        'Vamos conversar',
+        'form.error.name':    'O nome é obrigatório',
+        'form.error.email':   'Um e-mail válido é necessário',
+        'form.success.title': 'Você está na agenda.',
+        'form.success.sub':   'Entraremos em contato em até um dia útil.',
+
+        'footer.copy': '© 2025 Futura AI',
+      }
+    };
+
+    const LANG_META = {
+      en: { label: 'EN', name: 'English' },
+      es: { label: 'ES', name: 'Español' },
+      pt: { label: 'PT', name: 'Português' }
+    };
+
+    const HERO_TITLES = {
+      en: 'AI that works for your business,<br /><em>not around it</em>',
+      es: 'IA que trabaja para tu empresa,<br /><em>no al revés</em>',
+      pt: 'IA que trabalha para o seu negócio,<br /><em>não ao redor dele</em>'
+    };
+
+    let currentLocale = 'en';
+
+    function applyLocale(locale) {
+      const dict = strings[locale];
+      if (!dict) return;
+      currentLocale = locale;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (key === 'hero.title') {
+          el.innerHTML = HERO_TITLES[locale] || HERO_TITLES.en;
+        } else if (dict[key] !== undefined) {
+          el.textContent = dict[key];
+        }
+      });
+      document.documentElement.lang = locale;
+    }
+
+    /* ─── Dropdown sync ─────────────────────────────────────────── */
+    function syncDropdowns(locale) {
+      const label = (LANG_META[locale] || LANG_META.en).label;
+      document.querySelectorAll('.lang-dropdown').forEach(dropdown => {
+        const labelEl = dropdown.querySelector('.lang-current-label');
+        if (labelEl) labelEl.textContent = label;
+        dropdown.querySelectorAll('.lang-dropdown-menu li').forEach(li => {
+          li.classList.toggle('lang-active', li.getAttribute('data-lang') === locale);
+        });
+      });
+    }
+
+    /* ─── Dropdown open/close logic ─────────────────────────────── */
+    function setupDropdown(dropdown) {
+      const btn = dropdown.querySelector('.lang-dropdown-btn');
+      const menu = dropdown.querySelector('.lang-dropdown-menu');
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+        if (isOpen) {
+          document.querySelectorAll('.lang-dropdown.open').forEach(d => {
+            if (d !== dropdown) {
+              d.classList.remove('open');
+              d.querySelector('.lang-dropdown-btn').setAttribute('aria-expanded', 'false');
+            }
+          });
+        }
+      });
+
+      menu.querySelectorAll('li').forEach(li => {
+        li.addEventListener('click', () => {
+          const lang = li.getAttribute('data-lang');
+          localStorage.setItem('futura-lang', lang);
+          applyLocale(lang);
+          syncDropdowns(lang);
+          dropdown.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          if (dropdown.closest('.mobile-menu')) {
+            hamburger.classList.remove('open');
+            mobileMenu.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    }
+
+    document.querySelectorAll('.lang-dropdown').forEach(setupDropdown);
+
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.lang-dropdown.open').forEach(d => {
+        d.classList.remove('open');
+        d.querySelector('.lang-dropdown-btn').setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ─── Language auto-detection ───────────────────────────────── */
+    const PT_COUNTRIES = new Set(['BR','PT','AO','MZ','CV','GW','ST','TL']);
+    const ES_COUNTRIES = new Set(['AR','BO','CL','CO','CR','CU','DO','EC','SV','GT','HN','MX','NI','PA','PY','PE','PR','ES','UY','VE','GQ']);
+
+    function detectFromNavigator() {
+      const raw = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      if (raw.startsWith('pt')) return 'pt';
+      if (raw.startsWith('es')) return 'es';
+      return 'en';
+    }
+
+    async function detectFromGeo() {
+      try {
+        const res = await fetch('https://ipapi.co/json/');
+        const data = await res.json();
+        if (PT_COUNTRIES.has(data.country_code)) return 'pt';
+        if (ES_COUNTRIES.has(data.country_code)) return 'es';
+        return 'en';
+      } catch (e) {
+        return null;
+      }
+    }
+
+    async function initLanguage() {
+      const saved = localStorage.getItem('futura-lang');
+      if (saved && strings[saved]) {
+        applyLocale(saved);
+        syncDropdowns(saved);
+        return;
+      }
+
+      const navLang = detectFromNavigator();
+      applyLocale(navLang);
+      syncDropdowns(navLang);
+
+      /* If OS language defaulted to English, check geolocation to see if
+         the user is in a Spanish- or Portuguese-speaking country. */
+      if (navLang === 'en') {
+        const geoLang = await detectFromGeo();
+        if (geoLang && geoLang !== 'en') {
+          applyLocale(geoLang);
+          syncDropdowns(geoLang);
+        }
+      }
+    }
+
+    initLanguage();
+
+    /* ─── Hamburger menu ────────────────────────────────────────── */
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const open = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', String(open));
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ─── IntersectionObserver — scroll reveal ──────────────────── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ─── Contact form ──────────────────────────────────────────── */
+    const form = document.getElementById('contact-form');
+    const successEl = document.getElementById('form-success');
+    const submitBtn = document.getElementById('btn-submit');
+
+    function validateForm() {
+      let valid = true;
+      form.querySelectorAll('.form-group').forEach(g => g.classList.remove('invalid'));
+
+      const nameEl = document.getElementById('field-name');
+      if (!nameEl.value.trim()) {
+        nameEl.closest('.form-group').classList.add('invalid');
+        valid = false;
+      }
+
+      const emailEl = document.getElementById('field-email');
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim());
+      if (!emailEl.value.trim() || !emailOk) {
+        emailEl.closest('.form-group').classList.add('invalid');
+        valid = false;
+      }
+
+      return valid;
+    }
+
+    /* Clear error on input */
+    ['field-name', 'field-email'].forEach(id => {
+      document.getElementById(id).addEventListener('input', function () {
+        this.closest('.form-group').classList.remove('invalid');
+      });
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!validateForm()) return;
+
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+
+      try {
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          successEl.classList.add('visible');
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '';
+        }
+      } catch {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '';
+      }
+    });
+
+    /* ─── Active nav link on scroll ────────────────────────────── */
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const sections = [...navLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(s => sectionObserver.observe(s));
+
+    /* ─── Smooth-scroll for all anchor links ────────────────────── */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
