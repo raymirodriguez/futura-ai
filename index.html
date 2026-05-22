@@ -206,7 +206,7 @@
     /* ─── Hero ─────────────────────────────────────────────────── */
     #hero {
       position: relative;
-      min-height: calc(100vh - var(--nav-h));
+      min-height: 82vh;
       display: flex; align-items: center; overflow: hidden;
     }
 
@@ -223,7 +223,11 @@
       filter: grayscale(1) blur(0.5px);
     }
 
-    .hero-content { position: relative; z-index: 1; max-width: 820px; padding: 80px 0; }
+    .hero-content {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: center;
+      width: 100%; padding: 80px 0;
+    }
 
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
@@ -234,7 +238,7 @@
 
     .hero-company {
       font-family: var(--font-head);
-      font-size: clamp(3.2rem, 7.5vw, 6rem);
+      font-size: clamp(3.5rem, 8vw, 7.5rem);
       font-weight: 200; line-height: 1; letter-spacing: 0.06em;
       color: var(--white); margin-bottom: 12px;
     }
@@ -249,18 +253,18 @@
     .hero-sub {
       font-size: clamp(0.92rem, 1.5vw, 1rem);
       font-weight: 200; color: var(--muted); line-height: 1.85;
-      max-width: 600px; margin-bottom: 40px;
+      margin-bottom: 40px;
     }
 
-    .hero-ctas { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 52px; }
+    .hero-ctas { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 
     /* Featured product card inside hero */
     .hero-product-card {
-      display: inline-flex; flex-direction: column; gap: 10px;
+      display: flex; flex-direction: column; gap: 10px;
       background: rgba(19, 28, 38, 0.90);
       border: 1px solid rgba(25, 211, 197, 0.28);
       border-radius: 12px; padding: 24px 28px;
-      max-width: 420px;
+      width: 100%;
       backdrop-filter: blur(10px);
       box-shadow: 0 0 0 1px rgba(25, 211, 197, 0.06), 0 20px 60px rgba(0,0,0,0.45);
     }
@@ -554,8 +558,8 @@
       .nav-links, .nav-actions { display: none; }
       .hamburger { display: flex; }
       .hero-bg-mark { display: none; }
-      .hero-content { padding: 60px 0; }
-      .hero-product-card { max-width: 100%; }
+      .hero-content { grid-template-columns: 1fr; gap: 40px; padding: 60px 0; }
+      .hero-product-card { max-width: 100%; width: 100%; }
       .usp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
       .usp-item { justify-content: flex-start; }
       .pillars-grid { grid-template-columns: 1fr; }
@@ -660,21 +664,23 @@
 
       <div class="container">
         <div class="hero-content">
-          <p class="hero-eyebrow" data-i18n="hero.eyebrow">AI Solutions · Operations Intelligence</p>
-          <h1 class="hero-company">Futura AI Solutions</h1>
-          <p class="hero-tagline" data-i18n="hero.tagline">Operational Superintelligence</p>
-          <p class="hero-sub" data-i18n="hero.sub">
-            We build AI systems that help businesses operate smarter, respond faster, and scale without adding operational chaos. From AI receptionists and WhatsApp automation to custom workflows, data integration, and intelligent business systems.
-          </p>
-          <div class="hero-ctas">
-            <a href="https://wa.me/523224003407" class="btn-whatsapp" target="_blank" rel="noopener">
-              <i class="ti ti-brand-whatsapp"></i>
-              <span data-i18n="hero.cta1">Chat on WhatsApp</span>
-            </a>
-            <a href="#what-we-do" class="btn-ghost">
-              <span data-i18n="hero.cta2">Explore our solutions</span>
-              <i class="ti ti-arrow-down"></i>
-            </a>
+          <div class="hero-left">
+            <p class="hero-eyebrow" data-i18n="hero.eyebrow">AI Solutions · Operations Intelligence</p>
+            <h1 class="hero-company">Futura AI Solutions</h1>
+            <p class="hero-tagline" data-i18n="hero.tagline">Operational Superintelligence</p>
+            <p class="hero-sub" data-i18n="hero.sub">
+              We build AI systems that help businesses operate smarter, respond faster, and scale without adding operational chaos. From AI receptionists and WhatsApp automation to custom workflows, data integration, and intelligent business systems.
+            </p>
+            <div class="hero-ctas">
+              <a href="https://wa.me/523224003407" class="btn-whatsapp" target="_blank" rel="noopener">
+                <i class="ti ti-brand-whatsapp"></i>
+                <span data-i18n="hero.cta1">Chat on WhatsApp</span>
+              </a>
+              <a href="#what-we-do" class="btn-ghost">
+                <span data-i18n="hero.cta2">Explore our solutions</span>
+                <i class="ti ti-arrow-down"></i>
+              </a>
+            </div>
           </div>
 
           <!-- Featured product card -->
