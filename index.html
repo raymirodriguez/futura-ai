@@ -1439,10 +1439,32 @@
       });
     });
 
-    const saved = localStorage.getItem('futura-lang');
-    const browserLang = navigator.language.split('-')[0];
-    const initLang = (saved && LANG_META[saved]) ? saved : (LANG_META[browserLang] ? browserLang : 'en');
-    applyLang(initLang);
+    (function detectAndApply() {
+      // 1. Saved user preference (explicit choice always wins)
+      const saved = localStorage.getItem('futura-lang');
+      if (saved && LANG_META[saved]) { applyLang(saved); return; }
+
+      // 2. Browser / OS language preference list (navigator.languages is ordered by preference)
+      const prefs = Array.from(navigator.languages || [navigator.language || 'en']);
+      for (const l of prefs) {
+        const code = l.split('-')[0].toLowerCase();
+        if (LANG_META[code]) { applyLang(code); return; }
+      }
+
+      // 3. IP geo-detection — only runs when browser language has no supported match
+      fetch('https://ipapi.co/json/')
+        .then(r => r.json())
+        .then(d => {
+          const byCountry = {
+            mx:'es', co:'es', ar:'es', cl:'es', pe:'es', ve:'es', ec:'es',
+            bo:'es', py:'es', uy:'es', cr:'es', pa:'es', do:'es', gt:'es',
+            hn:'es', sv:'es', ni:'es', cu:'es', pr:'es',
+            br:'pt', pt:'pt', ao:'pt', mz:'pt', cv:'pt', gw:'pt', st:'pt', tl:'pt'
+          };
+          applyLang(byCountry[(d.country_code || '').toLowerCase()] || 'en');
+        })
+        .catch(() => applyLang('en'));
+    })();
 
     /* ─── Hamburger ─────────────────────────────────────────────── */
     const hamburger = document.getElementById('hamburger');
