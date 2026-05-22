@@ -19,23 +19,15 @@
     "@type": "SoftwareApplication",
     "name": "Futura AI Solutions",
     "applicationCategory": "BusinessApplication",
-    "description": "24/7 AI Voice Receptionist for small and medium businesses. Books appointments, sends WhatsApp notifications, and recovers missed revenue.",
+    "description": "Operations intelligence AI for small and medium businesses. AI Voice Receptionist and WhatsApp Assistant.",
     "url": "https://futura-ai.solutions",
-    "offers": {
-      "@type": "Offer",
-      "price": "299",
-      "priceCurrency": "USD"
-    },
+    "offers": { "@type": "Offer", "price": "299", "priceCurrency": "USD" },
     "areaServed": ["MX","US","VE"],
     "availableLanguage": ["English","Spanish","Portuguese"],
     "provider": {
       "@type": "LocalBusiness",
       "name": "Futura AI Solutions",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Puerto Vallarta",
-        "addressCountry": "MX"
-      }
+      "address": { "@type": "PostalAddress", "addressLocality": "Puerto Vallarta", "addressCountry": "MX" }
     }
   }
   </script>
@@ -93,15 +85,8 @@
     }
 
     /* ─── Reveal animation ─────────────────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
@@ -137,13 +122,14 @@
       line-height: 1.75;
     }
 
+    .section-header { margin-bottom: 60px; }
+
     /* ─── Navigation ───────────────────────────────────────────── */
     #nav {
       position: sticky;
       top: 0;
       z-index: 50;
       height: var(--nav-h);
-      padding: 0;
       background: rgba(11, 15, 20, 0.88);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
@@ -182,8 +168,7 @@
     .nav-links a::after {
       content: '';
       position: absolute;
-      bottom: -4px;
-      left: 0; right: 0;
+      bottom: -4px; left: 0; right: 0;
       height: 1px;
       background: #19D3C5;
       opacity: 0;
@@ -212,33 +197,14 @@
     }
     .btn-nav:hover { background: linear-gradient(135deg, #2AF0E0, #19D3C5); box-shadow: 0 10px 36px rgba(25, 211, 197, 0.28); transform: translateY(-1px); }
 
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-left: auto;
-    }
+    .nav-actions { display: flex; align-items: center; gap: 12px; margin-left: auto; }
 
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      padding: 6px;
-    }
-    .hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--white);
-      border-radius: 2px;
-      transition: transform 0.3s, opacity 0.3s;
-    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; padding: 6px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* Mobile nav drawer */
     .mobile-menu {
       display: none;
       position: fixed;
@@ -251,13 +217,7 @@
       gap: 20px;
     }
     .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-size: 1rem;
-      color: var(--muted);
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
+    .mobile-menu a { font-size: 1rem; color: var(--muted); font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; }
     .mobile-menu a:hover { color: var(--white); }
     .mobile-menu .btn-nav { align-self: flex-start; margin-top: 4px; }
 
@@ -284,19 +244,14 @@
       font-family: inherit;
     }
     .lang-dropdown-btn:hover,
-    .lang-dropdown.open .lang-dropdown-btn {
-      background: rgba(25, 211, 197, 0.08);
-      border-color: rgba(25, 211, 197, 0.30);
-      color: #E8EDF2;
-    }
+    .lang-dropdown.open .lang-dropdown-btn { background: rgba(25, 211, 197, 0.08); border-color: rgba(25, 211, 197, 0.30); color: #E8EDF2; }
 
     .lang-chevron { font-size: 0.7rem; transition: transform 0.2s; opacity: 0.6; }
     .lang-dropdown.open .lang-chevron { transform: rotate(180deg); }
 
     .lang-dropdown-menu {
       position: absolute;
-      top: calc(100% + 8px);
-      right: 0;
+      top: calc(100% + 8px); right: 0;
       min-width: 160px;
       background: var(--bg-card);
       border: 1px solid rgba(120, 160, 200, 0.14);
@@ -328,22 +283,9 @@
     .lang-code-badge { font-size: 0.65rem; letter-spacing: 0.12em; opacity: 0.55; }
     .lang-active .lang-code-badge { opacity: 1; }
 
-    .footer-lang-dropdown .lang-dropdown-btn {
-      padding: 4px 10px;
-      font-size: 0.68rem;
-      font-weight: 300;
-      letter-spacing: 0.14em;
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--label);
-      border-radius: 4px;
-    }
+    .footer-lang-dropdown .lang-dropdown-btn { padding: 4px 10px; font-size: 0.68rem; font-weight: 300; letter-spacing: 0.14em; background: transparent; border: 1px solid var(--border); color: var(--label); border-radius: 4px; }
     .footer-lang-dropdown .lang-dropdown-btn:hover,
-    .footer-lang-dropdown.open .lang-dropdown-btn {
-      background: transparent;
-      border-color: var(--teal);
-      color: var(--teal);
-    }
+    .footer-lang-dropdown.open .lang-dropdown-btn { background: transparent; border-color: var(--teal); color: var(--teal); }
     .footer-lang-dropdown .lang-dropdown-menu { bottom: calc(100% + 8px); top: auto; }
 
     .mobile-lang-dropdown { align-self: flex-start; }
@@ -360,37 +302,27 @@
     }
 
     .hero-grid {
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background-image: radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px);
       background-size: 36px 36px;
       pointer-events: none;
     }
     .hero-grid::after {
       content: '';
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background: radial-gradient(ellipse 70% 60% at 50% 40%, transparent 30%, var(--bg) 100%);
     }
 
     .hero-bg-mark {
-      position: absolute;
-      right: -80px;
-      top: 50%;
+      position: absolute; right: -80px; top: 50%;
       transform: translateY(-50%);
       width: min(55vw, 640px);
       opacity: 0.035;
-      pointer-events: none;
-      user-select: none;
+      pointer-events: none; user-select: none;
       filter: grayscale(1) blur(0.2px);
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 780px;
-      padding: 80px 0;
-    }
+    .hero-content { position: relative; z-index: 1; max-width: 780px; padding: 80px 0; }
 
     .hero-eyebrow {
       display: inline-flex;
@@ -403,13 +335,7 @@
       color: var(--teal);
       margin-bottom: 28px;
     }
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--teal);
-    }
+    .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--teal); }
 
     .hero-title {
       font-family: var(--font-head);
@@ -427,34 +353,13 @@
       font-weight: 200;
       color: var(--muted);
       line-height: 1.8;
-      max-width: 600px;
+      max-width: 620px;
       margin-bottom: 44px;
     }
 
-    .hero-ctas {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+    .hero-ctas { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 26px;
-      background: linear-gradient(135deg, #19D3C5, #17BFAE);
-      color: #061014;
-      border-radius: 7px;
-      font-size: 0.78rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      box-shadow: 0 8px 30px rgba(25, 211, 197, 0.18);
-      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-    }
-    .btn-primary:hover { background: linear-gradient(135deg, #2AF0E0, #19D3C5); box-shadow: 0 10px 40px rgba(25, 211, 197, 0.28); transform: translateY(-1px); }
-
+    /* ─── Buttons ──────────────────────────────────────────────── */
     .btn-ghost {
       display: inline-flex;
       align-items: center;
@@ -468,7 +373,7 @@
       font-weight: 300;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      transition: background 0.2s, border-color 0.2s;
     }
     .btn-ghost:hover { background: rgba(25, 211, 197, 0.10); border-color: rgba(25, 211, 197, 0.40); }
 
@@ -498,105 +403,17 @@
       padding: 22px 0;
     }
 
-    .usp-grid {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+    .usp-grid { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
-    .usp-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex: 1;
-      min-width: 160px;
-      justify-content: center;
-    }
+    .usp-item { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 160px; justify-content: center; }
 
-    .usp-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: var(--teal-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
+    .usp-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--teal-dim); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .usp-icon i { color: var(--teal); font-size: 1rem; }
 
-    .usp-label {
-      font-size: 0.8rem;
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      color: var(--white);
-      white-space: nowrap;
-    }
-
-    /* ─── Problem (was Solutions) ──────────────────────────────── */
-    #problem {
-      padding: 110px 0;
-      background: var(--bg-alt);
-    }
-
-    .problem-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-top: 60px;
-    }
-
-    .solution-tile {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 26px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-    .solution-tile:hover { border-color: rgba(25, 211, 197, 0.25); box-shadow: 0 0 0 1px rgba(25, 211, 197, 0.08), 0 16px 50px rgba(0, 0, 0, 0.3); }
-
-    .sol-header { display: flex; align-items: center; gap: 12px; }
-
-    .sol-icon {
-      width: 38px;
-      height: 38px;
-      background: var(--teal-dim);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .sol-icon i { color: var(--teal); font-size: 1rem; }
-
-    .sol-title {
-      font-family: var(--font-head);
-      font-size: 0.95rem;
-      font-weight: 400;
-      color: var(--white);
-      letter-spacing: 0.06em;
-    }
-
-    .sol-desc {
-      font-size: 0.85rem;
-      font-weight: 200;
-      color: var(--muted);
-      line-height: 1.7;
-      padding-left: 50px;
-    }
+    .usp-label { font-size: 0.8rem; font-weight: 300; letter-spacing: 0.06em; color: var(--white); white-space: nowrap; }
 
     /* ─── AI Receptionist ──────────────────────────────────────── */
-    #ai-receptionist {
-      padding: 110px 0;
-    }
-
-    .section-header { margin-bottom: 60px; }
+    #ai-receptionist { padding: 110px 0; }
 
     .flow-steps {
       display: grid;
@@ -605,210 +422,139 @@
       margin-top: 60px;
       position: relative;
     }
-
     .flow-steps::before {
       content: '';
       position: absolute;
       top: 36px;
-      left: calc(12.5% + 14px);
-      right: calc(12.5% + 14px);
+      left: calc(12.5% + 14px); right: calc(12.5% + 14px);
       height: 1px;
       background: linear-gradient(90deg, var(--teal) 0%, var(--border) 100%);
       pointer-events: none;
     }
 
-    .flow-step {
-      padding: 0 18px;
-      padding-top: 80px;
-      position: relative;
-    }
+    .flow-step { padding: 0 18px; padding-top: 80px; position: relative; }
 
     .flow-num {
-      position: absolute;
-      top: 0; left: 18px;
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-head);
-      font-size: 0.9rem;
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      color: var(--teal);
+      position: absolute; top: 0; left: 18px;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--bg-card); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head); font-size: 0.9rem; font-weight: 300; letter-spacing: 0.08em; color: var(--teal);
     }
-    .flow-step:first-child .flow-num {
-      background: linear-gradient(135deg, #19D3C5, #17BFAE);
-      color: #061014;
-      border-color: var(--teal);
-    }
+    .flow-step:first-child .flow-num { background: linear-gradient(135deg, #19D3C5, #17BFAE); color: #061014; border-color: var(--teal); }
 
-    .flow-title {
-      font-family: var(--font-head);
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 10px;
-      letter-spacing: 0.06em;
-    }
+    .flow-title { font-family: var(--font-head); font-size: 1.05rem; font-weight: 400; color: var(--white); margin-bottom: 10px; letter-spacing: 0.06em; }
+    .flow-desc { font-size: 0.85rem; font-weight: 200; color: var(--muted); line-height: 1.75; }
 
-    .flow-desc {
-      font-size: 0.85rem;
-      font-weight: 200;
-      color: var(--muted);
-      line-height: 1.75;
-    }
+    /* ─── Pricing ──────────────────────────────────────────────── */
+    #pricing { margin-top: 90px; padding-top: 80px; border-top: 1px solid var(--border); }
 
-    /* ─── Pricing Table ────────────────────────────────────────── */
-    #pricing {
-      margin-top: 90px;
-      padding-top: 80px;
-      border-top: 1px solid var(--border);
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 48px;
-    }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
 
     .pricing-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 36px 30px;
-      display: flex;
-      flex-direction: column;
+      display: flex; flex-direction: column;
       position: relative;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
       transition: border-color 0.25s, box-shadow 0.25s;
     }
-    .pricing-card.featured {
-      border-color: rgba(25, 211, 197, 0.40);
-      box-shadow: 0 0 0 1px rgba(25, 211, 197, 0.15), 0 16px 60px rgba(0, 0, 0, 0.35);
-    }
+    .pricing-card.featured { border-color: rgba(25, 211, 197, 0.40); box-shadow: 0 0 0 1px rgba(25, 211, 197, 0.15), 0 16px 60px rgba(0, 0, 0, 0.35); }
 
-    .pricing-badge {
-      position: absolute;
-      top: -13px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(135deg, #19D3C5, #17BFAE);
-      color: #061014;
-      font-size: 0.58rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 4px 16px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
+    .pricing-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #19D3C5, #17BFAE); color: #061014; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 4px 16px; border-radius: 20px; white-space: nowrap; }
 
-    .pricing-tier {
-      font-family: var(--font-head);
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 14px;
-    }
+    .pricing-tier { font-family: var(--font-head); font-size: 0.72rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
 
-    .pricing-price {
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-      margin-bottom: 4px;
-    }
-    .pricing-amount {
-      font-family: var(--font-head);
-      font-size: 2.6rem;
-      font-weight: 300;
-      color: var(--white);
-      letter-spacing: 0.02em;
-      line-height: 1;
-    }
-    .pricing-period {
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-weight: 200;
-    }
+    .pricing-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
+    .pricing-amount { font-family: var(--font-head); font-size: 2.6rem; font-weight: 300; color: var(--white); letter-spacing: 0.02em; line-height: 1; }
+    .pricing-period { font-size: 0.8rem; color: var(--muted); font-weight: 200; }
+    .pricing-onboarding { font-size: 0.78rem; color: var(--label); margin-bottom: 28px; font-weight: 200; }
+    .pricing-divider { height: 1px; background: var(--border); margin-bottom: 24px; }
 
-    .pricing-onboarding {
-      font-size: 0.78rem;
-      color: var(--label);
-      margin-bottom: 28px;
-      font-weight: 200;
-    }
-
-    .pricing-divider {
-      height: 1px;
-      background: var(--border);
-      margin-bottom: 24px;
-    }
-
-    .pricing-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
-      flex: 1;
-      margin-bottom: 32px;
-    }
-
-    .pricing-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.82rem;
-      font-weight: 200;
-      line-height: 1.5;
-    }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 11px; flex: 1; margin-bottom: 32px; }
+    .pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.82rem; font-weight: 200; line-height: 1.5; }
     .pricing-features li.included { color: var(--white); }
     .pricing-features li:not(.included) { color: var(--label); }
     .pricing-features li .feat-icon { font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
     .pricing-features li.included .feat-icon { color: var(--teal); }
     .pricing-features li:not(.included) .feat-icon { opacity: 0.4; }
 
-    .pricing-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 13px 20px;
-      border-radius: 7px;
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-      width: 100%;
-    }
-    .pricing-cta.primary {
-      background: linear-gradient(135deg, #19D3C5, #17BFAE);
-      color: #061014;
-      box-shadow: 0 8px 30px rgba(25, 211, 197, 0.18);
-    }
+    .pricing-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 20px; border-radius: 7px; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.2s, box-shadow 0.2s, transform 0.15s; width: 100%; }
+    .pricing-cta.primary { background: linear-gradient(135deg, #19D3C5, #17BFAE); color: #061014; box-shadow: 0 8px 30px rgba(25, 211, 197, 0.18); }
     .pricing-cta.primary:hover { background: linear-gradient(135deg, #2AF0E0, #19D3C5); box-shadow: 0 10px 40px rgba(25, 211, 197, 0.28); transform: translateY(-1px); }
-    .pricing-cta.ghost {
-      background: rgba(25, 211, 197, 0.06);
-      border: 1px solid rgba(25, 211, 197, 0.25);
-      color: #BDEFEA;
-    }
+    .pricing-cta.ghost { background: rgba(25, 211, 197, 0.06); border: 1px solid rgba(25, 211, 197, 0.25); color: #BDEFEA; }
     .pricing-cta.ghost:hover { background: rgba(25, 211, 197, 0.10); border-color: rgba(25, 211, 197, 0.40); }
 
-    /* ─── Services ─────────────────────────────────────────────── */
-    #services {
-      padding: 110px 0;
-      background: var(--bg-alt);
+    /* ─── WhatsApp Assistant ───────────────────────────────────── */
+    #whatsapp-assistant { padding: 110px 0; background: var(--bg-alt); }
+
+    .wa-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 60px;
     }
+
+    .wa-features { display: flex; flex-direction: column; gap: 28px; }
+
+    .wa-feature { display: flex; gap: 18px; align-items: flex-start; }
+
+    .wa-icon {
+      width: 42px; height: 42px; border-radius: 9px;
+      background: var(--teal-dim);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .wa-icon i { color: var(--teal); font-size: 1.1rem; }
+
+    .wa-feature-title { font-family: var(--font-head); font-size: 1rem; font-weight: 400; color: var(--white); margin-bottom: 6px; letter-spacing: 0.06em; }
+    .wa-feature-desc { font-size: 0.85rem; font-weight: 200; color: var(--muted); line-height: 1.7; }
+
+    .wa-cta-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .wa-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .wa-stat-value { font-family: var(--font-head); font-size: 2.2rem; font-weight: 200; color: var(--teal); line-height: 1; }
+    .wa-stat-label { font-size: 0.8rem; font-weight: 300; color: var(--muted); letter-spacing: 0.06em; }
+
+    .wa-tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .wa-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--teal-dim);
+      border: 1px solid rgba(25, 211, 197, 0.18);
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+    }
+
+    /* ─── Services ─────────────────────────────────────────────── */
+    #services { padding: 110px 0; }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
 
@@ -820,43 +566,15 @@
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
       transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
     }
-    .service-card:hover {
-      border-color: rgba(25, 211, 197, 0.25);
-      box-shadow: 0 0 0 1px rgba(25, 211, 197, 0.08), 0 16px 50px rgba(0, 0, 0, 0.3);
-      transform: translateY(-3px);
-    }
+    .service-card:hover { border-color: rgba(25, 211, 197, 0.25); box-shadow: 0 0 0 1px rgba(25, 211, 197, 0.08), 0 16px 50px rgba(0, 0, 0, 0.3); transform: translateY(-3px); }
 
-    .card-icon {
-      width: 46px; height: 46px;
-      border-radius: 10px;
-      background: var(--teal-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 22px;
-    }
+    .card-icon { width: 46px; height: 46px; border-radius: 10px; background: var(--teal-dim); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
     .card-icon i { color: var(--teal); font-size: 1.25rem; }
-
-    .card-title {
-      font-family: var(--font-head);
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 10px;
-      letter-spacing: 0.06em;
-    }
-
-    .card-desc {
-      font-size: 0.875rem;
-      font-weight: 200;
-      color: var(--muted);
-      line-height: 1.75;
-    }
+    .card-title { font-family: var(--font-head); font-size: 1.1rem; font-weight: 400; color: var(--white); margin-bottom: 10px; letter-spacing: 0.06em; }
+    .card-desc { font-size: 0.875rem; font-weight: 200; color: var(--muted); line-height: 1.75; }
 
     /* ─── How It Works ─────────────────────────────────────────── */
-    #how-it-works {
-      padding: 110px 0;
-    }
+    #how-it-works { padding: 110px 0; background: var(--bg-alt); }
 
     .steps-grid {
       display: grid;
@@ -865,293 +583,115 @@
       margin-top: 60px;
       position: relative;
     }
-
     .steps-grid::before {
       content: '';
-      position: absolute;
-      top: 36px;
-      left: calc(12.5% + 14px);
-      right: calc(12.5% + 14px);
+      position: absolute; top: 36px;
+      left: calc(12.5% + 14px); right: calc(12.5% + 14px);
       height: 1px;
       background: linear-gradient(90deg, var(--teal) 0%, var(--border) 100%);
       pointer-events: none;
     }
 
-    .step {
-      padding: 0 18px;
-      padding-top: 80px;
-      position: relative;
-    }
+    .step { padding: 0 18px; padding-top: 80px; position: relative; }
 
     .step-num {
-      position: absolute;
-      top: 0; left: 18px;
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-head);
-      font-size: 0.9rem;
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      color: var(--teal);
+      position: absolute; top: 0; left: 18px;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--bg-card); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head); font-size: 0.9rem; font-weight: 300; letter-spacing: 0.08em; color: var(--teal);
     }
-    .step:first-child .step-num {
-      background: linear-gradient(135deg, #19D3C5, #17BFAE);
-      color: #061014;
-      border-color: var(--teal);
-    }
+    .step:first-child .step-num { background: linear-gradient(135deg, #19D3C5, #17BFAE); color: #061014; border-color: var(--teal); }
 
-    .step-title {
-      font-family: var(--font-head);
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 10px;
-      letter-spacing: 0.06em;
-    }
-
-    .step-desc {
-      font-size: 0.85rem;
-      font-weight: 200;
-      color: var(--muted);
-      line-height: 1.75;
-    }
+    .step-title { font-family: var(--font-head); font-size: 1.05rem; font-weight: 400; color: var(--white); margin-bottom: 10px; letter-spacing: 0.06em; }
+    .step-desc { font-size: 0.85rem; font-weight: 200; color: var(--muted); line-height: 1.75; }
 
     /* ─── Dashboard ────────────────────────────────────────────── */
-    #dashboard {
-      padding: 110px 0;
-      background: var(--bg-alt);
-    }
+    #dashboard { padding: 110px 0; }
 
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-top: 60px;
-    }
+    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 60px; }
 
     .stat-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
-      transition: border-color 0.25s, box-shadow 0.25s;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 32px 28px; display: flex; flex-direction: column; gap: 10px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22); transition: border-color 0.25s, box-shadow 0.25s;
     }
     .stat-card:hover { border-color: rgba(25, 211, 197, 0.25); box-shadow: 0 0 0 1px rgba(25, 211, 197, 0.08), 0 16px 50px rgba(0, 0, 0, 0.3); }
 
-    .stat-icon {
-      width: 38px; height: 38px;
-      border-radius: 8px;
-      background: var(--teal-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 4px;
-    }
+    .stat-icon { width: 38px; height: 38px; border-radius: 8px; background: var(--teal-dim); display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
     .stat-icon i { color: var(--teal); font-size: 1rem; }
-
-    .stat-value {
-      font-family: var(--font-head);
-      font-size: 2.4rem;
-      font-weight: 200;
-      color: var(--teal);
-      letter-spacing: 0.04em;
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 0.75rem;
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--white);
-    }
-
-    .stat-desc {
-      font-size: 0.78rem;
-      font-weight: 200;
-      color: var(--muted);
-    }
+    .stat-value { font-family: var(--font-head); font-size: 2.4rem; font-weight: 200; color: var(--teal); letter-spacing: 0.04em; line-height: 1; }
+    .stat-label { font-size: 0.75rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); }
+    .stat-desc { font-size: 0.78rem; font-weight: 200; color: var(--muted); }
 
     /* ─── Contact ──────────────────────────────────────────────── */
-    #contact { padding: 110px 0; }
+    #contact { padding: 110px 0; background: var(--bg-alt); }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
     .contact-left .section-sub { margin-top: 0; margin-bottom: 32px; }
-
-    .contact-detail {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.875rem;
-      color: var(--muted);
-    }
+    .contact-detail { display: flex; align-items: center; gap: 10px; font-size: 0.875rem; color: var(--muted); }
     .contact-detail i { color: var(--teal); font-size: 1rem; }
 
     .contact-form { display: flex; flex-direction: column; gap: 14px; }
-
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
     .form-group { display: flex; flex-direction: column; gap: 6px; }
-
-    .form-group label {
-      font-size: 0.68rem;
-      font-weight: 300;
-      color: var(--label);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
+    .form-group label { font-size: 0.68rem; font-weight: 300; color: var(--label); letter-spacing: 0.16em; text-transform: uppercase; }
     .form-group input,
-    .form-group textarea {
-      background: #0E141C;
-      border: 1px solid rgba(130, 170, 210, 0.16);
-      border-radius: 7px;
-      padding: 12px 14px;
-      color: var(--white);
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      font-weight: 300;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      width: 100%;
-    }
+    .form-group textarea { background: #0E141C; border: 1px solid rgba(130, 170, 210, 0.16); border-radius: 7px; padding: 12px 14px; color: var(--white); font-family: var(--font-body); font-size: 0.9rem; font-weight: 300; outline: none; transition: border-color 0.2s, box-shadow 0.2s; width: 100%; }
     .form-group input::placeholder,
     .form-group textarea::placeholder { color: rgba(147, 164, 183, 0.55); }
     .form-group input:focus,
     .form-group textarea:focus { border-color: #19D3C5; box-shadow: 0 0 0 4px rgba(25, 211, 197, 0.12); }
     .form-group textarea { resize: vertical; min-height: 110px; }
 
-    .btn-submit {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 13px 26px;
-      background: linear-gradient(135deg, #19D3C5, #17BFAE);
-      color: #061014;
-      border-radius: 7px;
-      font-size: 0.78rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      box-shadow: 0 8px 30px rgba(25, 211, 197, 0.18);
-      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-      align-self: flex-start;
-    }
+    .btn-submit { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 26px; background: linear-gradient(135deg, #19D3C5, #17BFAE); color: #061014; border-radius: 7px; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; box-shadow: 0 8px 30px rgba(25, 211, 197, 0.18); transition: background 0.2s, box-shadow 0.2s, transform 0.15s; align-self: flex-start; }
     .btn-submit:hover { background: linear-gradient(135deg, #2AF0E0, #19D3C5); box-shadow: 0 10px 40px rgba(25, 211, 197, 0.28); transform: translateY(-1px); }
 
-    .form-success {
-      display: none;
-      background: var(--bg-card);
-      border: 1px solid var(--teal-glow);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      text-align: center;
-    }
+    .form-success { display: none; background: var(--bg-card); border: 1px solid var(--teal-glow); border-radius: var(--radius); padding: 32px 28px; text-align: center; }
     .form-success.visible { display: block; }
     .form-success i { font-size: 2rem; color: var(--teal); margin-bottom: 14px; }
     .form-success p { color: var(--muted); font-size: 0.95rem; }
     .form-success strong { color: var(--white); display: block; font-family: var(--font-head); font-size: 1.1rem; font-weight: 300; letter-spacing: 0.06em; margin-bottom: 6px; }
 
-    .field-error {
-      font-size: 0.65rem;
-      color: #f87171;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-top: 5px;
-      display: none;
-    }
+    .field-error { font-size: 0.65rem; color: #f87171; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 5px; display: none; }
     .form-group.invalid .field-error { display: block; }
     .form-group.invalid input,
     .form-group.invalid textarea { border-color: rgba(248, 113, 113, 0.55); box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.09); }
 
     /* ─── Footer ───────────────────────────────────────────────── */
     footer { border-top: 1px solid var(--border); padding: 28px 0; }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
     .footer-logo img { height: 24px; width: auto; }
-
-    .footer-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      font-size: 0.78rem;
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      color: var(--label);
-    }
-    .footer-meta-row {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+    .footer-meta { display: flex; flex-direction: column; gap: 4px; font-size: 0.78rem; font-weight: 300; letter-spacing: 0.06em; color: var(--label); }
+    .footer-meta-row { display: flex; align-items: center; gap: 20px; }
     .footer-meta a { color: var(--label); transition: color 0.2s; }
     .footer-meta a:hover { color: var(--white); }
 
     /* ─── Divider utility ──────────────────────────────────────── */
-    .teal-line {
-      display: block;
-      width: 36px;
-      height: 3px;
-      background: var(--teal);
-      border-radius: 2px;
-      margin-bottom: 22px;
-    }
+    .teal-line { display: block; width: 36px; height: 3px; background: var(--teal); border-radius: 2px; margin-bottom: 22px; }
 
     /* ─── Responsive ───────────────────────────────────────────── */
     @media (max-width: 900px) {
       .nav-links, .nav-actions { display: none; }
       .hamburger { display: flex; }
-
       .hero-bg-mark { display: none; }
       .hero-content { padding: 60px 0; }
-
       .usp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
       .usp-item { justify-content: flex-start; }
-
-      .problem-grid { grid-template-columns: 1fr; }
-
       .flow-steps { grid-template-columns: 1fr; gap: 32px; }
       .flow-steps::before { display: none; }
       .flow-step { padding: 0 0 0 70px; }
       .flow-num { left: 0; }
-
       .pricing-grid { grid-template-columns: 1fr; }
-
+      .wa-grid { grid-template-columns: 1fr; gap: 40px; }
       .services-grid { grid-template-columns: 1fr; }
-
       .steps-grid { grid-template-columns: 1fr; gap: 32px; }
       .steps-grid::before { display: none; }
       .step { padding: 0 0 0 70px; }
       .step-num { left: 0; }
-
       .stat-grid { grid-template-columns: 1fr 1fr; }
-
       .contact-grid { grid-template-columns: 1fr; gap: 48px; }
       .form-row { grid-template-columns: 1fr; }
-
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
 
@@ -1174,9 +714,9 @@
 
       <ul class="nav-links">
         <li><a href="#ai-receptionist" data-i18n="nav.ai-receptionist">AI Receptionist</a></li>
+        <li><a href="#whatsapp-assistant" data-i18n="nav.whatsapp">WhatsApp</a></li>
         <li><a href="#services" data-i18n="nav.services">Services</a></li>
         <li><a href="#how-it-works" data-i18n="nav.how-it-works">How It Works</a></li>
-        <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
 
@@ -1205,9 +745,9 @@
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu" role="menu">
     <a href="#ai-receptionist" data-i18n="nav.ai-receptionist">AI Receptionist</a>
+    <a href="#whatsapp-assistant" data-i18n="nav.whatsapp">WhatsApp</a>
     <a href="#services" data-i18n="nav.services">Services</a>
     <a href="#how-it-works" data-i18n="nav.how-it-works">How It Works</a>
-    <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
     <a href="#contact" data-i18n="nav.contact">Contact</a>
     <a href="#contact" class="btn-nav" data-i18n="nav.cta">Let's talk</a>
     <div class="lang-dropdown mobile-lang-dropdown" id="lang-dropdown-mobile">
@@ -1235,22 +775,21 @@
 
       <div class="container">
         <div class="hero-content">
-          <p class="hero-eyebrow" data-i18n="hero.eyebrow">AI Voice Receptionist</p>
+          <p class="hero-eyebrow" data-i18n="hero.eyebrow">AI Solutions · Operations Intelligence</p>
           <h1 class="hero-title" data-i18n="hero.title">
-            Your business misses calls.<br /><em>Every missed call is lost revenue.</em>
+            AI that answers every call, captures every lead,<br /><em>and runs your operations.</em>
           </h1>
           <p class="hero-sub" data-i18n="hero.sub">
-            Futura AI Solutions gives your business a 24/7 AI receptionist that answers calls, books appointments in under 30 seconds, and notifies you instantly on WhatsApp — so you never lose a customer to voicemail again.
+            Futura AI Solutions is an operations intelligence company for small and medium businesses. Our AI Voice Receptionist handles calls 24/7. Our WhatsApp Assistant captures every lead. Our consulting team makes it all work — in English, Spanish, or Portuguese.
           </p>
           <div class="hero-ctas">
             <a href="https://wa.me/523224003407" class="btn-whatsapp" target="_blank" rel="noopener" data-i18n="hero.cta0">
               <i class="ti ti-brand-whatsapp"></i>
               Chat on WhatsApp
             </a>
-            <!-- TODO: Replace href with tel:+1XXXXXXXXXX once demo phone number is provisioned -->
-            <a href="#ai-receptionist" class="btn-ghost" data-i18n="hero.cta2">
-              <i class="ti ti-phone"></i>
-              Call our AI
+            <a href="#ai-receptionist" class="btn-ghost" data-i18n="hero.cta1">
+              See our products
+              <i class="ti ti-arrow-down"></i>
             </a>
           </div>
         </div>
@@ -1266,17 +805,17 @@
 
           <div class="usp-item reveal">
             <div class="usp-icon" aria-hidden="true"><i class="ti ti-phone-check"></i></div>
-            <span class="usp-label" data-i18n="usp.1">24/7 — Never misses a call</span>
+            <span class="usp-label" data-i18n="usp.1">AI Voice Receptionist 24/7</span>
           </div>
 
           <div class="usp-item reveal reveal-delay-1">
-            <div class="usp-icon" aria-hidden="true"><i class="ti ti-calendar-check"></i></div>
-            <span class="usp-label" data-i18n="usp.2">Books appointments in 30 seconds</span>
+            <div class="usp-icon" aria-hidden="true"><i class="ti ti-brand-whatsapp"></i></div>
+            <span class="usp-label" data-i18n="usp.2">WhatsApp Lead Capture</span>
           </div>
 
           <div class="usp-item reveal reveal-delay-2">
-            <div class="usp-icon" aria-hidden="true"><i class="ti ti-brand-whatsapp"></i></div>
-            <span class="usp-label" data-i18n="usp.3">WhatsApp notifications instantly</span>
+            <div class="usp-icon" aria-hidden="true"><i class="ti ti-cpu"></i></div>
+            <span class="usp-label" data-i18n="usp.3">Operations Consulting</span>
           </div>
 
           <div class="usp-item reveal reveal-delay-3">
@@ -1289,67 +828,16 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <!-- THE PROBLEM (was Solutions) -->
-    <!-- ═══════════════════════════════════════════════════════════ -->
-    <section id="problem" aria-labelledby="problem-title">
-      <div class="container">
-
-        <div class="section-header reveal">
-          <span class="section-label" data-i18n="problem.label">The Problem</span>
-          <span class="teal-line"></span>
-          <h2 class="section-title" id="problem-title" data-i18n="problem.title">The Silent Revenue Leak</h2>
-          <p class="section-sub" data-i18n="problem.sub">62% of calls to small businesses go unanswered. 85% of those callers never call back. The revenue loss is real, measurable, and invisible — until now.</p>
-        </div>
-
-        <div class="problem-grid">
-
-          <div class="solution-tile reveal reveal-delay-1">
-            <div class="sol-header">
-              <div class="sol-icon" aria-hidden="true"><i class="ti ti-phone-off"></i></div>
-              <h3 class="sol-title" data-i18n="prob.1.title">Missed calls = lost customers</h3>
-            </div>
-            <p class="sol-desc" data-i18n="prob.1.desc">Every unanswered call is a potential client moving on to your competitor. Most SMBs lose 3–10 bookings per week without ever knowing it.</p>
-          </div>
-
-          <div class="solution-tile reveal reveal-delay-2">
-            <div class="sol-header">
-              <div class="sol-icon" aria-hidden="true"><i class="ti ti-moon"></i></div>
-              <h3 class="sol-title" data-i18n="prob.2.title">After-hours is the worst gap</h3>
-            </div>
-            <p class="sol-desc" data-i18n="prob.2.desc">40% of service calls arrive outside business hours. Without an AI receptionist, every ring goes to voicemail — or rings out entirely.</p>
-          </div>
-
-          <div class="solution-tile reveal reveal-delay-3">
-            <div class="sol-header">
-              <div class="sol-icon" aria-hidden="true"><i class="ti ti-user-x"></i></div>
-              <h3 class="sol-title" data-i18n="prob.3.title">A human receptionist isn't the answer</h3>
-            </div>
-            <p class="sol-desc" data-i18n="prob.3.desc">A receptionist costs $400–800 USD/month, works one shift, and can't cover evenings or weekends. There's a better way.</p>
-          </div>
-
-          <div class="solution-tile reveal reveal-delay-4">
-            <div class="sol-header">
-              <div class="sol-icon" aria-hidden="true"><i class="ti ti-calculator"></i></div>
-              <h3 class="sol-title" data-i18n="prob.4.title">The math is simple</h3>
-            </div>
-            <p class="sol-desc" data-i18n="prob.4.desc">If your average client is worth $300 and you recover just 2 missed bookings per month, the AI Receptionist pays for itself — everything else is pure upside.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════ -->
-    <!-- AI RECEPTIONIST (NEW) -->
+    <!-- AI RECEPTIONIST — FLAGSHIP PRODUCT -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <section id="ai-receptionist" aria-labelledby="ai-receptionist-title">
       <div class="container">
 
         <div class="section-header reveal">
-          <span class="section-label" data-i18n="air.label">Our flagship product</span>
+          <span class="section-label" data-i18n="air.label">Flagship product</span>
           <span class="teal-line"></span>
           <h2 class="section-title" id="ai-receptionist-title" data-i18n="air.title">AI Voice Receptionist</h2>
-          <p class="section-sub" data-i18n="air.sub">Answers calls. Books appointments. Notifies you. All automatically.</p>
+          <p class="section-sub" data-i18n="air.sub">62% of calls to small businesses go unanswered. Every missed call is a missed booking. Our AI Receptionist answers 24/7, books to your calendar, and notifies you on WhatsApp — all automatically.</p>
         </div>
 
         <div class="flow-steps">
@@ -1357,7 +845,7 @@
           <div class="flow-step reveal reveal-delay-1">
             <div class="flow-num" aria-hidden="true">01</div>
             <h3 class="flow-title" data-i18n="air.step1.title">Your phone rings</h3>
-            <p class="flow-desc" data-i18n="air.step1.desc">Staff have 4 rings to answer. If no one picks up, the AI activates automatically — no forwarding setup required.</p>
+            <p class="flow-desc" data-i18n="air.step1.desc">Staff have 4 rings to answer. If no one picks up, the AI activates automatically — no call forwarding setup required.</p>
           </div>
 
           <div class="flow-step reveal reveal-delay-2">
@@ -1375,14 +863,14 @@
           <div class="flow-step reveal reveal-delay-4">
             <div class="flow-num" aria-hidden="true">04</div>
             <h3 class="flow-title" data-i18n="air.step4.title">You're notified on WhatsApp</h3>
-            <p class="flow-desc" data-i18n="air.step4.desc">Within 60 seconds of the call ending, you receive a full call summary on WhatsApp. The caller gets a booking confirmation too.</p>
+            <p class="flow-desc" data-i18n="air.step4.desc">Within 60 seconds of the call ending, you receive a full summary on WhatsApp. The caller gets a confirmation too.</p>
           </div>
 
         </div>
 
         <!-- Pricing -->
         <div id="pricing">
-          <div class="section-header reveal" style="margin-top:0; margin-bottom:0;">
+          <div class="section-header reveal" style="margin-top:0;margin-bottom:0;">
             <span class="section-label">Plans &amp; Pricing</span>
             <span class="teal-line"></span>
             <h3 class="section-title" style="font-size:clamp(1.6rem,3vw,2.2rem);">Simple, transparent pricing</h3>
@@ -1390,13 +878,9 @@
 
           <div class="pricing-grid">
 
-            <!-- Starter -->
             <div class="pricing-card reveal reveal-delay-1">
               <div class="pricing-tier">Starter</div>
-              <div class="pricing-price">
-                <span class="pricing-amount">$299</span>
-                <span class="pricing-period">/mo</span>
-              </div>
+              <div class="pricing-price"><span class="pricing-amount">$299</span><span class="pricing-period">/mo</span></div>
               <div class="pricing-onboarding">+ $199 one-time onboarding</div>
               <div class="pricing-divider"></div>
               <ul class="pricing-features">
@@ -1408,19 +892,13 @@
                 <li><i class="ti ti-minus feat-icon"></i> Automated follow-ups</li>
                 <li><i class="ti ti-minus feat-icon"></i> Revenue reporting &amp; ROI dashboard</li>
               </ul>
-              <a href="https://wa.me/523224003407" class="pricing-cta ghost" target="_blank" rel="noopener">
-                <i class="ti ti-brand-whatsapp"></i> Get started
-              </a>
+              <a href="https://wa.me/523224003407" class="pricing-cta ghost" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> Get started</a>
             </div>
 
-            <!-- Growth (featured) -->
             <div class="pricing-card featured reveal reveal-delay-2">
               <div class="pricing-badge">Most Popular</div>
               <div class="pricing-tier">Growth</div>
-              <div class="pricing-price">
-                <span class="pricing-amount">$499</span>
-                <span class="pricing-period">/mo</span>
-              </div>
+              <div class="pricing-price"><span class="pricing-amount">$499</span><span class="pricing-period">/mo</span></div>
               <div class="pricing-onboarding">+ $299 one-time onboarding</div>
               <div class="pricing-divider"></div>
               <ul class="pricing-features">
@@ -1432,18 +910,12 @@
                 <li class="included"><i class="ti ti-check feat-icon"></i> Automated follow-ups</li>
                 <li><i class="ti ti-minus feat-icon"></i> Revenue reporting &amp; ROI dashboard</li>
               </ul>
-              <a href="https://wa.me/523224003407" class="pricing-cta primary" target="_blank" rel="noopener">
-                <i class="ti ti-brand-whatsapp"></i> Chat on WhatsApp to get started →
-              </a>
+              <a href="https://wa.me/523224003407" class="pricing-cta primary" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> Chat on WhatsApp to get started →</a>
             </div>
 
-            <!-- Pro -->
             <div class="pricing-card reveal reveal-delay-3">
               <div class="pricing-tier">Pro</div>
-              <div class="pricing-price">
-                <span class="pricing-amount">$799</span>
-                <span class="pricing-period">/mo</span>
-              </div>
+              <div class="pricing-price"><span class="pricing-amount">$799</span><span class="pricing-period">/mo</span></div>
               <div class="pricing-onboarding">+ $499 one-time onboarding</div>
               <div class="pricing-divider"></div>
               <ul class="pricing-features">
@@ -1455,9 +927,7 @@
                 <li class="included"><i class="ti ti-check feat-icon"></i> Automated follow-ups</li>
                 <li class="included"><i class="ti ti-check feat-icon"></i> Revenue reporting &amp; ROI dashboard</li>
               </ul>
-              <a href="https://wa.me/523224003407" class="pricing-cta ghost" target="_blank" rel="noopener">
-                <i class="ti ti-brand-whatsapp"></i> Get started
-              </a>
+              <a href="https://wa.me/523224003407" class="pricing-cta ghost" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> Get started</a>
             </div>
 
           </div>
@@ -1467,36 +937,81 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <!-- SERVICES -->
+    <!-- WHATSAPP ASSISTANT — SECOND PRODUCT -->
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <section id="services" aria-labelledby="services-title">
+    <section id="whatsapp-assistant" aria-labelledby="wa-title">
       <div class="container">
 
         <div class="section-header reveal">
-          <span class="section-label" data-i18n="services.label">Also available</span>
+          <span class="section-label" data-i18n="wa.label">Second product</span>
           <span class="teal-line"></span>
-          <h2 class="section-title" id="services-title" data-i18n="services.title">AI Consulting &amp; WhatsApp Automation</h2>
-          <p class="section-sub" data-i18n="services.sub">Beyond the AI Receptionist, Futura AI Solutions offers hands-on consulting for SMBs implementing AI, and a WhatsApp chatbot product for businesses in Latin America.</p>
+          <h2 class="section-title" id="wa-title" data-i18n="wa.title">WhatsApp Business Assistant</h2>
+          <p class="section-sub" data-i18n="wa.sub">Capture leads and book appointments through WhatsApp — no phone calls required. Built for businesses where customers already message first.</p>
         </div>
 
-        <div class="services-grid">
+        <div class="wa-grid">
 
-          <div class="service-card reveal reveal-delay-1">
-            <div class="card-icon" aria-hidden="true"><i class="ti ti-brain"></i></div>
-            <h3 class="card-title" data-i18n="services.card1.title">AI Consulting Services</h3>
-            <p class="card-desc" data-i18n="services.card1.desc">Custom AI implementation for your business. Workflow automation, AI agents, data integration, and process optimization. Project-based, fast, and practical — not theoretical.</p>
+          <div class="wa-features reveal">
+
+            <div class="wa-feature">
+              <div class="wa-icon" aria-hidden="true"><i class="ti ti-message-chatbot"></i></div>
+              <div>
+                <div class="wa-feature-title" data-i18n="wa.f1.title">Always in the conversation</div>
+                <p class="wa-feature-desc" data-i18n="wa.f1.desc">Responds to WhatsApp messages 24/7 in Spanish, English, or Portuguese. Natural, professional, and on-brand for your business.</p>
+              </div>
+            </div>
+
+            <div class="wa-feature">
+              <div class="wa-icon" aria-hidden="true"><i class="ti ti-calendar-check"></i></div>
+              <div>
+                <div class="wa-feature-title" data-i18n="wa.f2.title">Books appointments via chat</div>
+                <p class="wa-feature-desc" data-i18n="wa.f2.desc">Checks your calendar in real time and confirms bookings through WhatsApp — no voice calls, no manual entry, no double bookings.</p>
+              </div>
+            </div>
+
+            <div class="wa-feature">
+              <div class="wa-icon" aria-hidden="true"><i class="ti ti-users"></i></div>
+              <div>
+                <div class="wa-feature-title" data-i18n="wa.f3.title">Captures and qualifies leads</div>
+                <p class="wa-feature-desc" data-i18n="wa.f3.desc">Collects contact info and key details from every conversation. Every lead logged automatically — ready for your CRM or follow-up sequence.</p>
+              </div>
+            </div>
+
+            <div class="wa-feature">
+              <div class="wa-icon" aria-hidden="true"><i class="ti ti-map-pin"></i></div>
+              <div>
+                <div class="wa-feature-title" data-i18n="wa.f4.title">Built for Latin America</div>
+                <p class="wa-feature-desc" data-i18n="wa.f4.desc">Designed for businesses in Mexico, Venezuela, Colombia, and across the US. WhatsApp is where your customers already are.</p>
+              </div>
+            </div>
+
           </div>
 
-          <div class="service-card reveal reveal-delay-2">
-            <div class="card-icon" aria-hidden="true"><i class="ti ti-brand-whatsapp"></i></div>
-            <h3 class="card-title" data-i18n="services.card2.title">WhatsApp Business Chatbot</h3>
-            <p class="card-desc" data-i18n="services.card2.desc">A conversational AI chatbot integrated with WhatsApp Business for appointment booking and lead capture. No voice calls required. Ideal for businesses in Mexico, Venezuela, and across Latin America.</p>
-          </div>
+          <div class="wa-cta-block reveal reveal-delay-2">
 
-          <div class="service-card reveal reveal-delay-3">
-            <div class="card-icon" aria-hidden="true"><i class="ti ti-arrows-transfer-up"></i></div>
-            <h3 class="card-title" data-i18n="services.card3.title">Systems &amp; Data Integration</h3>
-            <p class="card-desc" data-i18n="services.card3.desc">Connect your CRM, calendar, POS, and communication tools into a unified operation. We integrate what you already use so your data works for you, not against you.</p>
+            <div class="wa-stat">
+              <div class="wa-stat-value">2B+</div>
+              <div class="wa-stat-label">WhatsApp users worldwide — your customers are already there</div>
+            </div>
+
+            <div>
+              <p style="font-size:0.85rem;font-weight:200;color:var(--muted);line-height:1.75;margin-bottom:16px;" data-i18n="wa.card.desc">
+                Available as a standalone product or bundled with the AI Voice Receptionist for complete coverage — calls, messages, and every channel covered.
+              </p>
+              <div class="wa-tag-list">
+                <span class="wa-tag"><i class="ti ti-check"></i> No voice calls required</span>
+                <span class="wa-tag"><i class="ti ti-check"></i> Google Calendar sync</span>
+                <span class="wa-tag"><i class="ti ti-check"></i> CRM integration</span>
+                <span class="wa-tag"><i class="ti ti-check"></i> Trilingual</span>
+                <span class="wa-tag"><i class="ti ti-check"></i> 24/7 availability</span>
+              </div>
+            </div>
+
+            <a href="https://wa.me/523224003407" class="btn-whatsapp" target="_blank" rel="noopener" style="align-self:flex-start;" data-i18n="wa.cta">
+              <i class="ti ti-brand-whatsapp"></i>
+              Ask about WhatsApp Assistant
+            </a>
+
           </div>
 
         </div>
@@ -1504,7 +1019,38 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <!-- HOW IT WORKS (was Process) -->
+    <!-- SERVICES — CONSULTING -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section id="services" aria-labelledby="services-title">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-label" data-i18n="services.label">Also available</span>
+          <span class="teal-line"></span>
+          <h2 class="section-title" id="services-title" data-i18n="services.title">AI Consulting &amp; Integration</h2>
+          <p class="section-sub" data-i18n="services.sub">Beyond our two products, Futura AI Solutions offers hands-on AI consulting and systems integration for SMBs ready to optimize their full operations stack.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card reveal reveal-delay-1">
+            <div class="card-icon" aria-hidden="true"><i class="ti ti-brain"></i></div>
+            <h3 class="card-title" data-i18n="services.card1.title">AI Consulting Services</h3>
+            <p class="card-desc" data-i18n="services.card1.desc">Custom AI implementation for your business. Workflow automation, AI agents, data integration, and process optimization. Project-based, fast, and practical — not theoretical. We come from industrial operations and build AI that runs like one.</p>
+          </div>
+
+          <div class="service-card reveal reveal-delay-2">
+            <div class="card-icon" aria-hidden="true"><i class="ti ti-arrows-transfer-up"></i></div>
+            <h3 class="card-title" data-i18n="services.card2.title">Systems &amp; Data Integration</h3>
+            <p class="card-desc" data-i18n="services.card2.desc">Connect your CRM, calendar, POS, and communication tools into a unified operation. We integrate what you already use — GoHighLevel, HubSpot, Pipedrive, Zoho — so your data works for you, not against you.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- HOW IT WORKS -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <section id="how-it-works" aria-labelledby="how-it-works-title">
       <div class="container">
@@ -1532,13 +1078,13 @@
           <div class="step reveal reveal-delay-3">
             <div class="step-num" aria-hidden="true">03</div>
             <h3 class="step-title" data-i18n="step.3.title">Go live</h3>
-            <p class="step-desc" data-i18n="step.3.desc">Your AI Receptionist activates. Every handled call, booked appointment, and WhatsApp notification is tracked in your real-time dashboard.</p>
+            <p class="step-desc" data-i18n="step.3.desc">Your AI activates. Every handled call, booked appointment, and WhatsApp notification is tracked in your real-time Pulse Dashboard.</p>
           </div>
 
           <div class="step reveal reveal-delay-4">
             <div class="step-num" aria-hidden="true">04</div>
             <h3 class="step-title" data-i18n="step.4.title">Grow</h3>
-            <p class="step-desc" data-i18n="step.4.desc">Start on Starter, upgrade as your needs grow. Add CRM integration, follow-up sequences, and revenue reporting when you're ready.</p>
+            <p class="step-desc" data-i18n="step.4.desc">Start on Starter, upgrade as you grow. Add the WhatsApp Assistant, CRM integration, follow-up sequences, and revenue reporting when you're ready.</p>
           </div>
 
         </div>
@@ -1546,7 +1092,7 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <!-- DASHBOARD (NEW) -->
+    <!-- DASHBOARD -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <section id="dashboard" aria-labelledby="dashboard-title">
       <div class="container">
@@ -1555,7 +1101,7 @@
           <span class="section-label" data-i18n="dash.label">Full visibility</span>
           <span class="teal-line"></span>
           <h2 class="section-title" id="dashboard-title" data-i18n="dash.title">Your Pulse Dashboard — included in every plan</h2>
-          <p class="section-sub" data-i18n="dash.sub">Every plan includes a real-time operations dashboard. See calls handled, appointments booked, leads captured, and revenue recovered — by day, week, month, or rolling 30 days. The dashboard is your proof of ROI, updated live.</p>
+          <p class="section-sub" data-i18n="dash.sub">Every plan includes a real-time operations dashboard. See calls handled, appointments booked, leads captured, and revenue recovered — by day, week, month, or rolling 30 days. Your proof of ROI, updated live.</p>
         </div>
 
         <div class="stat-grid">
@@ -1578,7 +1124,7 @@
             <div class="stat-icon" aria-hidden="true"><i class="ti ti-users"></i></div>
             <div class="stat-value">63</div>
             <div class="stat-label">Leads captured this month</div>
-            <div class="stat-desc">New contacts captured and logged from every call handled.</div>
+            <div class="stat-desc">New contacts captured and logged from every call and chat handled.</div>
           </div>
 
           <div class="stat-card reveal reveal-delay-4">
@@ -1597,7 +1143,6 @@
     <!-- ═══════════════════════════════════════════════════════════ -->
     <section id="contact" aria-labelledby="contact-title">
       <div class="container">
-
         <div class="contact-grid">
 
           <div class="contact-left reveal">
@@ -1608,7 +1153,7 @@
               Call our AI demo to experience the product, or send us a message on WhatsApp. We onboard new clients in under a week.
             </p>
             <div class="contact-detail">
-              <a href="https://wa.me/523224003407" class="btn-whatsapp" target="_blank" rel="noopener" data-i18n="hero.cta0">
+              <a href="https://wa.me/523224003407" class="btn-whatsapp" target="_blank" rel="noopener">
                 <i class="ti ti-brand-whatsapp"></i>
                 Chat on WhatsApp
               </a>
@@ -1699,71 +1244,71 @@
     const strings = {
       en: {
         'nav.ai-receptionist': 'AI Receptionist',
+        'nav.whatsapp':        'WhatsApp',
         'nav.services':        'Services',
         'nav.how-it-works':    'How It Works',
-        'nav.pricing':         'Pricing',
         'nav.contact':         'Contact',
         'nav.cta':             "Let's talk",
 
-        'hero.eyebrow': 'AI Voice Receptionist',
-        'hero.title':   'Your business misses calls. Every missed call is lost revenue.',
-        'hero.sub':     'Futura AI Solutions gives your business a 24/7 AI receptionist that answers calls, books appointments in under 30 seconds, and notifies you instantly on WhatsApp — so you never lose a customer to voicemail again.',
+        'hero.eyebrow': 'AI Solutions · Operations Intelligence',
+        'hero.title':   'AI that answers every call, captures every lead, and runs your operations.',
+        'hero.sub':     'Futura AI Solutions is an operations intelligence company for small and medium businesses. Our AI Voice Receptionist handles calls 24/7. Our WhatsApp Assistant captures every lead. Our consulting team makes it all work — in English, Spanish, or Portuguese.',
         'hero.cta0':    'Chat on WhatsApp',
-        'hero.cta2':    'Call our AI',
+        'hero.cta1':    'See our products',
 
-        'usp.1': '24/7 — Never misses a call',
-        'usp.2': 'Books appointments in 30 seconds',
-        'usp.3': 'WhatsApp notifications instantly',
+        'usp.1': 'AI Voice Receptionist 24/7',
+        'usp.2': 'WhatsApp Lead Capture',
+        'usp.3': 'Operations Consulting',
         'usp.4': 'Trilingual: EN · ES · PT',
 
-        'problem.label': 'The Problem',
-        'problem.title': 'The Silent Revenue Leak',
-        'problem.sub':   '62% of calls to small businesses go unanswered. 85% of those callers never call back. The revenue loss is real, measurable, and invisible — until now.',
-        'prob.1.title': 'Missed calls = lost customers',
-        'prob.1.desc':  'Every unanswered call is a potential client moving on to your competitor. Most SMBs lose 3–10 bookings per week without ever knowing it.',
-        'prob.2.title': 'After-hours is the worst gap',
-        'prob.2.desc':  '40% of service calls arrive outside business hours. Without an AI receptionist, every ring goes to voicemail — or rings out entirely.',
-        'prob.3.title': 'A human receptionist isn\'t the answer',
-        'prob.3.desc':  'A receptionist costs $400–800 USD/month, works one shift, and can\'t cover evenings or weekends. There\'s a better way.',
-        'prob.4.title': 'The math is simple',
-        'prob.4.desc':  'If your average client is worth $300 and you recover just 2 missed bookings per month, the AI Receptionist pays for itself — everything else is pure upside.',
-
-        'air.label': 'Our flagship product',
+        'air.label': 'Flagship product',
         'air.title': 'AI Voice Receptionist',
-        'air.sub':   'Answers calls. Books appointments. Notifies you. All automatically.',
+        'air.sub':   '62% of calls to small businesses go unanswered. Every missed call is a missed booking. Our AI Receptionist answers 24/7, books to your calendar, and notifies you on WhatsApp — all automatically.',
         'air.step1.title': 'Your phone rings',
-        'air.step1.desc':  'Staff have 4 rings to answer. If no one picks up, the AI activates automatically — no forwarding setup required.',
+        'air.step1.desc':  'Staff have 4 rings to answer. If no one picks up, the AI activates automatically — no call forwarding setup required.',
         'air.step2.title': 'AI takes the call',
         'air.step2.desc':  'A natural, professional AI voice answers questions about your business and handles the conversation in Spanish, English, or both.',
         'air.step3.title': 'Appointment booked in 30 seconds',
         'air.step3.desc':  'The AI checks your Google Calendar in real time and confirms the booking directly. No manual entry. No double bookings.',
-        'air.step4.title': 'You\'re notified on WhatsApp',
-        'air.step4.desc':  'Within 60 seconds of the call ending, you receive a full call summary on WhatsApp. The caller gets a booking confirmation too.',
+        'air.step4.title': "You're notified on WhatsApp",
+        'air.step4.desc':  'Within 60 seconds of the call ending, you receive a full summary on WhatsApp. The caller gets a confirmation too.',
+
+        'wa.label': 'Second product',
+        'wa.title': 'WhatsApp Business Assistant',
+        'wa.sub':   'Capture leads and book appointments through WhatsApp — no phone calls required. Built for businesses where customers already message first.',
+        'wa.f1.title': 'Always in the conversation',
+        'wa.f1.desc':  'Responds to WhatsApp messages 24/7 in Spanish, English, or Portuguese. Natural, professional, and on-brand for your business.',
+        'wa.f2.title': 'Books appointments via chat',
+        'wa.f2.desc':  'Checks your calendar in real time and confirms bookings through WhatsApp — no voice calls, no manual entry, no double bookings.',
+        'wa.f3.title': 'Captures and qualifies leads',
+        'wa.f3.desc':  'Collects contact info and key details from every conversation. Every lead logged automatically — ready for your CRM or follow-up sequence.',
+        'wa.f4.title': 'Built for Latin America',
+        'wa.f4.desc':  'Designed for businesses in Mexico, Venezuela, Colombia, and across the US. WhatsApp is where your customers already are.',
+        'wa.card.desc': 'Available as a standalone product or bundled with the AI Voice Receptionist for complete coverage — calls, messages, and every channel covered.',
+        'wa.cta':   'Ask about WhatsApp Assistant',
 
         'services.label': 'Also available',
-        'services.title': 'AI Consulting & WhatsApp Automation',
-        'services.sub':   'Beyond the AI Receptionist, Futura AI Solutions offers hands-on consulting for SMBs implementing AI, and a WhatsApp chatbot product for businesses in Latin America.',
+        'services.title': 'AI Consulting & Integration',
+        'services.sub':   'Beyond our two products, Futura AI Solutions offers hands-on AI consulting and systems integration for SMBs ready to optimize their full operations stack.',
         'services.card1.title': 'AI Consulting Services',
-        'services.card1.desc':  'Custom AI implementation for your business. Workflow automation, AI agents, data integration, and process optimization. Project-based, fast, and practical — not theoretical.',
-        'services.card2.title': 'WhatsApp Business Chatbot',
-        'services.card2.desc':  'A conversational AI chatbot integrated with WhatsApp Business for appointment booking and lead capture. No voice calls required. Ideal for businesses in Mexico, Venezuela, and across Latin America.',
-        'services.card3.title': 'Systems & Data Integration',
-        'services.card3.desc':  'Connect your CRM, calendar, POS, and communication tools into a unified operation. We integrate what you already use so your data works for you, not against you.',
+        'services.card1.desc':  'Custom AI implementation for your business. Workflow automation, AI agents, data integration, and process optimization. Project-based, fast, and practical — not theoretical. We come from industrial operations and build AI that runs like one.',
+        'services.card2.title': 'Systems & Data Integration',
+        'services.card2.desc':  'Connect your CRM, calendar, POS, and communication tools into a unified operation. We integrate what you already use — GoHighLevel, HubSpot, Pipedrive, Zoho — so your data works for you, not against you.',
 
         'process.label': 'Our process',
         'process.title': 'How It Works',
         'step.1.title': 'Demo call',
-        'step.1.desc':  'Call our AI Receptionist demo line and experience the product firsthand. No pitch deck. No slides. You\'ll hear exactly what your customers will hear.',
+        'step.1.desc':  "Call our AI Receptionist demo line and experience the product firsthand. No pitch deck. No slides. You'll hear exactly what your customers will hear.",
         'step.2.title': 'Onboarding',
-        'step.2.desc':  'We configure the AI with your business\'s services, pricing, hours, and tone. Google Calendar and WhatsApp connected. Live in under a week.',
+        'step.2.desc':  "We configure the AI with your business's services, pricing, hours, and tone. Google Calendar and WhatsApp connected. Live in under a week.",
         'step.3.title': 'Go live',
-        'step.3.desc':  'Your AI Receptionist activates. Every handled call, booked appointment, and WhatsApp notification is tracked in your real-time dashboard.',
+        'step.3.desc':  'Your AI activates. Every handled call, booked appointment, and WhatsApp notification is tracked in your real-time Pulse Dashboard.',
         'step.4.title': 'Grow',
-        'step.4.desc':  "Start on Starter, upgrade as your needs grow. Add CRM integration, follow-up sequences, and revenue reporting when you're ready.",
+        'step.4.desc':  "Start on Starter, upgrade as you grow. Add the WhatsApp Assistant, CRM integration, follow-up sequences, and revenue reporting when you're ready.",
 
         'dash.label': 'Full visibility',
         'dash.title': 'Your Pulse Dashboard — included in every plan',
-        'dash.sub':   'Every plan includes a real-time operations dashboard. See calls handled, appointments booked, leads captured, and revenue recovered — by day, week, month, or rolling 30 days. The dashboard is your proof of ROI, updated live.',
+        'dash.sub':   'Every plan includes a real-time operations dashboard. See calls handled, appointments booked, leads captured, and revenue recovered — by day, week, month, or rolling 30 days. Your proof of ROI, updated live.',
 
         'contact.label': 'Get started',
         'contact.title': 'Ready to stop missing calls?',
@@ -1783,38 +1328,26 @@
 
       es: {
         'nav.ai-receptionist': 'Recepcionista IA',
+        'nav.whatsapp':        'WhatsApp',
         'nav.services':        'Servicios',
         'nav.how-it-works':    'Cómo funciona',
-        'nav.pricing':         'Precios',
         'nav.contact':         'Contacto',
         'nav.cta':             'Hablemos',
 
-        'hero.eyebrow': 'Recepcionista de Voz con IA',
-        'hero.title':   'Tu negocio pierde llamadas. Cada llamada perdida es ingreso perdido.',
-        'hero.sub':     'Futura AI Solutions le da a tu negocio una recepcionista de IA disponible 24/7 que contesta llamadas, agenda citas en menos de 30 segundos y te notifica por WhatsApp al instante.',
+        'hero.eyebrow': 'Soluciones IA · Inteligencia Operacional',
+        'hero.title':   'IA que contesta cada llamada, captura cada lead y opera tu negocio.',
+        'hero.sub':     'Futura AI Solutions es una empresa de inteligencia operacional para pequeñas y medianas empresas. Nuestra Recepcionista de Voz IA atiende llamadas 24/7. Nuestro Asistente de WhatsApp captura cada lead. Nuestro equipo de consultoría lo integra todo.',
         'hero.cta0':    'Chatea por WhatsApp',
-        'hero.cta2':    'Llama a nuestra IA',
+        'hero.cta1':    'Ver nuestros productos',
 
-        'usp.1': '24/7 — Nunca pierde una llamada',
-        'usp.2': 'Agenda citas en 30 segundos',
-        'usp.3': 'Notificaciones por WhatsApp al instante',
+        'usp.1': 'Recepcionista IA 24/7',
+        'usp.2': 'Captura de Leads por WhatsApp',
+        'usp.3': 'Consultoría Operacional',
         'usp.4': 'Trilingüe: EN · ES · PT',
 
-        'problem.label': 'El Problema',
-        'problem.title': 'La Fuga Silenciosa de Ingresos',
-        'problem.sub':   'El 62% de las llamadas a pequeños negocios quedan sin respuesta. El 85% de esos clientes nunca vuelve a llamar. La pérdida de ingresos es real, medible e invisible — hasta ahora.',
-        'prob.1.title': 'Llamadas perdidas = clientes perdidos',
-        'prob.1.desc':  'Cada llamada sin respuesta es un cliente potencial que se va con tu competencia. La mayoría de las PyMEs pierden de 3 a 10 reservas por semana sin saberlo.',
-        'prob.2.title': 'Fuera de horario es el mayor problema',
-        'prob.2.desc':  'El 40% de las llamadas de servicio llegan fuera del horario laboral. Sin una recepcionista de IA, cada llamada va al buzón de voz.',
-        'prob.3.title': 'Una recepcionista humana no es la solución',
-        'prob.3.desc':  'Una recepcionista cuesta $400–800 USD/mes, trabaja un turno y no cubre noches ni fines de semana. Hay una mejor opción.',
-        'prob.4.title': 'Las matemáticas son simples',
-        'prob.4.desc':  'Si tu cliente promedio vale $300 y recuperas solo 2 reservas perdidas al mes, la Recepcionista IA se paga sola — todo lo demás es ganancia.',
-
-        'air.label': 'Nuestro producto estrella',
+        'air.label': 'Producto estrella',
         'air.title': 'Recepcionista de Voz con IA',
-        'air.sub':   'Contesta llamadas. Agenda citas. Te notifica. Todo automáticamente.',
+        'air.sub':   'El 62% de las llamadas a pequeños negocios quedan sin respuesta. Cada llamada perdida es una reserva perdida. Nuestra IA contesta 24/7, agenda en tu calendario y te notifica por WhatsApp.',
         'air.step1.title': 'Tu teléfono suena',
         'air.step1.desc':  'El equipo tiene 4 timbres para contestar. Si nadie responde, la IA se activa automáticamente.',
         'air.step2.title': 'La IA toma la llamada',
@@ -1824,81 +1357,78 @@
         'air.step4.title': 'Recibes notificación por WhatsApp',
         'air.step4.desc':  'En 60 segundos tras la llamada, recibes un resumen completo por WhatsApp. El cliente recibe su confirmación también.',
 
+        'wa.label': 'Segundo producto',
+        'wa.title': 'Asistente de WhatsApp Business',
+        'wa.sub':   'Captura leads y agenda citas por WhatsApp — sin llamadas de voz. Ideal para negocios donde los clientes ya escriben primero.',
+        'wa.f1.title': 'Siempre en la conversación',
+        'wa.f1.desc':  'Responde mensajes de WhatsApp 24/7 en español, inglés o portugués. Natural, profesional y alineado con tu marca.',
+        'wa.f2.title': 'Agenda citas por chat',
+        'wa.f2.desc':  'Verifica tu calendario en tiempo real y confirma reservas por WhatsApp — sin llamadas, sin entrada manual, sin dobles reservas.',
+        'wa.f3.title': 'Captura y califica leads',
+        'wa.f3.desc':  'Recopila datos de contacto de cada conversación. Cada lead registrado automáticamente y listo para tu CRM.',
+        'wa.f4.title': 'Hecho para Latinoamérica',
+        'wa.f4.desc':  'Diseñado para negocios en México, Venezuela, Colombia y EE.UU. WhatsApp es donde tus clientes ya están.',
+        'wa.card.desc': 'Disponible como producto independiente o combinado con la Recepcionista IA para cobertura completa.',
+        'wa.cta':   'Consultar sobre Asistente WhatsApp',
+
         'services.label': 'También disponible',
-        'services.title': 'Consultoría IA y Automatización WhatsApp',
-        'services.sub':   'Más allá de la Recepcionista IA, Futura AI Solutions ofrece consultoría para PyMEs que implementan IA y un chatbot de WhatsApp para negocios en Latinoamérica.',
+        'services.title': 'Consultoría IA e Integración',
+        'services.sub':   'Más allá de nuestros dos productos, Futura AI Solutions ofrece consultoría de IA e integración de sistemas para PyMEs listas para optimizar su operación completa.',
         'services.card1.title': 'Consultoría de IA',
-        'services.card1.desc':  'Implementación de IA personalizada para tu negocio. Automatización de flujos, agentes de IA, integración de datos y optimización de procesos. Rápido y práctico, no teórico.',
-        'services.card2.title': 'Chatbot WhatsApp Business',
-        'services.card2.desc':  'Un chatbot de IA conversacional integrado con WhatsApp Business para agendar citas y capturar leads. Sin llamadas de voz. Ideal para negocios en México, Venezuela y Latinoamérica.',
-        'services.card3.title': 'Integración de Sistemas y Datos',
-        'services.card3.desc':  'Conecta tu CRM, calendario, POS y herramientas de comunicación en una operación unificada. Integramos lo que ya usas para que tus datos trabajen para ti.',
+        'services.card1.desc':  'Implementación de IA personalizada. Automatización de flujos, agentes de IA, integración de datos y optimización de procesos. Rápido y práctico, no teórico.',
+        'services.card2.title': 'Integración de Sistemas y Datos',
+        'services.card2.desc':  'Conecta tu CRM, calendario, POS y herramientas de comunicación en una operación unificada. Integramos GoHighLevel, HubSpot, Pipedrive, Zoho y más.',
 
         'process.label': 'Nuestro proceso',
         'process.title': 'Cómo funciona',
         'step.1.title': 'Llamada demo',
-        'step.1.desc':  'Llama a nuestra línea demo de Recepcionista IA y experimenta el producto de primera mano. Sin presentaciones. Escucharás exactamente lo que tus clientes escucharán.',
+        'step.1.desc':  'Llama a nuestra línea demo y experimenta el producto de primera mano. Sin presentaciones. Escucharás lo que tus clientes escucharán.',
         'step.2.title': 'Onboarding',
         'step.2.desc':  'Configuramos la IA con los servicios, precios, horarios y tono de tu negocio. Google Calendar y WhatsApp conectados. En vivo en menos de una semana.',
         'step.3.title': 'Activación',
-        'step.3.desc':  'Tu Recepcionista IA se activa. Cada llamada atendida, cita agendada y notificación de WhatsApp queda registrada en tu dashboard en tiempo real.',
+        'step.3.desc':  'Tu IA se activa. Cada llamada atendida, cita agendada y notificación queda registrada en tu dashboard en tiempo real.',
         'step.4.title': 'Crecer',
-        'step.4.desc':  'Empieza en Starter y sube de plan cuando lo necesites. Agrega integración con CRM, seguimientos automáticos y reportes de ingresos cuando estés listo.',
+        'step.4.desc':  'Empieza en Starter y sube de plan cuando lo necesites. Agrega el Asistente WhatsApp, CRM, seguimientos y reportes de ingresos.',
 
         'dash.label': 'Visibilidad total',
         'dash.title': 'Tu Dashboard Pulse — incluido en todos los planes',
-        'dash.sub':   'Todos los planes incluyen un dashboard de operaciones en tiempo real. Visualiza llamadas atendidas, citas agendadas, leads capturados e ingresos recuperados. Tu prueba de ROI, actualizada en vivo.',
+        'dash.sub':   'Todos los planes incluyen un dashboard de operaciones en tiempo real. Llamadas atendidas, citas agendadas, leads capturados e ingresos recuperados. Tu prueba de ROI, actualizada en vivo.',
 
         'contact.label': 'Empecemos',
         'contact.title': '¿Listo para dejar de perder llamadas?',
         'contact.sub':   'Llama a nuestra IA demo para experimentar el producto, o envíanos un mensaje por WhatsApp. Incorporamos nuevos clientes en menos de una semana.',
-        'form.name':     'Nombre',
-        'form.company':  'Empresa',
-        'form.email':    'Correo',
-        'form.message':  '¿En qué estás trabajando? (opcional)',
-        'form.submit':        'Hablemos',
-        'form.error.name':    'El nombre es obligatorio',
-        'form.error.email':   'Se requiere un correo válido',
+        'form.name': 'Nombre', 'form.company': 'Empresa', 'form.email': 'Correo',
+        'form.message': '¿En qué estás trabajando? (opcional)',
+        'form.submit': 'Hablemos',
+        'form.error.name': 'El nombre es obligatorio',
+        'form.error.email': 'Se requiere un correo válido',
         'form.success.title': 'Estás en el calendario.',
-        'form.success.sub':   'Estaremos en contacto dentro de un día hábil.',
-
+        'form.success.sub': 'Estaremos en contacto dentro de un día hábil.',
         'footer.copy': '© 2026 Futura AI Solutions',
       },
 
       pt: {
         'nav.ai-receptionist': 'Recepcionista IA',
+        'nav.whatsapp':        'WhatsApp',
         'nav.services':        'Serviços',
         'nav.how-it-works':    'Como Funciona',
-        'nav.pricing':         'Preços',
         'nav.contact':         'Contato',
         'nav.cta':             'Vamos conversar',
 
-        'hero.eyebrow': 'Recepcionista de Voz com IA',
-        'hero.title':   'Seu negócio perde chamadas. Cada chamada perdida é receita perdida.',
-        'hero.sub':     'A Futura AI Solutions oferece ao seu negócio uma recepcionista de IA 24/7 que atende chamadas, agenda consultas em menos de 30 segundos e notifica você instantaneamente pelo WhatsApp.',
+        'hero.eyebrow': 'Soluções IA · Inteligência Operacional',
+        'hero.title':   'IA que atende cada chamada, captura cada lead e opera seu negócio.',
+        'hero.sub':     'A Futura AI Solutions é uma empresa de inteligência operacional para pequenas e médias empresas. Nossa Recepcionista de Voz IA atende chamadas 24/7. Nosso Assistente WhatsApp captura cada lead. Nossa equipe de consultoria faz tudo funcionar.',
         'hero.cta0':    'Fale pelo WhatsApp',
-        'hero.cta2':    'Ligue para nossa IA',
+        'hero.cta1':    'Ver nossos produtos',
 
-        'usp.1': '24/7 — Nunca perde uma chamada',
-        'usp.2': 'Agenda consultas em 30 segundos',
-        'usp.3': 'Notificações pelo WhatsApp instantaneamente',
+        'usp.1': 'Recepcionista IA 24/7',
+        'usp.2': 'Captura de Leads pelo WhatsApp',
+        'usp.3': 'Consultoria Operacional',
         'usp.4': 'Trilíngue: EN · ES · PT',
 
-        'problem.label': 'O Problema',
-        'problem.title': 'O Vazamento Silencioso de Receita',
-        'problem.sub':   '62% das chamadas para pequenos negócios ficam sem resposta. 85% desses clientes nunca ligam de volta. A perda de receita é real, mensurável e invisível — até agora.',
-        'prob.1.title': 'Chamadas perdidas = clientes perdidos',
-        'prob.1.desc':  'Cada chamada sem resposta é um cliente em potencial indo para o concorrente. A maioria das PMEs perde de 3 a 10 reservas por semana sem saber.',
-        'prob.2.title': 'Fora do horário é o maior problema',
-        'prob.2.desc':  '40% das chamadas chegam fora do horário comercial. Sem uma recepcionista de IA, cada ligação vai para o correio de voz.',
-        'prob.3.title': 'Uma recepcionista humana não é a solução',
-        'prob.3.desc':  'Uma recepcionista custa $400–800 USD/mês, trabalha um turno e não cobre noites ou fins de semana. Existe uma forma melhor.',
-        'prob.4.title': 'A matemática é simples',
-        'prob.4.desc':  'Se o seu cliente médio vale $300 e você recuperar apenas 2 reservas perdidas por mês, a Recepcionista IA se paga — todo o resto é lucro.',
-
-        'air.label': 'Nosso produto principal',
+        'air.label': 'Produto principal',
         'air.title': 'Recepcionista de Voz com IA',
-        'air.sub':   'Atende chamadas. Agenda consultas. Notifica você. Tudo automaticamente.',
+        'air.sub':   '62% das chamadas para pequenos negócios ficam sem resposta. Cada chamada perdida é uma reserva perdida. Nossa IA atende 24/7, agenda no seu calendário e notifica você pelo WhatsApp.',
         'air.step1.title': 'Seu telefone toca',
         'air.step1.desc':  'A equipe tem 4 toques para atender. Se ninguém atender, a IA é ativada automaticamente.',
         'air.step2.title': 'A IA atende a chamada',
@@ -1906,46 +1436,55 @@
         'air.step3.title': 'Consulta agendada em 30 segundos',
         'air.step3.desc':  'A IA verifica seu Google Calendar em tempo real e confirma o agendamento diretamente. Sem entrada manual. Sem agendamentos duplos.',
         'air.step4.title': 'Você é notificado pelo WhatsApp',
-        'air.step4.desc':  'Em 60 segundos após o fim da chamada, você recebe um resumo completo pelo WhatsApp. O cliente também recebe a confirmação.',
+        'air.step4.desc':  'Em 60 segundos após o fim da chamada, você recebe um resumo completo. O cliente também recebe a confirmação.',
+
+        'wa.label': 'Segundo produto',
+        'wa.title': 'Assistente WhatsApp Business',
+        'wa.sub':   'Capture leads e agende consultas pelo WhatsApp — sem chamadas de voz. Ideal para negócios onde os clientes já enviam mensagens primeiro.',
+        'wa.f1.title': 'Sempre na conversa',
+        'wa.f1.desc':  'Responde mensagens do WhatsApp 24/7 em português, espanhol ou inglês. Natural, profissional e alinhado com sua marca.',
+        'wa.f2.title': 'Agenda consultas via chat',
+        'wa.f2.desc':  'Verifica seu calendário em tempo real e confirma agendamentos pelo WhatsApp — sem chamadas, sem entrada manual, sem agendamentos duplos.',
+        'wa.f3.title': 'Captura e qualifica leads',
+        'wa.f3.desc':  'Coleta dados de contato de cada conversa. Cada lead registrado automaticamente e pronto para seu CRM.',
+        'wa.f4.title': 'Feito para a América Latina',
+        'wa.f4.desc':  'Desenvolvido para negócios no México, Venezuela, Colômbia e EUA. O WhatsApp é onde seus clientes já estão.',
+        'wa.card.desc': 'Disponível como produto independente ou combinado com a Recepcionista IA para cobertura completa.',
+        'wa.cta':   'Perguntar sobre Assistente WhatsApp',
 
         'services.label': 'Também disponível',
-        'services.title': 'Consultoria IA e Automação WhatsApp',
-        'services.sub':   'Além da Recepcionista IA, a Futura AI Solutions oferece consultoria para PMEs implementando IA e um chatbot de WhatsApp para negócios na América Latina.',
+        'services.title': 'Consultoria IA e Integração',
+        'services.sub':   'Além dos nossos dois produtos, a Futura AI Solutions oferece consultoria de IA e integração de sistemas para PMEs prontas para otimizar sua operação completa.',
         'services.card1.title': 'Consultoria de IA',
-        'services.card1.desc':  'Implementação de IA personalizada para seu negócio. Automação de fluxos, agentes de IA, integração de dados e otimização de processos. Rápido e prático, não teórico.',
-        'services.card2.title': 'Chatbot WhatsApp Business',
-        'services.card2.desc':  'Um chatbot de IA conversacional integrado ao WhatsApp Business para agendamento e captura de leads. Sem chamadas de voz. Ideal para negócios no México, Venezuela e em toda a América Latina.',
-        'services.card3.title': 'Integração de Sistemas e Dados',
-        'services.card3.desc':  'Conecte seu CRM, calendário, PDV e ferramentas de comunicação em uma operação unificada. Integramos o que você já usa para que seus dados trabalhem por você.',
+        'services.card1.desc':  'Implementação de IA personalizada. Automação de fluxos, agentes de IA, integração de dados e otimização de processos. Rápido e prático, não teórico.',
+        'services.card2.title': 'Integração de Sistemas e Dados',
+        'services.card2.desc':  'Conecte seu CRM, calendário, PDV e ferramentas de comunicação em uma operação unificada. Integramos GoHighLevel, HubSpot, Pipedrive, Zoho e mais.',
 
         'process.label': 'Nosso processo',
         'process.title': 'Como Funciona',
         'step.1.title': 'Chamada demo',
-        'step.1.desc':  'Ligue para nossa linha demo da Recepcionista IA e experimente o produto em primeira mão. Sem apresentações. Você vai ouvir exatamente o que seus clientes vão ouvir.',
+        'step.1.desc':  'Ligue para nossa linha demo e experimente o produto em primeira mão. Sem apresentações. Você vai ouvir o que seus clientes vão ouvir.',
         'step.2.title': 'Onboarding',
         'step.2.desc':  'Configuramos a IA com os serviços, preços, horários e tom do seu negócio. Google Calendar e WhatsApp conectados. No ar em menos de uma semana.',
         'step.3.title': 'Ativação',
-        'step.3.desc':  'Sua Recepcionista IA é ativada. Cada chamada atendida, consulta agendada e notificação de WhatsApp é registrada no seu dashboard em tempo real.',
+        'step.3.desc':  'Sua IA é ativada. Cada chamada atendida, consulta agendada e notificação é registrada no seu dashboard em tempo real.',
         'step.4.title': 'Crescer',
-        'step.4.desc':  'Comece no Starter e suba de plano conforme crescer. Adicione integração com CRM, sequências de acompanhamento e relatórios de receita quando estiver pronto.',
+        'step.4.desc':  'Comece no Starter e suba de plano conforme crescer. Adicione o Assistente WhatsApp, CRM, sequências e relatórios de receita.',
 
         'dash.label': 'Visibilidade total',
         'dash.title': 'Seu Dashboard Pulse — incluído em todos os planos',
-        'dash.sub':   'Todos os planos incluem um dashboard de operações em tempo real. Veja chamadas atendidas, consultas agendadas, leads capturados e receita recuperada. Sua prova de ROI, atualizada ao vivo.',
+        'dash.sub':   'Todos os planos incluem um dashboard de operações em tempo real. Chamadas atendidas, consultas agendadas, leads capturados e receita recuperada. Sua prova de ROI, atualizada ao vivo.',
 
         'contact.label': 'Comece agora',
         'contact.title': 'Pronto para parar de perder chamadas?',
         'contact.sub':   'Ligue para nossa IA demo para experimentar o produto, ou envie uma mensagem pelo WhatsApp. Integramos novos clientes em menos de uma semana.',
-        'form.name':     'Nome',
-        'form.company':  'Empresa',
-        'form.email':    'E-mail',
-        'form.message':  'No que você está trabalhando? (opcional)',
-        'form.submit':        'Vamos conversar',
-        'form.error.name':    'O nome é obrigatório',
-        'form.error.email':   'Um e-mail válido é necessário',
+        'form.name': 'Nome', 'form.company': 'Empresa', 'form.email': 'E-mail',
+        'form.message': 'No que você está trabalhando? (opcional)',
+        'form.submit': 'Vamos conversar',
+        'form.error.name': 'O nome é obrigatório',
+        'form.error.email': 'Um e-mail válido é necessário',
         'form.success.title': 'Você está na agenda.',
-        'form.success.sub':   'Entraremos em contato em até um dia útil.',
-
+        'form.success.sub': 'Entraremos em contato em até um dia útil.',
         'footer.copy': '© 2026 Futura AI Solutions',
       }
     };
@@ -1957,9 +1496,9 @@
     };
 
     const HERO_TITLES = {
-      en: 'Your business misses calls.<br /><em>Every missed call is lost revenue.</em>',
-      es: 'Tu negocio pierde llamadas.<br /><em>Cada llamada perdida es ingreso perdido.</em>',
-      pt: 'Seu negócio perde chamadas.<br /><em>Cada chamada perdida é receita perdida.</em>'
+      en: 'AI that answers every call, captures every lead,<br /><em>and runs your operations.</em>',
+      es: 'IA que contesta cada llamada, captura cada lead<br /><em>y opera tu negocio.</em>',
+      pt: 'IA que atende cada chamada, captura cada lead<br /><em>e opera seu negócio.</em>'
     };
 
     let currentLocale = 'en';
@@ -1993,21 +1532,16 @@
     function setupDropdown(dropdown) {
       const btn = dropdown.querySelector('.lang-dropdown-btn');
       const menu = dropdown.querySelector('.lang-dropdown-menu');
-
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const isOpen = dropdown.classList.toggle('open');
         btn.setAttribute('aria-expanded', String(isOpen));
         if (isOpen) {
           document.querySelectorAll('.lang-dropdown.open').forEach(d => {
-            if (d !== dropdown) {
-              d.classList.remove('open');
-              d.querySelector('.lang-dropdown-btn').setAttribute('aria-expanded', 'false');
-            }
+            if (d !== dropdown) { d.classList.remove('open'); d.querySelector('.lang-dropdown-btn').setAttribute('aria-expanded', 'false'); }
           });
         }
       });
-
       menu.querySelectorAll('li').forEach(li => {
         li.addEventListener('click', () => {
           const lang = li.getAttribute('data-lang');
@@ -2052,33 +1586,24 @@
         if (PT_COUNTRIES.has(data.country_code)) return 'pt';
         if (ES_COUNTRIES.has(data.country_code)) return 'es';
         return 'en';
-      } catch (e) {
-        return null;
-      }
+      } catch (e) { return null; }
     }
 
     async function initLanguage() {
       const saved = localStorage.getItem('futura-lang');
-      if (saved && strings[saved]) {
-        applyLocale(saved);
-        syncDropdowns(saved);
-        return;
-      }
+      if (saved && strings[saved]) { applyLocale(saved); syncDropdowns(saved); return; }
       const navLang = detectFromNavigator();
       applyLocale(navLang);
       syncDropdowns(navLang);
       if (navLang === 'en') {
         const geoLang = await detectFromGeo();
-        if (geoLang && geoLang !== 'en') {
-          applyLocale(geoLang);
-          syncDropdowns(geoLang);
-        }
+        if (geoLang && geoLang !== 'en') { applyLocale(geoLang); syncDropdowns(geoLang); }
       }
     }
 
     initLanguage();
 
-    /* ─── Hamburger menu ────────────────────────────────────────── */
+    /* ─── Hamburger ─────────────────────────────────────────────── */
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -2099,10 +1624,7 @@
     /* ─── Scroll reveal ─────────────────────────────────────────── */
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
@@ -2125,36 +1647,21 @@
     }
 
     ['field-name', 'field-email'].forEach(id => {
-      document.getElementById(id).addEventListener('input', function () {
-        this.closest('.form-group').classList.remove('invalid');
-      });
+      document.getElementById(id).addEventListener('input', function () { this.closest('.form-group').classList.remove('invalid'); });
     });
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!validateForm()) return;
-      submitBtn.disabled = true;
-      submitBtn.style.opacity = '0.7';
+      submitBtn.disabled = true; submitBtn.style.opacity = '0.7';
       try {
-        const res = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(new FormData(form)).toString()
-        });
-        if (res.ok) {
-          form.style.display = 'none';
-          successEl.classList.add('visible');
-        } else {
-          submitBtn.disabled = false;
-          submitBtn.style.opacity = '';
-        }
-      } catch {
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '';
-      }
+        const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() });
+        if (res.ok) { form.style.display = 'none'; successEl.classList.add('visible'); }
+        else { submitBtn.disabled = false; submitBtn.style.opacity = ''; }
+      } catch { submitBtn.disabled = false; submitBtn.style.opacity = ''; }
     });
 
-    /* ─── Active nav link on scroll ────────────────────────────── */
+    /* ─── Active nav on scroll ──────────────────────────────────── */
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
     const sections = [...navLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
     const sectionObserver = new IntersectionObserver((entries) => {
