@@ -535,7 +535,7 @@
     /* ─── Footer ───────────────────────────────────────────────── */
     footer { border-top: 1px solid var(--border); padding: 36px 0; }
     .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    .footer-logo img { height: 24px; width: auto; margin-bottom: 12px; }
+    .footer-brand img { height: 140px; width: auto; }
     .footer-brand { display: flex; flex-direction: column; gap: 4px; }
     .footer-brand-tagline { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label); }
     .footer-meta { display: flex; flex-direction: column; gap: 4px; font-size: 0.78rem; font-weight: 300; letter-spacing: 0.06em; color: var(--label); text-align: right; }
@@ -611,7 +611,7 @@
             <li role="option" data-lang="pt">Português <span class="lang-code-badge">PT</span></li>
           </ul>
         </div>
-        <a href="#contact" class="btn-nav"><i class="ti ti-message-circle"></i> Let's talk</a>
+        <a href="#contact" class="btn-nav"><i class="ti ti-message-circle"></i> <span data-i18n="nav.cta">Let's talk</span></a>
       </div>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -628,7 +628,7 @@
     <a href="#consulting" data-i18n="nav.consulting">Consulting</a>
     <a href="#how-it-works" data-i18n="nav.how-it-works">How It Works</a>
     <a href="#contact" data-i18n="nav.contact">Contact</a>
-    <a href="#contact" class="btn-nav">Let's talk</a>
+    <a href="#contact" class="btn-nav" data-i18n="nav.cta">Let's talk</a>
     <div class="lang-dropdown mobile-lang-dropdown" id="lang-dropdown-mobile">
       <button class="lang-dropdown-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
         <i class="ti ti-world"></i>
@@ -654,30 +654,30 @@
 
       <div class="container">
         <div class="hero-content">
-          <p class="hero-eyebrow">AI Solutions · Operations Intelligence</p>
+          <p class="hero-eyebrow" data-i18n="hero.eyebrow">AI Solutions · Operations Intelligence</p>
           <h1 class="hero-company">Futura AI Solutions</h1>
-          <p class="hero-tagline">Operational Superintelligence</p>
-          <p class="hero-sub">
+          <p class="hero-tagline" data-i18n="hero.tagline">Operational Superintelligence</p>
+          <p class="hero-sub" data-i18n="hero.sub">
             We build AI systems that help businesses operate smarter, respond faster, and scale without adding operational chaos. From AI receptionists and WhatsApp automation to custom workflows, data integration, and intelligent business systems.
           </p>
           <div class="hero-ctas">
             <a href="https://wa.me/523224003407" class="btn-whatsapp" target="_blank" rel="noopener">
               <i class="ti ti-brand-whatsapp"></i>
-              Chat on WhatsApp
+              <span data-i18n="hero.cta1">Chat on WhatsApp</span>
             </a>
             <a href="#what-we-do" class="btn-ghost">
-              Explore our solutions
+              <span data-i18n="hero.cta2">Explore our solutions</span>
               <i class="ti ti-arrow-down"></i>
             </a>
           </div>
 
           <!-- Featured product card -->
           <div class="hero-product-card reveal">
-            <div class="hpc-label">Featured Product</div>
+            <div class="hpc-label" data-i18n="hero.card.label">Featured Product</div>
             <div class="hpc-name">Pulse</div>
-            <div class="hpc-type">AI Voice Receptionist &nbsp;·&nbsp; by Futura AI Solutions</div>
-            <p class="hpc-desc">Answers calls 24/7, books appointments through Google Calendar, and notifies your team on WhatsApp — automatically.</p>
-            <a href="#pulse" class="hpc-link">Learn more <i class="ti ti-arrow-right"></i></a>
+            <div class="hpc-type" data-i18n="hero.card.type">AI Voice Receptionist &nbsp;·&nbsp; by Futura AI Solutions</div>
+            <p class="hpc-desc" data-i18n="hero.card.desc">Answers calls 24/7, books appointments through Google Calendar, and notifies your team on WhatsApp — automatically.</p>
+            <a href="#pulse" class="hpc-link"><span data-i18n="hero.card.link">Learn more</span> <i class="ti ti-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -692,22 +692,22 @@
 
           <div class="usp-item reveal">
             <div class="usp-icon" aria-hidden="true"><i class="ti ti-phone-check"></i></div>
-            <span class="usp-label">AI Voice Receptionist</span>
+            <span class="usp-label" data-i18n="usp.1">AI Voice Receptionist</span>
           </div>
 
           <div class="usp-item reveal reveal-delay-1">
             <div class="usp-icon" aria-hidden="true"><i class="ti ti-brand-whatsapp"></i></div>
-            <span class="usp-label">WhatsApp Automation</span>
+            <span class="usp-label" data-i18n="usp.2">WhatsApp Automation</span>
           </div>
 
           <div class="usp-item reveal reveal-delay-2">
             <div class="usp-icon" aria-hidden="true"><i class="ti ti-cpu"></i></div>
-            <span class="usp-label">AI Consulting & Integration</span>
+            <span class="usp-label" data-i18n="usp.3">AI Consulting &amp; Integration</span>
           </div>
 
           <div class="usp-item reveal reveal-delay-3">
             <div class="usp-icon" aria-hidden="true"><i class="ti ti-world"></i></div>
-            <span class="usp-label">Trilingual: EN · ES · PT</span>
+            <span class="usp-label" data-i18n="usp.4">Trilingual: EN · ES · PT</span>
           </div>
 
         </div>
@@ -721,30 +721,30 @@
       <div class="container">
 
         <div class="section-header reveal">
-          <span class="section-label">Our offer</span>
+          <span class="section-label" data-i18n="wwd.label">Our offer</span>
           <span class="teal-line"></span>
-          <h2 class="section-title" id="what-we-do-title">What We Do</h2>
-          <p class="section-sub">Futura AI Solutions helps businesses connect their systems, automate repetitive work, capture more leads, and turn scattered operations into intelligent workflows.</p>
+          <h2 class="section-title" id="what-we-do-title" data-i18n="wwd.title">What We Do</h2>
+          <p class="section-sub" data-i18n="wwd.sub">Futura AI Solutions helps businesses connect their systems, automate repetitive work, capture more leads, and turn scattered operations into intelligent workflows.</p>
         </div>
 
         <div class="pillars-grid">
 
           <div class="pillar-card reveal reveal-delay-1">
             <div class="card-icon" aria-hidden="true"><i class="ti ti-device-desktop-analytics"></i></div>
-            <h3 class="card-title">AI Products</h3>
-            <p class="card-desc">Productized AI tools that solve specific business problems — from missed calls and WhatsApp lead capture to automated follow-ups and real-time operations dashboards.</p>
+            <h3 class="card-title" data-i18n="wwd.card1.title">AI Products</h3>
+            <p class="card-desc" data-i18n="wwd.card1.desc">Productized AI tools that solve specific business problems — from missed calls and WhatsApp lead capture to automated follow-ups and real-time operations dashboards.</p>
           </div>
 
           <div class="pillar-card reveal reveal-delay-2">
             <div class="card-icon" aria-hidden="true"><i class="ti ti-brain"></i></div>
-            <h3 class="card-title">AI Consulting</h3>
-            <p class="card-desc">Custom AI implementation for businesses that need practical automation, workflow design, and operational problem-solving. We build what you actually need — not what sounds impressive.</p>
+            <h3 class="card-title" data-i18n="wwd.card2.title">AI Consulting</h3>
+            <p class="card-desc" data-i18n="wwd.card2.desc">Custom AI implementation for businesses that need practical automation, workflow design, and operational problem-solving. We build what you actually need — not what sounds impressive.</p>
           </div>
 
           <div class="pillar-card reveal reveal-delay-3">
             <div class="card-icon" aria-hidden="true"><i class="ti ti-arrows-transfer-up"></i></div>
-            <h3 class="card-title">Systems & Data Integration</h3>
-            <p class="card-desc">We connect calendars, CRMs, communication channels, databases, and business tools so your information works as one system — not as a collection of disconnected apps.</p>
+            <h3 class="card-title" data-i18n="wwd.card3.title">Systems &amp; Data Integration</h3>
+            <p class="card-desc" data-i18n="wwd.card3.desc">We connect calendars, CRMs, communication channels, databases, and business tools so your information works as one system — not as a collection of disconnected apps.</p>
           </div>
 
         </div>
@@ -759,38 +759,38 @@
 
         <div class="section-header reveal">
           <div class="pulse-label-row">
-            <span class="section-label">Featured Product</span>
+            <span class="section-label" data-i18n="pulse.label">Featured Product</span>
             <span class="pulse-product-badge"><i class="ti ti-circle-filled" style="font-size:0.5rem;"></i> Pulse</span>
           </div>
           <span class="teal-line"></span>
-          <h2 class="section-title" id="pulse-title">Pulse AI Voice Receptionist</h2>
-          <p class="section-sub">The first flagship product from Futura AI Solutions. Pulse answers missed calls, books appointments through Google Calendar, and sends instant WhatsApp summaries to your team. Built for businesses that cannot afford to lose leads when no one picks up the phone.</p>
+          <h2 class="section-title" id="pulse-title" data-i18n="pulse.title">Pulse AI Voice Receptionist</h2>
+          <p class="section-sub" data-i18n="pulse.sub">The first flagship product from Futura AI Solutions. Pulse answers missed calls, books appointments through Google Calendar, and sends instant WhatsApp summaries to your team. Built for businesses that cannot afford to lose leads when no one picks up the phone.</p>
         </div>
 
         <div class="flow-steps">
 
           <div class="flow-step reveal reveal-delay-1">
             <div class="flow-num" aria-hidden="true">01</div>
-            <h3 class="flow-title">Your phone rings</h3>
-            <p class="flow-desc">Staff have 4 rings to answer. If no one picks up, Pulse activates automatically — no call forwarding setup required.</p>
+            <h3 class="flow-title" data-i18n="pulse.step1.title">Your phone rings</h3>
+            <p class="flow-desc" data-i18n="pulse.step1.desc">Staff have 4 rings to answer. If no one picks up, Pulse activates automatically — no call forwarding setup required.</p>
           </div>
 
           <div class="flow-step reveal reveal-delay-2">
             <div class="flow-num" aria-hidden="true">02</div>
-            <h3 class="flow-title">Pulse answers</h3>
-            <p class="flow-desc">A natural, professional AI voice handles the conversation in Spanish, English, or both — answering questions and qualifying the caller.</p>
+            <h3 class="flow-title" data-i18n="pulse.step2.title">Pulse answers</h3>
+            <p class="flow-desc" data-i18n="pulse.step2.desc">A natural, professional AI voice handles the conversation in Spanish, English, or both — answering questions and qualifying the caller.</p>
           </div>
 
           <div class="flow-step reveal reveal-delay-3">
             <div class="flow-num" aria-hidden="true">03</div>
-            <h3 class="flow-title">Appointment booked</h3>
-            <p class="flow-desc">Pulse checks your Google Calendar in real time and confirms the booking directly. No manual entry. No double bookings.</p>
+            <h3 class="flow-title" data-i18n="pulse.step3.title">Appointment booked</h3>
+            <p class="flow-desc" data-i18n="pulse.step3.desc">Pulse checks your Google Calendar in real time and confirms the booking directly. No manual entry. No double bookings.</p>
           </div>
 
           <div class="flow-step reveal reveal-delay-4">
             <div class="flow-num" aria-hidden="true">04</div>
-            <h3 class="flow-title">WhatsApp summary sent</h3>
-            <p class="flow-desc">Within 60 seconds of the call ending, Pulse sends a full summary to your team on WhatsApp. The caller gets a confirmation too.</p>
+            <h3 class="flow-title" data-i18n="pulse.step4.title">WhatsApp summary sent</h3>
+            <p class="flow-desc" data-i18n="pulse.step4.desc">Within 60 seconds of the call ending, Pulse sends a full summary to your team on WhatsApp. The caller gets a confirmation too.</p>
           </div>
 
         </div>
@@ -798,63 +798,63 @@
         <!-- Pulse Pricing -->
         <div id="pricing">
           <div class="section-header reveal" style="margin-top:0;margin-bottom:0;">
-            <span class="section-label">Pulse Plans &amp; Pricing</span>
+            <span class="section-label" data-i18n="pricing.label">Pulse Plans &amp; Pricing</span>
             <span class="teal-line"></span>
-            <h3 class="section-title" style="font-size:clamp(1.6rem,3vw,2.2rem);">Simple pricing for your AI Voice Receptionist</h3>
+            <h3 class="section-title" style="font-size:clamp(1.6rem,3vw,2.2rem);" data-i18n="pricing.title">Simple pricing for your AI Voice Receptionist</h3>
           </div>
 
           <div class="pricing-grid">
 
             <div class="pricing-card reveal reveal-delay-1">
-              <div class="pricing-tier">Starter</div>
-              <div class="pricing-price"><span class="pricing-amount">$299</span><span class="pricing-period">/mo</span></div>
-              <div class="pricing-onboarding">+ $199 one-time onboarding</div>
+              <div class="pricing-tier" data-i18n="pricing.starter.tier">Starter</div>
+              <div class="pricing-price"><span class="pricing-amount">$299</span><span class="pricing-period" data-i18n="pricing.period">/mo</span></div>
+              <div class="pricing-onboarding" data-i18n="pricing.starter.onboarding">+ $199 one-time onboarding</div>
               <div class="pricing-divider"></div>
               <ul class="pricing-features">
-                <li class="included"><i class="ti ti-check feat-icon"></i> Pulse answers calls 24/7</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> Google Calendar booking</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> WhatsApp notifications</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> Real-time Pulse Dashboard</li>
-                <li><i class="ti ti-minus feat-icon"></i> CRM integration</li>
-                <li><i class="ti ti-minus feat-icon"></i> Automated follow-ups</li>
-                <li><i class="ti ti-minus feat-icon"></i> Revenue reporting &amp; ROI dashboard</li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.calls">Pulse answers calls 24/7</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.calendar">Google Calendar booking</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.whatsapp">WhatsApp notifications</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.dashboard">Real-time Pulse Dashboard</span></li>
+                <li><i class="ti ti-minus feat-icon"></i> <span data-i18n="pricing.feat.crm">CRM integration</span></li>
+                <li><i class="ti ti-minus feat-icon"></i> <span data-i18n="pricing.feat.followups">Automated follow-ups</span></li>
+                <li><i class="ti ti-minus feat-icon"></i> <span data-i18n="pricing.feat.revenue">Revenue reporting &amp; ROI dashboard</span></li>
               </ul>
-              <a href="https://wa.me/523224003407" class="pricing-cta ghost" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> Get started</a>
+              <a href="https://wa.me/523224003407" class="pricing-cta ghost" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="pricing.cta.ghost">Get started</span></a>
             </div>
 
             <div class="pricing-card featured reveal reveal-delay-2">
-              <div class="pricing-badge">Most Popular</div>
-              <div class="pricing-tier">Growth</div>
-              <div class="pricing-price"><span class="pricing-amount">$499</span><span class="pricing-period">/mo</span></div>
-              <div class="pricing-onboarding">+ $299 one-time onboarding</div>
+              <div class="pricing-badge" data-i18n="pricing.growth.badge">Most Popular</div>
+              <div class="pricing-tier" data-i18n="pricing.growth.tier">Growth</div>
+              <div class="pricing-price"><span class="pricing-amount">$499</span><span class="pricing-period" data-i18n="pricing.period">/mo</span></div>
+              <div class="pricing-onboarding" data-i18n="pricing.growth.onboarding">+ $299 one-time onboarding</div>
               <div class="pricing-divider"></div>
               <ul class="pricing-features">
-                <li class="included"><i class="ti ti-check feat-icon"></i> Pulse answers calls 24/7</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> Google Calendar booking</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> WhatsApp notifications</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> Real-time Pulse Dashboard</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> CRM integration (GHL, HubSpot, Pipedrive, Zoho)</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> Automated follow-ups</li>
-                <li><i class="ti ti-minus feat-icon"></i> Revenue reporting &amp; ROI dashboard</li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.calls">Pulse answers calls 24/7</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.calendar">Google Calendar booking</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.whatsapp">WhatsApp notifications</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.dashboard">Real-time Pulse Dashboard</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.crm">CRM integration (GHL, HubSpot, Pipedrive, Zoho)</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.followups">Automated follow-ups</span></li>
+                <li><i class="ti ti-minus feat-icon"></i> <span data-i18n="pricing.feat.revenue">Revenue reporting &amp; ROI dashboard</span></li>
               </ul>
-              <a href="https://wa.me/523224003407" class="pricing-cta primary" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> Chat on WhatsApp to get started →</a>
+              <a href="https://wa.me/523224003407" class="pricing-cta primary" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="pricing.cta.primary">Chat on WhatsApp to get started →</span></a>
             </div>
 
             <div class="pricing-card reveal reveal-delay-3">
-              <div class="pricing-tier">Pro</div>
-              <div class="pricing-price"><span class="pricing-amount">$799</span><span class="pricing-period">/mo</span></div>
-              <div class="pricing-onboarding">+ $499 one-time onboarding</div>
+              <div class="pricing-tier" data-i18n="pricing.pro.tier">Pro</div>
+              <div class="pricing-price"><span class="pricing-amount">$799</span><span class="pricing-period" data-i18n="pricing.period">/mo</span></div>
+              <div class="pricing-onboarding" data-i18n="pricing.pro.onboarding">+ $499 one-time onboarding</div>
               <div class="pricing-divider"></div>
               <ul class="pricing-features">
-                <li class="included"><i class="ti ti-check feat-icon"></i> Pulse answers calls 24/7</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> Google Calendar booking</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> WhatsApp notifications</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> Real-time Pulse Dashboard</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> CRM integration (GHL, HubSpot, Pipedrive, Zoho)</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> Automated follow-ups</li>
-                <li class="included"><i class="ti ti-check feat-icon"></i> Revenue reporting &amp; ROI dashboard</li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.calls">Pulse answers calls 24/7</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.calendar">Google Calendar booking</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.whatsapp">WhatsApp notifications</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.dashboard">Real-time Pulse Dashboard</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.crm">CRM integration (GHL, HubSpot, Pipedrive, Zoho)</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.followups">Automated follow-ups</span></li>
+                <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.revenue">Revenue reporting &amp; ROI dashboard</span></li>
               </ul>
-              <a href="https://wa.me/523224003407" class="pricing-cta ghost" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> Get started</a>
+              <a href="https://wa.me/523224003407" class="pricing-cta ghost" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="pricing.cta.ghost">Get started</span></a>
             </div>
 
           </div>
@@ -870,10 +870,10 @@
       <div class="container">
 
         <div class="section-header reveal">
-          <span class="section-label">Second Product · Futura AI Ecosystem</span>
+          <span class="section-label" data-i18n="wa.label">Second Product · Futura AI Ecosystem</span>
           <span class="teal-line"></span>
-          <h2 class="section-title" id="wa-title">WhatsApp Business Assistant</h2>
-          <p class="section-sub">Capture leads and book appointments through WhatsApp — no phone calls required. Built for businesses where customers already message first.</p>
+          <h2 class="section-title" id="wa-title" data-i18n="wa.title">WhatsApp Business Assistant</h2>
+          <p class="section-sub" data-i18n="wa.sub">Capture leads and book appointments through WhatsApp — no phone calls required. Built for businesses where customers already message first.</p>
         </div>
 
         <div class="wa-grid">
@@ -883,32 +883,32 @@
             <div class="wa-feature">
               <div class="wa-icon" aria-hidden="true"><i class="ti ti-message-chatbot"></i></div>
               <div>
-                <div class="wa-feature-title">Always in the conversation</div>
-                <p class="wa-feature-desc">Responds to WhatsApp messages 24/7 in Spanish, English, or Portuguese. Natural, professional, and on-brand for your business.</p>
+                <div class="wa-feature-title" data-i18n="wa.feat1.title">Always in the conversation</div>
+                <p class="wa-feature-desc" data-i18n="wa.feat1.desc">Responds to WhatsApp messages 24/7 in Spanish, English, or Portuguese. Natural, professional, and on-brand for your business.</p>
               </div>
             </div>
 
             <div class="wa-feature">
               <div class="wa-icon" aria-hidden="true"><i class="ti ti-calendar-check"></i></div>
               <div>
-                <div class="wa-feature-title">Books appointments via chat</div>
-                <p class="wa-feature-desc">Checks your calendar in real time and confirms bookings through WhatsApp — no voice calls, no manual entry, no double bookings.</p>
+                <div class="wa-feature-title" data-i18n="wa.feat2.title">Books appointments via chat</div>
+                <p class="wa-feature-desc" data-i18n="wa.feat2.desc">Checks your calendar in real time and confirms bookings through WhatsApp — no voice calls, no manual entry, no double bookings.</p>
               </div>
             </div>
 
             <div class="wa-feature">
               <div class="wa-icon" aria-hidden="true"><i class="ti ti-users"></i></div>
               <div>
-                <div class="wa-feature-title">Captures and qualifies leads</div>
-                <p class="wa-feature-desc">Collects contact info and key details from every conversation. Every lead logged automatically — ready for your CRM or follow-up sequence.</p>
+                <div class="wa-feature-title" data-i18n="wa.feat3.title">Captures and qualifies leads</div>
+                <p class="wa-feature-desc" data-i18n="wa.feat3.desc">Collects contact info and key details from every conversation. Every lead logged automatically — ready for your CRM or follow-up sequence.</p>
               </div>
             </div>
 
             <div class="wa-feature">
               <div class="wa-icon" aria-hidden="true"><i class="ti ti-map-pin"></i></div>
               <div>
-                <div class="wa-feature-title">Built for Latin America</div>
-                <p class="wa-feature-desc">Designed for businesses in Mexico, Venezuela, Colombia, and across the US. WhatsApp is where your customers already are.</p>
+                <div class="wa-feature-title" data-i18n="wa.feat4.title">Built for Latin America</div>
+                <p class="wa-feature-desc" data-i18n="wa.feat4.desc">Designed for businesses in Mexico, Venezuela, Colombia, and across the US. WhatsApp is where your customers already are.</p>
               </div>
             </div>
 
@@ -917,23 +917,23 @@
           <div class="wa-cta-block reveal reveal-delay-2">
             <div class="wa-stat">
               <div class="wa-stat-value">2B+</div>
-              <div class="wa-stat-label">WhatsApp users worldwide — your customers are already there</div>
+              <div class="wa-stat-label" data-i18n="wa.stat.label">WhatsApp users worldwide — your customers are already there</div>
             </div>
             <div>
-              <p style="font-size:0.85rem;font-weight:200;color:var(--muted);line-height:1.75;margin-bottom:16px;">
+              <p style="font-size:0.85rem;font-weight:200;color:var(--muted);line-height:1.75;margin-bottom:16px;" data-i18n="wa.body">
                 Available as a standalone product or bundled with Pulse for complete coverage — calls, messages, and every channel handled.
               </p>
               <div class="wa-tag-list">
-                <span class="wa-tag"><i class="ti ti-check"></i> No voice calls required</span>
-                <span class="wa-tag"><i class="ti ti-check"></i> Google Calendar sync</span>
-                <span class="wa-tag"><i class="ti ti-check"></i> CRM integration</span>
-                <span class="wa-tag"><i class="ti ti-check"></i> Trilingual</span>
-                <span class="wa-tag"><i class="ti ti-check"></i> 24/7 availability</span>
+                <span class="wa-tag"><i class="ti ti-check"></i> <span data-i18n="wa.tag1">No voice calls required</span></span>
+                <span class="wa-tag"><i class="ti ti-check"></i> <span data-i18n="wa.tag2">Google Calendar sync</span></span>
+                <span class="wa-tag"><i class="ti ti-check"></i> <span data-i18n="wa.tag3">CRM integration</span></span>
+                <span class="wa-tag"><i class="ti ti-check"></i> <span data-i18n="wa.tag4">Trilingual</span></span>
+                <span class="wa-tag"><i class="ti ti-check"></i> <span data-i18n="wa.tag5">24/7 availability</span></span>
               </div>
             </div>
             <a href="https://wa.me/523224003407" class="btn-whatsapp" target="_blank" rel="noopener" style="align-self:flex-start;">
               <i class="ti ti-brand-whatsapp"></i>
-              Ask about WhatsApp Assistant
+              <span data-i18n="wa.cta">Ask about WhatsApp Assistant</span>
             </a>
           </div>
 
@@ -948,15 +948,15 @@
       <div class="container">
 
         <div class="section-header reveal" style="margin-bottom:0;">
-          <span class="section-label">Beyond Products</span>
+          <span class="section-label" data-i18n="consulting.label">Beyond Products</span>
           <span class="teal-line"></span>
-          <h2 class="section-title" id="consulting-title">AI Consulting &amp; Systems Integration</h2>
+          <h2 class="section-title" id="consulting-title" data-i18n="consulting.title">AI Consulting &amp; Systems Integration</h2>
         </div>
 
-        <p class="consulting-intro reveal">
+        <p class="consulting-intro reveal" data-i18n="consulting.intro">
           Not every business problem fits into a product. Futura AI Solutions also provides hands-on consulting for companies that need custom AI workflows, CRM automation, data integration, internal tools, reporting dashboards, and intelligent operations design.
         </p>
-        <p class="consulting-highlight reveal reveal-delay-1">
+        <p class="consulting-highlight reveal reveal-delay-1" data-i18n="consulting.highlight">
           We help businesses move from scattered tools and manual processes to connected, intelligent operations.
         </p>
 
@@ -964,14 +964,14 @@
 
           <div class="service-card reveal reveal-delay-2">
             <div class="card-icon" aria-hidden="true"><i class="ti ti-brain"></i></div>
-            <h3 class="card-title">AI Consulting Services</h3>
-            <p class="card-desc">Custom AI implementation built around your specific operational challenges. We design and deploy workflow automation, AI agents, intelligent routing systems, and decision-support tools. Project-based, fast, and grounded in real business operations — not theoretical AI hype.</p>
+            <h3 class="card-title" data-i18n="consulting.card1.title">AI Consulting Services</h3>
+            <p class="card-desc" data-i18n="consulting.card1.desc">Custom AI implementation built around your specific operational challenges. We design and deploy workflow automation, AI agents, intelligent routing systems, and decision-support tools. Project-based, fast, and grounded in real business operations — not theoretical AI hype.</p>
           </div>
 
           <div class="service-card reveal reveal-delay-3">
             <div class="card-icon" aria-hidden="true"><i class="ti ti-arrows-transfer-up"></i></div>
-            <h3 class="card-title">Systems &amp; Data Integration</h3>
-            <p class="card-desc">We connect your CRM, calendar, POS, communication tools, and data sources into a unified operational layer. GoHighLevel, HubSpot, Pipedrive, Zoho, Google Workspace, and more. When your systems talk to each other, your business stops leaking revenue through the cracks.</p>
+            <h3 class="card-title" data-i18n="consulting.card2.title">Systems &amp; Data Integration</h3>
+            <p class="card-desc" data-i18n="consulting.card2.desc">We connect your CRM, calendar, POS, communication tools, and data sources into a unified operational layer. GoHighLevel, HubSpot, Pipedrive, Zoho, Google Workspace, and more. When your systems talk to each other, your business stops leaking revenue through the cracks.</p>
           </div>
 
         </div>
@@ -985,10 +985,10 @@
       <div class="container">
 
         <div class="section-header reveal">
-          <span class="section-label">Full visibility · Pulse Dashboard</span>
+          <span class="section-label" data-i18n="dashboard.label">Full visibility · Pulse Dashboard</span>
           <span class="teal-line"></span>
-          <h2 class="section-title" id="dashboard-title">Your operations, visible in real time</h2>
-          <p class="section-sub">Every Pulse plan includes a live operations dashboard. Calls handled, appointments booked, leads captured, and revenue recovered — by day, week, month, or rolling 30 days. Your proof of ROI, updated live.</p>
+          <h2 class="section-title" id="dashboard-title" data-i18n="dashboard.title">Your operations, visible in real time</h2>
+          <p class="section-sub" data-i18n="dashboard.sub">Every Pulse plan includes a live operations dashboard. Calls handled, appointments booked, leads captured, and revenue recovered — by day, week, month, or rolling 30 days. Your proof of ROI, updated live.</p>
         </div>
 
         <div class="stat-grid">
@@ -996,29 +996,29 @@
           <div class="stat-card reveal reveal-delay-1">
             <div class="stat-icon" aria-hidden="true"><i class="ti ti-phone-incoming"></i></div>
             <div class="stat-value">24</div>
-            <div class="stat-label">Calls handled today</div>
-            <div class="stat-desc">Every call answered by Pulse, logged in real time.</div>
+            <div class="stat-label" data-i18n="dashboard.stat1.label">Calls handled today</div>
+            <div class="stat-desc" data-i18n="dashboard.stat1.desc">Every call answered by Pulse, logged in real time.</div>
           </div>
 
           <div class="stat-card reveal reveal-delay-2">
             <div class="stat-icon" aria-hidden="true"><i class="ti ti-calendar-event"></i></div>
             <div class="stat-value">17</div>
-            <div class="stat-label">Appointments booked this week</div>
-            <div class="stat-desc">Confirmed directly to Google Calendar. Zero manual entry.</div>
+            <div class="stat-label" data-i18n="dashboard.stat2.label">Appointments booked this week</div>
+            <div class="stat-desc" data-i18n="dashboard.stat2.desc">Confirmed directly to Google Calendar. Zero manual entry.</div>
           </div>
 
           <div class="stat-card reveal reveal-delay-3">
             <div class="stat-icon" aria-hidden="true"><i class="ti ti-users"></i></div>
             <div class="stat-value">63</div>
-            <div class="stat-label">Leads captured this month</div>
-            <div class="stat-desc">New contacts logged from every call and WhatsApp interaction.</div>
+            <div class="stat-label" data-i18n="dashboard.stat3.label">Leads captured this month</div>
+            <div class="stat-desc" data-i18n="dashboard.stat3.desc">New contacts logged from every call and WhatsApp interaction.</div>
           </div>
 
           <div class="stat-card reveal reveal-delay-4">
             <div class="stat-icon" aria-hidden="true"><i class="ti ti-currency-dollar"></i></div>
             <div class="stat-value">$4.2k</div>
-            <div class="stat-label">Revenue recovered (rolling 30D)</div>
-            <div class="stat-desc">Estimated revenue from bookings that would have gone to voicemail.</div>
+            <div class="stat-label" data-i18n="dashboard.stat4.label">Revenue recovered (rolling 30D)</div>
+            <div class="stat-desc" data-i18n="dashboard.stat4.desc">Estimated revenue from bookings that would have gone to voicemail.</div>
           </div>
 
         </div>
@@ -1032,35 +1032,35 @@
       <div class="container">
 
         <div class="section-header reveal">
-          <span class="section-label">Our process</span>
+          <span class="section-label" data-i18n="hiw.label">Our process</span>
           <span class="teal-line"></span>
-          <h2 class="section-title" id="how-it-works-title">How It Works</h2>
+          <h2 class="section-title" id="how-it-works-title" data-i18n="hiw.title">How It Works</h2>
         </div>
 
         <div class="steps-grid">
 
           <div class="step reveal reveal-delay-1">
             <div class="step-num" aria-hidden="true">01</div>
-            <h3 class="step-title">Demo call</h3>
-            <p class="step-desc">Call our Pulse demo line and hear the product in action. No pitch deck. No slides. You'll hear exactly what your customers will hear when Pulse picks up.</p>
+            <h3 class="step-title" data-i18n="hiw.step1.title">Demo call</h3>
+            <p class="step-desc" data-i18n="hiw.step1.desc">Call our Pulse demo line and hear the product in action. No pitch deck. No slides. You'll hear exactly what your customers will hear when Pulse picks up.</p>
           </div>
 
           <div class="step reveal reveal-delay-2">
             <div class="step-num" aria-hidden="true">02</div>
-            <h3 class="step-title">Onboarding</h3>
-            <p class="step-desc">We configure Pulse with your business's services, pricing, hours, and tone. Google Calendar and WhatsApp connected. Live in under a week.</p>
+            <h3 class="step-title" data-i18n="hiw.step2.title">Onboarding</h3>
+            <p class="step-desc" data-i18n="hiw.step2.desc">We configure Pulse with your business's services, pricing, hours, and tone. Google Calendar and WhatsApp connected. Live in under a week.</p>
           </div>
 
           <div class="step reveal reveal-delay-3">
             <div class="step-num" aria-hidden="true">03</div>
-            <h3 class="step-title">Go live</h3>
-            <p class="step-desc">Pulse activates. Every handled call, booked appointment, and WhatsApp summary is tracked live in your Pulse Dashboard.</p>
+            <h3 class="step-title" data-i18n="hiw.step3.title">Go live</h3>
+            <p class="step-desc" data-i18n="hiw.step3.desc">Pulse activates. Every handled call, booked appointment, and WhatsApp summary is tracked live in your Pulse Dashboard.</p>
           </div>
 
           <div class="step reveal reveal-delay-4">
             <div class="step-num" aria-hidden="true">04</div>
-            <h3 class="step-title">Grow</h3>
-            <p class="step-desc">Start on Starter and upgrade as your business grows. Add the WhatsApp Assistant, CRM integration, follow-up automation, and custom consulting when you're ready.</p>
+            <h3 class="step-title" data-i18n="hiw.step4.title">Grow</h3>
+            <p class="step-desc" data-i18n="hiw.step4.desc">Start on Starter and upgrade as your business grows. Add the WhatsApp Assistant, CRM integration, follow-up automation, and custom consulting when you're ready.</p>
           </div>
 
         </div>
@@ -1075,18 +1075,18 @@
         <div class="contact-grid">
 
           <div class="contact-left reveal">
-            <span class="section-label">Get started</span>
+            <span class="section-label" data-i18n="contact.label">Get started</span>
             <span class="teal-line"></span>
-            <h2 class="section-title" id="contact-title">Ready to make your business smarter?</h2>
-            <p class="section-sub" style="margin-bottom:32px;">
+            <h2 class="section-title" id="contact-title" data-i18n="contact.title">Ready to make your business smarter?</h2>
+            <p class="section-sub" style="margin-bottom:32px;" data-i18n="contact.sub">
               Start with Pulse, automate WhatsApp, or talk to us about a custom AI solution for your business. We onboard new clients in under a week.
             </p>
             <div class="contact-detail">
               <a href="https://wa.me/523224003407" class="btn-whatsapp" target="_blank" rel="noopener" style="margin-right:12px;">
                 <i class="ti ti-brand-whatsapp"></i>
-                Chat on WhatsApp
+                <span data-i18n="contact.cta1">Chat on WhatsApp</span>
               </a>
-              <a href="#what-we-do" class="btn-ghost">
+              <a href="#what-we-do" class="btn-ghost" data-i18n="contact.cta2">
                 Explore solutions
               </a>
             </div>
@@ -1098,37 +1098,37 @@
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="field-name">Name</label>
-                  <input type="text" id="field-name" name="name" placeholder="Jane Smith" />
-                  <span class="field-error">Name is required</span>
+                  <label for="field-name" data-i18n="contact.form.name">Name</label>
+                  <input type="text" id="field-name" name="name" placeholder="Jane Smith" data-i18n-placeholder="contact.form.name.ph" />
+                  <span class="field-error" data-i18n="contact.form.error.name">Name is required</span>
                 </div>
                 <div class="form-group">
-                  <label for="field-company">Company</label>
-                  <input type="text" id="field-company" name="company" placeholder="Acme Corp" />
+                  <label for="field-company" data-i18n="contact.form.company">Company</label>
+                  <input type="text" id="field-company" name="company" placeholder="Acme Corp" data-i18n-placeholder="contact.form.company.ph" />
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="field-email">Email</label>
-                <input type="email" id="field-email" name="email" placeholder="jane@acmecorp.com" />
-                <span class="field-error">A valid email is required</span>
+                <label for="field-email" data-i18n="contact.form.email">Email</label>
+                <input type="email" id="field-email" name="email" placeholder="jane@acmecorp.com" data-i18n-placeholder="contact.form.email.ph" />
+                <span class="field-error" data-i18n="contact.form.error.email">A valid email is required</span>
               </div>
 
               <div class="form-group">
-                <label for="field-message">What are you working on? <span style="color:var(--label)">(optional)</span></label>
-                <textarea id="field-message" name="message" placeholder="Tell us about your business — calls, WhatsApp, integrations, or a custom AI project…"></textarea>
+                <label for="field-message"><span data-i18n="contact.form.message">What are you working on?</span> <span style="color:var(--label)" data-i18n="contact.form.message.opt">(optional)</span></label>
+                <textarea id="field-message" name="message" placeholder="Tell us about your business — calls, WhatsApp, integrations, or a custom AI project…" data-i18n-placeholder="contact.form.message.ph"></textarea>
               </div>
 
               <button type="submit" class="btn-submit" id="btn-submit">
-                <span>Let's talk</span>
+                <span data-i18n="contact.form.submit">Let's talk</span>
                 <i class="ti ti-arrow-right"></i>
               </button>
             </form>
 
             <div class="form-success" id="form-success" aria-live="polite">
               <i class="ti ti-circle-check"></i>
-              <strong>You're on the calendar.</strong>
-              <p>We'll be in touch within one business day.</p>
+              <strong data-i18n="contact.success.title">You're on the calendar.</strong>
+              <p data-i18n="contact.success.msg">We'll be in touch within one business day.</p>
             </div>
           </div>
 
@@ -1147,7 +1147,7 @@
         <a href="#" aria-label="Futura AI Solutions">
           <img src="FuturaLogo_White.png" alt="Futura AI Solutions" />
         </a>
-        <span class="footer-brand-tagline">Operational Superintelligence for modern businesses.</span>
+        <span class="footer-brand-tagline" data-i18n="footer.tagline">Operational Superintelligence for modern businesses.</span>
       </div>
       <div class="footer-meta">
         <div class="footer-meta-row">
@@ -1175,13 +1175,221 @@
   </footer>
 
   <script>
-    /* ─── Language dropdown ─────────────────────────────────────── */
+    /* ─── i18n strings ──────────────────────────────────────────── */
     const LANG_META = {
       en: { label: 'EN', name: 'English' },
       es: { label: 'ES', name: 'Español' },
       pt: { label: 'PT', name: 'Português' }
     };
 
+    const strings = {
+      en: {
+        'nav.solutions':'Solutions','nav.pulse':'Pulse','nav.whatsapp':'WhatsApp','nav.consulting':'Consulting','nav.how-it-works':'How It Works','nav.contact':'Contact','nav.cta':"Let's talk",
+        'hero.eyebrow':'AI Solutions · Operations Intelligence','hero.tagline':'Operational Superintelligence',
+        'hero.sub':'We build AI systems that help businesses operate smarter, respond faster, and scale without adding operational chaos. From AI receptionists and WhatsApp automation to custom workflows, data integration, and intelligent business systems.',
+        'hero.cta1':'Chat on WhatsApp','hero.cta2':'Explore our solutions','hero.card.label':'Featured Product',
+        'hero.card.type':'AI Voice Receptionist &nbsp;·&nbsp; by Futura AI Solutions',
+        'hero.card.desc':'Answers calls 24/7, books appointments through Google Calendar, and notifies your team on WhatsApp — automatically.','hero.card.link':'Learn more',
+        'usp.1':'AI Voice Receptionist','usp.2':'WhatsApp Automation','usp.3':'AI Consulting &amp; Integration','usp.4':'Trilingual: EN · ES · PT',
+        'wwd.label':'Our offer','wwd.title':'What We Do','wwd.sub':'Futura AI Solutions helps businesses connect their systems, automate repetitive work, capture more leads, and turn scattered operations into intelligent workflows.',
+        'wwd.card1.title':'AI Products','wwd.card1.desc':'Productized AI tools that solve specific business problems — from missed calls and WhatsApp lead capture to automated follow-ups and real-time operations dashboards.',
+        'wwd.card2.title':'AI Consulting','wwd.card2.desc':'Custom AI implementation for businesses that need practical automation, workflow design, and operational problem-solving. We build what you actually need — not what sounds impressive.',
+        'wwd.card3.title':'Systems &amp; Data Integration','wwd.card3.desc':'We connect calendars, CRMs, communication channels, databases, and business tools so your information works as one system — not as a collection of disconnected apps.',
+        'pulse.label':'Featured Product','pulse.title':'Pulse AI Voice Receptionist',
+        'pulse.sub':'The first flagship product from Futura AI Solutions. Pulse answers missed calls, books appointments through Google Calendar, and sends instant WhatsApp summaries to your team. Built for businesses that cannot afford to lose leads when no one picks up the phone.',
+        'pulse.step1.title':'Your phone rings','pulse.step1.desc':'Staff have 4 rings to answer. If no one picks up, Pulse activates automatically — no call forwarding setup required.',
+        'pulse.step2.title':'Pulse answers','pulse.step2.desc':'A natural, professional AI voice handles the conversation in Spanish, English, or both — answering questions and qualifying the caller.',
+        'pulse.step3.title':'Appointment booked','pulse.step3.desc':'Pulse checks your Google Calendar in real time and confirms the booking directly. No manual entry. No double bookings.',
+        'pulse.step4.title':'WhatsApp summary sent','pulse.step4.desc':'Within 60 seconds of the call ending, Pulse sends a full summary to your team on WhatsApp. The caller gets a confirmation too.',
+        'pricing.label':'Pulse Plans &amp; Pricing','pricing.title':'Simple pricing for your AI Voice Receptionist',
+        'pricing.starter.tier':'Starter','pricing.starter.onboarding':'+ $199 one-time onboarding',
+        'pricing.growth.tier':'Growth','pricing.growth.badge':'Most Popular','pricing.growth.onboarding':'+ $299 one-time onboarding',
+        'pricing.pro.tier':'Pro','pricing.pro.onboarding':'+ $499 one-time onboarding','pricing.period':'/mo',
+        'pricing.feat.calls':'Pulse answers calls 24/7','pricing.feat.calendar':'Google Calendar booking','pricing.feat.whatsapp':'WhatsApp notifications',
+        'pricing.feat.dashboard':'Real-time Pulse Dashboard','pricing.feat.crm':'CRM integration (GHL, HubSpot, Pipedrive, Zoho)',
+        'pricing.feat.followups':'Automated follow-ups','pricing.feat.revenue':'Revenue reporting &amp; ROI dashboard',
+        'pricing.cta.ghost':'Get started','pricing.cta.primary':'Chat on WhatsApp to get started →',
+        'wa.label':'Second Product · Futura AI Ecosystem','wa.title':'WhatsApp Business Assistant',
+        'wa.sub':'Capture leads and book appointments through WhatsApp — no phone calls required. Built for businesses where customers already message first.',
+        'wa.feat1.title':'Always in the conversation','wa.feat1.desc':'Responds to WhatsApp messages 24/7 in Spanish, English, or Portuguese. Natural, professional, and on-brand for your business.',
+        'wa.feat2.title':'Books appointments via chat','wa.feat2.desc':'Checks your calendar in real time and confirms bookings through WhatsApp — no voice calls, no manual entry, no double bookings.',
+        'wa.feat3.title':'Captures and qualifies leads','wa.feat3.desc':'Collects contact info and key details from every conversation. Every lead logged automatically — ready for your CRM or follow-up sequence.',
+        'wa.feat4.title':'Built for Latin America','wa.feat4.desc':'Designed for businesses in Mexico, Venezuela, Colombia, and across the US. WhatsApp is where your customers already are.',
+        'wa.stat.label':'WhatsApp users worldwide — your customers are already there',
+        'wa.body':'Available as a standalone product or bundled with Pulse for complete coverage — calls, messages, and every channel handled.',
+        'wa.tag1':'No voice calls required','wa.tag2':'Google Calendar sync','wa.tag3':'CRM integration','wa.tag4':'Trilingual','wa.tag5':'24/7 availability',
+        'wa.cta':'Ask about WhatsApp Assistant',
+        'consulting.label':'Beyond Products','consulting.title':'AI Consulting &amp; Systems Integration',
+        'consulting.intro':'Not every business problem fits into a product. Futura AI Solutions also provides hands-on consulting for companies that need custom AI workflows, CRM automation, data integration, internal tools, reporting dashboards, and intelligent operations design.',
+        'consulting.highlight':'We help businesses move from scattered tools and manual processes to connected, intelligent operations.',
+        'consulting.card1.title':'AI Consulting Services','consulting.card1.desc':'Custom AI implementation built around your specific operational challenges. We design and deploy workflow automation, AI agents, intelligent routing systems, and decision-support tools. Project-based, fast, and grounded in real business operations — not theoretical AI hype.',
+        'consulting.card2.title':'Systems &amp; Data Integration','consulting.card2.desc':'We connect your CRM, calendar, POS, communication tools, and data sources into a unified operational layer. GoHighLevel, HubSpot, Pipedrive, Zoho, Google Workspace, and more. When your systems talk to each other, your business stops leaking revenue through the cracks.',
+        'dashboard.label':'Full visibility · Pulse Dashboard','dashboard.title':'Your operations, visible in real time',
+        'dashboard.sub':'Every Pulse plan includes a live operations dashboard. Calls handled, appointments booked, leads captured, and revenue recovered — by day, week, month, or rolling 30 days. Your proof of ROI, updated live.',
+        'dashboard.stat1.label':'Calls handled today','dashboard.stat1.desc':'Every call answered by Pulse, logged in real time.',
+        'dashboard.stat2.label':'Appointments booked this week','dashboard.stat2.desc':'Confirmed directly to Google Calendar. Zero manual entry.',
+        'dashboard.stat3.label':'Leads captured this month','dashboard.stat3.desc':'New contacts logged from every call and WhatsApp interaction.',
+        'dashboard.stat4.label':'Revenue recovered (rolling 30D)','dashboard.stat4.desc':'Estimated revenue from bookings that would have gone to voicemail.',
+        'hiw.label':'Our process','hiw.title':'How It Works',
+        'hiw.step1.title':'Demo call','hiw.step1.desc':"Call our Pulse demo line and hear the product in action. No pitch deck. No slides. You'll hear exactly what your customers will hear when Pulse picks up.",
+        'hiw.step2.title':'Onboarding','hiw.step2.desc':"We configure Pulse with your business's services, pricing, hours, and tone. Google Calendar and WhatsApp connected. Live in under a week.",
+        'hiw.step3.title':'Go live','hiw.step3.desc':'Pulse activates. Every handled call, booked appointment, and WhatsApp summary is tracked live in your Pulse Dashboard.',
+        'hiw.step4.title':'Grow','hiw.step4.desc':"Start on Starter and upgrade as your business grows. Add the WhatsApp Assistant, CRM integration, follow-up automation, and custom consulting when you're ready.",
+        'contact.label':'Get started','contact.title':'Ready to make your business smarter?',
+        'contact.sub':'Start with Pulse, automate WhatsApp, or talk to us about a custom AI solution for your business. We onboard new clients in under a week.',
+        'contact.cta1':'Chat on WhatsApp','contact.cta2':'Explore solutions',
+        'contact.form.name':'Name','contact.form.company':'Company','contact.form.email':'Email',
+        'contact.form.message':'What are you working on?','contact.form.message.opt':'(optional)',
+        'contact.form.name.ph':'Jane Smith','contact.form.company.ph':'Acme Corp','contact.form.email.ph':'jane@acmecorp.com',
+        'contact.form.message.ph':'Tell us about your business — calls, WhatsApp, integrations, or a custom AI project…',
+        'contact.form.submit':"Let's talk",'contact.form.error.name':'Name is required','contact.form.error.email':'A valid email is required',
+        'contact.success.title':"You're on the calendar.",'contact.success.msg':"We'll be in touch within one business day.",
+        'footer.tagline':'Operational Superintelligence for modern businesses.'
+      },
+      es: {
+        'nav.solutions':'Soluciones','nav.pulse':'Pulse','nav.whatsapp':'WhatsApp','nav.consulting':'Consultoría','nav.how-it-works':'Cómo funciona','nav.contact':'Contacto','nav.cta':'Hablemos',
+        'hero.eyebrow':'Soluciones de IA · Inteligencia Operativa','hero.tagline':'Superinteligencia Operativa',
+        'hero.sub':'Construimos sistemas de IA que ayudan a las empresas a operar con más inteligencia, responder más rápido y escalar sin caos operativo. Desde recepcionistas de IA y automatización de WhatsApp hasta flujos personalizados, integración de datos y sistemas empresariales inteligentes.',
+        'hero.cta1':'Escríbenos por WhatsApp','hero.cta2':'Explorar nuestras soluciones','hero.card.label':'Producto destacado',
+        'hero.card.type':'Recepcionista de Voz con IA &nbsp;·&nbsp; by Futura AI Solutions',
+        'hero.card.desc':'Responde llamadas 24/7, agenda citas en Google Calendar y notifica a tu equipo por WhatsApp — de forma automática.','hero.card.link':'Conoce más',
+        'usp.1':'Recepcionista de Voz con IA','usp.2':'Automatización de WhatsApp','usp.3':'Consultoría e Integración de IA','usp.4':'Trilingüe: EN · ES · PT',
+        'wwd.label':'Lo que hacemos','wwd.title':'Nuestros Servicios','wwd.sub':'Futura AI Solutions ayuda a las empresas a conectar sus sistemas, automatizar tareas repetitivas, capturar más prospectos y convertir operaciones dispersas en flujos de trabajo inteligentes.',
+        'wwd.card1.title':'Productos de IA','wwd.card1.desc':'Herramientas de IA listas para usar que resuelven problemas específicos de negocio — desde llamadas perdidas y captura de prospectos por WhatsApp hasta seguimientos automáticos y dashboards operativos en tiempo real.',
+        'wwd.card2.title':'Consultoría de IA','wwd.card2.desc':'Implementación de IA personalizada para empresas que necesitan automatización práctica, diseño de flujos de trabajo y solución de problemas operativos. Construimos lo que realmente necesitas — no lo que suena impresionante.',
+        'wwd.card3.title':'Integración de Sistemas y Datos','wwd.card3.desc':'Conectamos calendarios, CRMs, canales de comunicación, bases de datos y herramientas de negocio para que tu información funcione como un solo sistema — no como apps desconectadas.',
+        'pulse.label':'Producto Destacado','pulse.title':'Pulse: Recepcionista de Voz con IA',
+        'pulse.sub':'El primer producto insignia de Futura AI Solutions. Pulse responde llamadas perdidas, agenda citas en Google Calendar y envía resúmenes instantáneos por WhatsApp a tu equipo. Diseñado para empresas que no pueden permitirse perder prospectos cuando nadie contesta.',
+        'pulse.step1.title':'Tu teléfono suena','pulse.step1.desc':'El equipo tiene 4 timbres para contestar. Si nadie responde, Pulse se activa automáticamente — sin necesidad de desvío de llamadas.',
+        'pulse.step2.title':'Pulse responde','pulse.step2.desc':'Una voz de IA natural y profesional maneja la conversación en español, inglés o ambos — respondiendo preguntas y calificando al llamante.',
+        'pulse.step3.title':'Cita agendada','pulse.step3.desc':'Pulse verifica tu Google Calendar en tiempo real y confirma la cita directamente. Sin captura manual. Sin duplicados.',
+        'pulse.step4.title':'Resumen enviado por WhatsApp','pulse.step4.desc':'A los 60 segundos de terminar la llamada, Pulse envía un resumen completo a tu equipo por WhatsApp. El llamante también recibe confirmación.',
+        'pricing.label':'Planes y Precios de Pulse','pricing.title':'Precios simples para tu Recepcionista de Voz con IA',
+        'pricing.starter.tier':'Básico','pricing.starter.onboarding':'+ $199 configuración inicial',
+        'pricing.growth.tier':'Crecimiento','pricing.growth.badge':'Más popular','pricing.growth.onboarding':'+ $299 configuración inicial',
+        'pricing.pro.tier':'Pro','pricing.pro.onboarding':'+ $499 configuración inicial','pricing.period':'/mes',
+        'pricing.feat.calls':'Pulse responde llamadas 24/7','pricing.feat.calendar':'Agendamiento en Google Calendar','pricing.feat.whatsapp':'Notificaciones por WhatsApp',
+        'pricing.feat.dashboard':'Dashboard Pulse en tiempo real','pricing.feat.crm':'Integración con CRM (GHL, HubSpot, Pipedrive, Zoho)',
+        'pricing.feat.followups':'Seguimientos automáticos','pricing.feat.revenue':'Reportes de ingresos y dashboard de ROI',
+        'pricing.cta.ghost':'Comenzar','pricing.cta.primary':'Escríbenos por WhatsApp →',
+        'wa.label':'Segundo Producto · Ecosistema Futura AI','wa.title':'Asistente de WhatsApp Business',
+        'wa.sub':'Captura prospectos y agenda citas por WhatsApp — sin llamadas telefónicas. Diseñado para empresas donde los clientes ya escriben primero.',
+        'wa.feat1.title':'Siempre en la conversación','wa.feat1.desc':'Responde mensajes de WhatsApp 24/7 en español, inglés o portugués. Natural, profesional y con la voz de tu marca.',
+        'wa.feat2.title':'Agenda citas por chat','wa.feat2.desc':'Verifica tu calendario en tiempo real y confirma citas por WhatsApp — sin llamadas, sin captura manual, sin duplicados.',
+        'wa.feat3.title':'Captura y califica prospectos','wa.feat3.desc':'Recopila datos de contacto y detalles clave de cada conversación. Cada prospecto registrado automáticamente — listo para tu CRM o secuencia de seguimiento.',
+        'wa.feat4.title':'Diseñado para América Latina','wa.feat4.desc':'Pensado para empresas en México, Venezuela, Colombia y EE.UU. WhatsApp es donde ya están tus clientes.',
+        'wa.stat.label':'Usuarios de WhatsApp en el mundo — tus clientes ya están ahí',
+        'wa.body':'Disponible como producto independiente o combinado con Pulse para cobertura total — llamadas, mensajes y todos los canales atendidos.',
+        'wa.tag1':'Sin llamadas de voz','wa.tag2':'Sincronización con Google Calendar','wa.tag3':'Integración con CRM','wa.tag4':'Trilingüe','wa.tag5':'Disponible 24/7',
+        'wa.cta':'Preguntar sobre WhatsApp Assistant',
+        'consulting.label':'Más allá de los productos','consulting.title':'Consultoría de IA e Integración de Sistemas',
+        'consulting.intro':'No todo problema de negocio cabe en un producto. Futura AI Solutions también ofrece consultoría especializada para empresas que necesitan flujos de trabajo de IA personalizados, automatización de CRM, integración de datos, herramientas internas, dashboards de reportes y diseño de operaciones inteligentes.',
+        'consulting.highlight':'Ayudamos a las empresas a pasar de herramientas dispersas y procesos manuales a operaciones conectadas e inteligentes.',
+        'consulting.card1.title':'Servicios de Consultoría de IA','consulting.card1.desc':'Implementación de IA personalizada alrededor de tus desafíos operativos específicos. Diseñamos y desplegamos automatización de flujos de trabajo, agentes de IA, sistemas de enrutamiento inteligente y herramientas de soporte a decisiones. Basado en proyectos, rápido y real — no en promesas de IA teórica.',
+        'consulting.card2.title':'Integración de Sistemas y Datos','consulting.card2.desc':'Conectamos tu CRM, calendario, punto de venta, herramientas de comunicación y fuentes de datos en una capa operativa unificada. GoHighLevel, HubSpot, Pipedrive, Zoho, Google Workspace y más. Cuando tus sistemas se comunican, tu negocio deja de perder ingresos.',
+        'dashboard.label':'Visibilidad total · Dashboard de Pulse','dashboard.title':'Tus operaciones, visibles en tiempo real',
+        'dashboard.sub':'Cada plan de Pulse incluye un dashboard de operaciones en vivo. Llamadas atendidas, citas agendadas, prospectos capturados e ingresos recuperados — por día, semana, mes o los últimos 30 días. Tu prueba de ROI, actualizada en vivo.',
+        'dashboard.stat1.label':'Llamadas atendidas hoy','dashboard.stat1.desc':'Cada llamada respondida por Pulse, registrada en tiempo real.',
+        'dashboard.stat2.label':'Citas agendadas esta semana','dashboard.stat2.desc':'Confirmadas directamente en Google Calendar. Sin captura manual.',
+        'dashboard.stat3.label':'Prospectos capturados este mes','dashboard.stat3.desc':'Nuevos contactos registrados de cada llamada e interacción de WhatsApp.',
+        'dashboard.stat4.label':'Ingresos recuperados (últimos 30 días)','dashboard.stat4.desc':'Ingresos estimados de citas que habrían ido al buzón de voz.',
+        'hiw.label':'Nuestro proceso','hiw.title':'Cómo Funciona',
+        'hiw.step1.title':'Llamada de demo','hiw.step1.desc':'Llama a nuestra línea de demo de Pulse y escucha el producto en acción. Sin presentaciones. Sin diapositivas. Escucharás exactamente lo que tus clientes escucharán cuando Pulse conteste.',
+        'hiw.step2.title':'Configuración','hiw.step2.desc':'Configuramos Pulse con los servicios, precios, horarios y tono de tu negocio. Google Calendar y WhatsApp conectados. En vivo en menos de una semana.',
+        'hiw.step3.title':'En vivo','hiw.step3.desc':'Pulse se activa. Cada llamada atendida, cita agendada y resumen de WhatsApp se rastrea en vivo en tu Dashboard de Pulse.',
+        'hiw.step4.title':'Crece','hiw.step4.desc':'Comienza con el plan Básico y mejora a medida que tu negocio crece. Agrega el Asistente de WhatsApp, integración de CRM, automatización de seguimientos y consultoría personalizada cuando estés listo.',
+        'contact.label':'Comienza ahora','contact.title':'¿Listo para hacer tu negocio más inteligente?',
+        'contact.sub':'Comienza con Pulse, automatiza WhatsApp o habla con nosotros sobre una solución de IA personalizada. Incorporamos nuevos clientes en menos de una semana.',
+        'contact.cta1':'Escríbenos por WhatsApp','contact.cta2':'Explorar soluciones',
+        'contact.form.name':'Nombre','contact.form.company':'Empresa','contact.form.email':'Correo electrónico',
+        'contact.form.message':'¿En qué estás trabajando?','contact.form.message.opt':'(opcional)',
+        'contact.form.name.ph':'Juan Pérez','contact.form.company.ph':'Mi Empresa S.A.','contact.form.email.ph':'juan@miempresa.com',
+        'contact.form.message.ph':'Cuéntanos sobre tu negocio — llamadas, WhatsApp, integraciones o un proyecto de IA personalizado…',
+        'contact.form.submit':'Hablemos','contact.form.error.name':'El nombre es obligatorio','contact.form.error.email':'Se requiere un correo válido',
+        'contact.success.title':'Estás en el calendario.','contact.success.msg':'Nos pondremos en contacto en un día hábil.',
+        'footer.tagline':'Superinteligencia Operativa para negocios modernos.'
+      },
+      pt: {
+        'nav.solutions':'Soluções','nav.pulse':'Pulse','nav.whatsapp':'WhatsApp','nav.consulting':'Consultoria','nav.how-it-works':'Como funciona','nav.contact':'Contato','nav.cta':'Vamos conversar',
+        'hero.eyebrow':'Soluções de IA · Inteligência Operacional','hero.tagline':'Superinteligência Operacional',
+        'hero.sub':'Desenvolvemos sistemas de IA que ajudam empresas a operar de forma mais inteligente, responder mais rápido e escalar sem caos operacional. De recepcionistas de IA e automação de WhatsApp a fluxos personalizados, integração de dados e sistemas empresariais inteligentes.',
+        'hero.cta1':'Falar pelo WhatsApp','hero.cta2':'Explorar nossas soluções','hero.card.label':'Produto em destaque',
+        'hero.card.type':'Recepcionista de Voz com IA &nbsp;·&nbsp; by Futura AI Solutions',
+        'hero.card.desc':'Atende ligações 24/7, agenda consultas no Google Agenda e notifica sua equipe pelo WhatsApp — automaticamente.','hero.card.link':'Saiba mais',
+        'usp.1':'Recepcionista de Voz com IA','usp.2':'Automação de WhatsApp','usp.3':'Consultoria e Integração de IA','usp.4':'Trilíngue: EN · ES · PT',
+        'wwd.label':'O que fazemos','wwd.title':'Nossos Serviços','wwd.sub':'A Futura AI Solutions ajuda empresas a conectar seus sistemas, automatizar trabalho repetitivo, capturar mais leads e transformar operações fragmentadas em fluxos de trabalho inteligentes.',
+        'wwd.card1.title':'Produtos de IA','wwd.card1.desc':'Ferramentas de IA prontas que resolvem problemas empresariais específicos — de ligações perdidas e captura de leads pelo WhatsApp a seguimentos automáticos e painéis de operações em tempo real.',
+        'wwd.card2.title':'Consultoria de IA','wwd.card2.desc':'Implementação personalizada de IA para empresas que precisam de automação prática, design de fluxo de trabalho e resolução de problemas operacionais. Construímos o que você realmente precisa — não o que soa impressionante.',
+        'wwd.card3.title':'Integração de Sistemas e Dados','wwd.card3.desc':'Conectamos calendários, CRMs, canais de comunicação, bancos de dados e ferramentas empresariais para que suas informações funcionem como um único sistema — não como apps desconectados.',
+        'pulse.label':'Produto em Destaque','pulse.title':'Pulse: Recepcionista de Voz com IA',
+        'pulse.sub':'O primeiro produto principal da Futura AI Solutions. O Pulse atende ligações perdidas, agenda consultas no Google Agenda e envia resumos instantâneos pelo WhatsApp para sua equipe. Desenvolvido para empresas que não podem perder leads quando ninguém atende o telefone.',
+        'pulse.step1.title':'Seu telefone toca','pulse.step1.desc':'A equipe tem 4 toques para atender. Se ninguém atender, o Pulse é ativado automaticamente — sem necessidade de desvio de chamada.',
+        'pulse.step2.title':'Pulse atende','pulse.step2.desc':'Uma voz de IA natural e profissional conduz a conversa em espanhol, inglês ou ambos — respondendo perguntas e qualificando o chamador.',
+        'pulse.step3.title':'Consulta agendada','pulse.step3.desc':'O Pulse verifica seu Google Agenda em tempo real e confirma o agendamento diretamente. Sem inserção manual. Sem duplicações.',
+        'pulse.step4.title':'Resumo enviado pelo WhatsApp','pulse.step4.desc':'Em 60 segundos após a ligação, o Pulse envia um resumo completo para sua equipe pelo WhatsApp. O chamador também recebe confirmação.',
+        'pricing.label':'Planos e Preços do Pulse','pricing.title':'Preços simples para seu Recepcionista de Voz com IA',
+        'pricing.starter.tier':'Básico','pricing.starter.onboarding':'+ $199 configuração única',
+        'pricing.growth.tier':'Crescimento','pricing.growth.badge':'Mais popular','pricing.growth.onboarding':'+ $299 configuração única',
+        'pricing.pro.tier':'Pro','pricing.pro.onboarding':'+ $499 configuração única','pricing.period':'/mês',
+        'pricing.feat.calls':'Pulse atende ligações 24/7','pricing.feat.calendar':'Agendamento no Google Agenda','pricing.feat.whatsapp':'Notificações pelo WhatsApp',
+        'pricing.feat.dashboard':'Painel Pulse em tempo real','pricing.feat.crm':'Integração com CRM (GHL, HubSpot, Pipedrive, Zoho)',
+        'pricing.feat.followups':'Seguimentos automáticos','pricing.feat.revenue':'Relatórios de receita e painel de ROI',
+        'pricing.cta.ghost':'Começar','pricing.cta.primary':'Falar pelo WhatsApp para começar →',
+        'wa.label':'Segundo Produto · Ecossistema Futura AI','wa.title':'Assistente de WhatsApp Business',
+        'wa.sub':'Capture leads e agende consultas pelo WhatsApp — sem ligações. Desenvolvido para empresas onde os clientes já enviam mensagens primeiro.',
+        'wa.feat1.title':'Sempre na conversa','wa.feat1.desc':'Responde mensagens do WhatsApp 24/7 em espanhol, inglês ou português. Natural, profissional e com a identidade da sua marca.',
+        'wa.feat2.title':'Agenda consultas pelo chat','wa.feat2.desc':'Verifica seu calendário em tempo real e confirma agendamentos pelo WhatsApp — sem ligações, sem inserção manual, sem duplicações.',
+        'wa.feat3.title':'Captura e qualifica leads','wa.feat3.desc':'Coleta informações de contato e detalhes importantes de cada conversa. Cada lead registrado automaticamente — pronto para seu CRM ou sequência de acompanhamento.',
+        'wa.feat4.title':'Desenvolvido para a América Latina','wa.feat4.desc':'Projetado para empresas no México, Venezuela, Colômbia e nos EUA. O WhatsApp é onde seus clientes já estão.',
+        'wa.stat.label':'Usuários de WhatsApp no mundo — seus clientes já estão lá',
+        'wa.body':'Disponível como produto independente ou combinado com o Pulse para cobertura completa — ligações, mensagens e todos os canais atendidos.',
+        'wa.tag1':'Sem ligações de voz','wa.tag2':'Sincronização com Google Agenda','wa.tag3':'Integração com CRM','wa.tag4':'Trilíngue','wa.tag5':'Disponível 24/7',
+        'wa.cta':'Perguntar sobre o Assistente de WhatsApp',
+        'consulting.label':'Além dos produtos','consulting.title':'Consultoria de IA e Integração de Sistemas',
+        'consulting.intro':'Nem todo problema empresarial cabe em um produto. A Futura AI Solutions também oferece consultoria especializada para empresas que precisam de fluxos de trabalho de IA personalizados, automação de CRM, integração de dados, ferramentas internas, painéis de relatórios e design de operações inteligentes.',
+        'consulting.highlight':'Ajudamos empresas a sair de ferramentas dispersas e processos manuais para operações conectadas e inteligentes.',
+        'consulting.card1.title':'Serviços de Consultoria de IA','consulting.card1.desc':'Implementação de IA personalizada desenvolvida em torno de seus desafios operacionais específicos. Projetamos e implantamos automação de fluxo de trabalho, agentes de IA, sistemas de roteamento inteligente e ferramentas de suporte à decisão. Baseado em projetos, rápido e real — não em promessas teóricas de IA.',
+        'consulting.card2.title':'Integração de Sistemas e Dados','consulting.card2.desc':'Conectamos seu CRM, calendário, PDV, ferramentas de comunicação e fontes de dados em uma camada operacional unificada. GoHighLevel, HubSpot, Pipedrive, Zoho, Google Workspace e mais. Quando seus sistemas se comunicam, sua empresa para de perder receita.',
+        'dashboard.label':'Visibilidade total · Painel do Pulse','dashboard.title':'Suas operações, visíveis em tempo real',
+        'dashboard.sub':'Cada plano do Pulse inclui um painel de operações ao vivo. Ligações atendidas, consultas agendadas, leads capturados e receita recuperada — por dia, semana, mês ou nos últimos 30 dias. Sua prova de ROI, atualizada ao vivo.',
+        'dashboard.stat1.label':'Ligações atendidas hoje','dashboard.stat1.desc':'Cada ligação respondida pelo Pulse, registrada em tempo real.',
+        'dashboard.stat2.label':'Consultas agendadas esta semana','dashboard.stat2.desc':'Confirmadas diretamente no Google Agenda. Zero inserção manual.',
+        'dashboard.stat3.label':'Leads capturados este mês','dashboard.stat3.desc':'Novos contatos registrados de cada ligação e interação pelo WhatsApp.',
+        'dashboard.stat4.label':'Receita recuperada (últimos 30 dias)','dashboard.stat4.desc':'Receita estimada de agendamentos que teriam ido para o correio de voz.',
+        'hiw.label':'Nosso processo','hiw.title':'Como Funciona',
+        'hiw.step1.title':'Ligação de demonstração','hiw.step1.desc':'Ligue para nossa linha de demonstração do Pulse e ouça o produto em ação. Sem apresentações. Sem slides. Você ouvirá exatamente o que seus clientes ouvirão quando o Pulse atender.',
+        'hiw.step2.title':'Configuração','hiw.step2.desc':'Configuramos o Pulse com os serviços, preços, horários e tom do seu negócio. Google Agenda e WhatsApp conectados. Ao vivo em menos de uma semana.',
+        'hiw.step3.title':'Ir ao vivo','hiw.step3.desc':'O Pulse é ativado. Cada ligação atendida, consulta agendada e resumo do WhatsApp é rastreado ao vivo no seu Painel do Pulse.',
+        'hiw.step4.title':'Crescer','hiw.step4.desc':'Comece no plano Básico e faça upgrade à medida que seu negócio cresce. Adicione o Assistente de WhatsApp, integração de CRM, automação de acompanhamento e consultoria personalizada quando estiver pronto.',
+        'contact.label':'Comece agora','contact.title':'Pronto para tornar seu negócio mais inteligente?',
+        'contact.sub':'Comece com o Pulse, automatize o WhatsApp ou fale conosco sobre uma solução de IA personalizada. Integramos novos clientes em menos de uma semana.',
+        'contact.cta1':'Falar pelo WhatsApp','contact.cta2':'Explorar soluções',
+        'contact.form.name':'Nome','contact.form.company':'Empresa','contact.form.email':'E-mail',
+        'contact.form.message':'Em que você está trabalhando?','contact.form.message.opt':'(opcional)',
+        'contact.form.name.ph':'João Silva','contact.form.company.ph':'Minha Empresa Ltda.','contact.form.email.ph':'joao@minhaempresa.com',
+        'contact.form.message.ph':'Conte-nos sobre seu negócio — ligações, WhatsApp, integrações ou um projeto de IA personalizado…',
+        'contact.form.submit':'Vamos conversar','contact.form.error.name':'Nome é obrigatório','contact.form.error.email':'Um e-mail válido é necessário',
+        'contact.success.title':'Você está no calendário.','contact.success.msg':'Entraremos em contato em até um dia útil.',
+        'footer.tagline':'Superinteligência Operacional para empresas modernas.'
+      }
+    };
+
+    /* ─── Apply language ────────────────────────────────────────── */
+    function applyLang(locale) {
+      const t = strings[locale] || strings.en;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const v = t[el.getAttribute('data-i18n')];
+        if (v !== undefined) el.innerHTML = v;
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const v = t[el.getAttribute('data-i18n-placeholder')];
+        if (v !== undefined) el.placeholder = v;
+      });
+      document.documentElement.lang = locale;
+      syncDropdowns(locale);
+    }
+
+    /* ─── Language dropdown ─────────────────────────────────────── */
     function syncDropdowns(locale) {
       const label = (LANG_META[locale] || LANG_META.en).label;
       document.querySelectorAll('.lang-dropdown').forEach(dropdown => {
@@ -1210,8 +1418,7 @@
         li.addEventListener('click', () => {
           const lang = li.getAttribute('data-lang');
           localStorage.setItem('futura-lang', lang);
-          syncDropdowns(lang);
-          document.documentElement.lang = lang;
+          applyLang(lang);
           dropdown.classList.remove('open');
           btn.setAttribute('aria-expanded', 'false');
           if (dropdown.closest('.mobile-menu')) {
@@ -1233,7 +1440,9 @@
     });
 
     const saved = localStorage.getItem('futura-lang');
-    if (saved && LANG_META[saved]) { syncDropdowns(saved); document.documentElement.lang = saved; }
+    const browserLang = navigator.language.split('-')[0];
+    const initLang = (saved && LANG_META[saved]) ? saved : (LANG_META[browserLang] ? browserLang : 'en');
+    applyLang(initLang);
 
     /* ─── Hamburger ─────────────────────────────────────────────── */
     const hamburger = document.getElementById('hamburger');
