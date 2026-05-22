@@ -278,6 +278,7 @@
       font-family: var(--font-head); font-size: 1.9rem; font-weight: 300;
       letter-spacing: 0.1em; color: var(--white); line-height: 1;
     }
+    .hpc-logo { height: 32px; width: auto; display: block; }
 
     .hpc-type {
       font-size: 0.78rem; font-weight: 300; letter-spacing: 0.08em;
@@ -353,6 +354,7 @@
 
     /* ─── Pulse — Flagship Product ─────────────────────────────── */
     #pulse { padding: 110px 0; background: var(--bg-alt); }
+    .pulse-section-logo { height: 52px; width: auto; display: block; margin-bottom: 16px; }
 
     .pulse-label-row {
       display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap;
@@ -686,7 +688,7 @@
           <!-- Featured product card -->
           <div class="hero-product-card reveal">
             <div class="hpc-label" data-i18n="hero.card.label">Featured Product</div>
-            <div class="hpc-name">Pulse</div>
+            <img src="PulseLogo.png" alt="Pulse" class="hpc-logo" />
             <div class="hpc-type" data-i18n="hero.card.type">AI Voice Receptionist &nbsp;·&nbsp; by Futura AI Solutions</div>
             <p class="hpc-desc" data-i18n="hero.card.desc">Answers calls 24/7, books appointments through Google Calendar, and notifies your team on WhatsApp — automatically.</p>
             <a href="#pulse" class="hpc-link"><span data-i18n="hero.card.link">Learn more</span> <i class="ti ti-arrow-right"></i></a>
@@ -775,7 +777,8 @@
             <span class="pulse-product-badge"><i class="ti ti-circle-filled" style="font-size:0.5rem;"></i> Pulse</span>
           </div>
           <span class="teal-line"></span>
-          <h2 class="section-title" id="pulse-title" data-i18n="pulse.title">Pulse AI Voice Receptionist</h2>
+          <img src="PulseLogo.png" alt="Pulse" class="pulse-section-logo" />
+          <h2 class="section-title" id="pulse-title" data-i18n="pulse.title">AI Voice Receptionist</h2>
           <p class="section-sub" data-i18n="pulse.sub">The first flagship product from Futura AI Solutions. Pulse answers missed calls, books appointments through Google Calendar, and sends instant WhatsApp summaries to your team. Built for businesses that cannot afford to lose leads when no one picks up the phone.</p>
           <p class="pulse-emphasis" data-i18n="pulse.emphasis">Your team handles the customers in front of them. Pulse handles the calls that would otherwise go unanswered.</p>
         </div>
@@ -1208,7 +1211,7 @@
         'wwd.card1.title':'AI Products','wwd.card1.desc':'Productized AI tools that solve specific business problems — from missed calls and WhatsApp lead capture to automated follow-ups and real-time operations dashboards.',
         'wwd.card2.title':'AI Consulting','wwd.card2.desc':'Custom AI implementation for businesses that need practical automation, workflow design, and operational problem-solving. We build what you actually need — not what sounds impressive.',
         'wwd.card3.title':'Systems &amp; Data Integration','wwd.card3.desc':'We connect calendars, CRMs, communication channels, databases, and business tools so your information works as one system — not as a collection of disconnected apps.',
-        'pulse.label':'Featured Product','pulse.title':'Pulse AI Voice Receptionist',
+        'pulse.label':'Featured Product','pulse.title':'AI Voice Receptionist',
         'pulse.sub':'Pulse is not here to replace your receptionist or inbound handler. It is here to protect your revenue when your team cannot answer: after hours, on weekends, while the line is busy, or while staff are helping another customer. Pulse answers the calls that would otherwise be missed, books appointments through Google Calendar, and sends instant WhatsApp summaries to your team.',
         'pulse.emphasis':'Your team handles the customers in front of them. Pulse handles the calls that would otherwise go unanswered.',
         'pulse.step1.title':'Your phone rings','pulse.step1.desc':'Your staff gets the first chance to answer. If they are busy, helping another client, away from the desk, or the call comes outside office hours, Pulse is ready to step in.',
@@ -1272,7 +1275,7 @@
         'wwd.card1.title':'Productos de IA','wwd.card1.desc':'Herramientas de IA listas para usar que resuelven problemas específicos de negocio — desde llamadas perdidas y captura de prospectos por WhatsApp hasta seguimientos automáticos y dashboards operativos en tiempo real.',
         'wwd.card2.title':'Consultoría de IA','wwd.card2.desc':'Implementación de IA personalizada para empresas que necesitan automatización práctica, diseño de flujos de trabajo y solución de problemas operativos. Construimos lo que realmente necesitas — no lo que suena impresionante.',
         'wwd.card3.title':'Integración de Sistemas y Datos','wwd.card3.desc':'Conectamos calendarios, CRMs, canales de comunicación, bases de datos y herramientas de negocio para que tu información funcione como un solo sistema — no como apps desconectadas.',
-        'pulse.label':'Producto Destacado','pulse.title':'Pulse: Recepcionista de Voz con IA',
+        'pulse.label':'Producto Destacado','pulse.title':'Recepcionista de Voz con IA',
         'pulse.sub':'Pulse no está aquí para reemplazar a tu recepcionista o equipo de atención. Está aquí para proteger tus ingresos cuando tu equipo no puede contestar: fuera de horario, los fines de semana, cuando la línea está ocupada o cuando el personal está atendiendo a otro cliente. Pulse responde las llamadas que de otro modo se perderían, agenda citas en Google Calendar y envía resúmenes instantáneos por WhatsApp a tu equipo.',
         'pulse.emphasis':'Tu equipo atiende a los clientes que tiene enfrente. Pulse atiende las llamadas que de otro modo quedarían sin respuesta.',
         'pulse.step1.title':'Tu teléfono suena','pulse.step1.desc':'Tu equipo tiene la primera oportunidad de contestar. Si están ocupados, atendiendo a otro cliente, lejos del escritorio, o si la llamada llega fuera del horario de atención, Pulse está listo para intervenir.',
@@ -1336,7 +1339,7 @@
         'wwd.card1.title':'Produtos de IA','wwd.card1.desc':'Ferramentas de IA prontas que resolvem problemas empresariais específicos — de ligações perdidas e captura de leads pelo WhatsApp a seguimentos automáticos e painéis de operações em tempo real.',
         'wwd.card2.title':'Consultoria de IA','wwd.card2.desc':'Implementação personalizada de IA para empresas que precisam de automação prática, design de fluxo de trabalho e resolução de problemas operacionais. Construímos o que você realmente precisa — não o que soa impressionante.',
         'wwd.card3.title':'Integração de Sistemas e Dados','wwd.card3.desc':'Conectamos calendários, CRMs, canais de comunicação, bancos de dados e ferramentas empresariais para que suas informações funcionem como um único sistema — não como apps desconectados.',
-        'pulse.label':'Produto em Destaque','pulse.title':'Pulse: Recepcionista de Voz com IA',
+        'pulse.label':'Produto em Destaque','pulse.title':'Recepcionista de Voz com IA',
         'pulse.sub':'O Pulse não está aqui para substituir seu recepcionista ou atendente. Está aqui para proteger sua receita quando sua equipe não pode atender: fora do horário, nos fins de semana, enquanto a linha está ocupada ou enquanto a equipe está atendendo outro cliente. O Pulse atende as ligações que de outra forma seriam perdidas, agenda consultas no Google Agenda e envia resumos instantâneos pelo WhatsApp para sua equipe.',
         'pulse.emphasis':'Sua equipe atende os clientes à sua frente. O Pulse atende as ligações que de outra forma ficariam sem resposta.',
         'pulse.step1.title':'Seu telefone toca','pulse.step1.desc':'Sua equipe tem a primeira chance de atender. Se estiverem ocupados, atendendo outro cliente, longe da mesa ou se a ligação chegar fora do horário, o Pulse está pronto para intervir.',
