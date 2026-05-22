@@ -260,23 +260,13 @@
 
     /* Featured product card inside hero */
     .hero-product-card {
-      display: grid; grid-template-columns: 160px 1fr; gap: 0;
+      display: flex; flex-direction: column; gap: 10px;
       background: rgba(19, 28, 38, 0.90);
       border: 1px solid rgba(25, 211, 197, 0.28);
-      border-radius: 12px; padding: 0;
+      border-radius: 12px; padding: 24px 28px;
       width: 100%;
       backdrop-filter: blur(10px);
       box-shadow: 0 0 0 1px rgba(25, 211, 197, 0.06), 0 20px 60px rgba(0,0,0,0.45);
-      overflow: hidden;
-    }
-    .hpc-left {
-      display: flex; align-items: center; justify-content: center;
-      padding: 24px 20px;
-      border-right: 1px solid rgba(25, 211, 197, 0.15);
-    }
-    .hpc-right {
-      display: flex; flex-direction: column; gap: 10px;
-      padding: 24px 24px;
     }
 
     .hpc-label {
@@ -288,7 +278,7 @@
       font-family: var(--font-head); font-size: 1.9rem; font-weight: 300;
       letter-spacing: 0.1em; color: var(--white); line-height: 1;
     }
-    .hpc-logo { width: 120px; height: auto; display: block; }
+    .hpc-logo { width: 150px; height: auto; display: block; margin-bottom: 4px; }
 
     .hpc-type {
       font-size: 0.78rem; font-weight: 300; letter-spacing: 0.08em;
@@ -364,7 +354,14 @@
 
     /* ─── Pulse — Flagship Product ─────────────────────────────── */
     #pulse { padding: 110px 0; background: var(--bg-alt); }
-    .pulse-section-logo { width: 320px; height: auto; display: block; margin-bottom: 16px; }
+    .pulse-section-logo { width: 280px; height: auto; display: block; }
+    .pulse-header-grid {
+      display: grid; grid-template-columns: 320px 1fr; gap: 64px; align-items: center;
+    }
+    .pulse-header-left {
+      display: flex; align-items: center; justify-content: center;
+      border-right: 1px solid rgba(25, 211, 197, 0.15); padding-right: 64px;
+    }
 
     .pulse-label-row {
       display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap;
@@ -697,15 +694,11 @@
 
           <!-- Featured product card -->
           <div class="hero-product-card reveal">
-            <div class="hpc-left">
-              <img src="PulseLogo.png" alt="Pulse" class="hpc-logo" />
-            </div>
-            <div class="hpc-right">
-              <div class="hpc-label" data-i18n="hero.card.label">Featured Product</div>
-              <div class="hpc-type" data-i18n="hero.card.type">AI Voice Receptionist &nbsp;·&nbsp; by Futura AI Solutions</div>
-              <p class="hpc-desc" data-i18n="hero.card.desc">Answers calls 24/7, books appointments through Google Calendar, and notifies your team on WhatsApp — automatically.</p>
-              <a href="#pulse" class="hpc-link"><span data-i18n="hero.card.link">Learn more</span> <i class="ti ti-arrow-right"></i></a>
-            </div>
+            <img src="PulseLogo.png" alt="Pulse" class="hpc-logo" />
+            <div class="hpc-label" data-i18n="hero.card.label">Featured Product</div>
+            <div class="hpc-type" data-i18n="hero.card.type">AI Voice Receptionist &nbsp;·&nbsp; by Futura AI Solutions</div>
+            <p class="hpc-desc" data-i18n="hero.card.desc">Answers calls 24/7, books appointments through Google Calendar, and notifies your team on WhatsApp — automatically.</p>
+            <a href="#pulse" class="hpc-link"><span data-i18n="hero.card.link">Learn more</span> <i class="ti ti-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -786,15 +779,21 @@
       <div class="container">
 
         <div class="section-header reveal">
-          <div class="pulse-label-row">
-            <span class="section-label" data-i18n="pulse.label">Featured Product</span>
-            <span class="pulse-product-badge"><i class="ti ti-circle-filled" style="font-size:0.5rem;"></i> Pulse</span>
+          <div class="pulse-header-grid">
+            <div class="pulse-header-left">
+              <img src="PulseLogo.png" alt="Pulse" class="pulse-section-logo" />
+            </div>
+            <div class="pulse-header-right">
+              <div class="pulse-label-row">
+                <span class="section-label" data-i18n="pulse.label">Featured Product</span>
+                <span class="pulse-product-badge"><i class="ti ti-circle-filled" style="font-size:0.5rem;"></i> Pulse</span>
+              </div>
+              <span class="teal-line"></span>
+              <h2 class="section-title" id="pulse-title" data-i18n="pulse.title">AI Voice Receptionist</h2>
+              <p class="section-sub" data-i18n="pulse.sub">The first flagship product from Futura AI Solutions. Pulse answers missed calls, books appointments through Google Calendar, and sends instant WhatsApp summaries to your team. Built for businesses that cannot afford to lose leads when no one picks up the phone.</p>
+              <p class="pulse-emphasis" data-i18n="pulse.emphasis">Your team handles the customers in front of them. Pulse handles the calls that would otherwise go unanswered.</p>
+            </div>
           </div>
-          <span class="teal-line"></span>
-          <img src="PulseLogo.png" alt="Pulse" class="pulse-section-logo" />
-          <h2 class="section-title" id="pulse-title" data-i18n="pulse.title">AI Voice Receptionist</h2>
-          <p class="section-sub" data-i18n="pulse.sub">The first flagship product from Futura AI Solutions. Pulse answers missed calls, books appointments through Google Calendar, and sends instant WhatsApp summaries to your team. Built for businesses that cannot afford to lose leads when no one picks up the phone.</p>
-          <p class="pulse-emphasis" data-i18n="pulse.emphasis">Your team handles the customers in front of them. Pulse handles the calls that would otherwise go unanswered.</p>
         </div>
 
         <div class="flow-steps">
