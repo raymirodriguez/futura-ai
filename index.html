@@ -320,6 +320,9 @@
     }
     .btn-whatsapp .ti { font-size: 18px; color: #061014; }
     .btn-whatsapp:hover { background: linear-gradient(135deg, #2AF0E0, #19D3C5); box-shadow: 0 10px 40px rgba(25, 211, 197, 0.28); transform: translateY(-1px); }
+    .btn-call { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 7px; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; background: rgba(25, 211, 197, 0.06); border: 1px solid rgba(25, 211, 197, 0.25); color: #BDEFEA; transition: background 0.2s, border-color 0.2s, transform 0.15s; text-decoration: none; }
+    .btn-call:hover { background: rgba(25, 211, 197, 0.10); border-color: rgba(25, 211, 197, 0.40); transform: translateY(-1px); }
+    .btn-call .ti { font-size: 15px; color: var(--teal); }
 
     /* ─── USP Strip ────────────────────────────────────────────── */
     #usp {
@@ -434,6 +437,9 @@
     .pricing-cta.primary:hover { background: linear-gradient(135deg, #2AF0E0, #19D3C5); box-shadow: 0 10px 40px rgba(25, 211, 197, 0.28); transform: translateY(-1px); }
     .pricing-cta.ghost { background: rgba(25, 211, 197, 0.06); border: 1px solid rgba(25, 211, 197, 0.25); color: #BDEFEA; }
     .pricing-cta.ghost:hover { background: rgba(25, 211, 197, 0.10); border-color: rgba(25, 211, 197, 0.40); }
+    .pricing-call-link { display: flex; align-items: center; justify-content: center; gap: 5px; margin-top: 10px; font-size: 0.7rem; color: var(--muted); text-decoration: none; transition: color 0.2s; letter-spacing: 0.03em; }
+    .pricing-call-link:hover { color: var(--teal); }
+    .pricing-call-link .ti { font-size: 12px; color: var(--teal); }
 
     /* ─── WhatsApp Assistant ───────────────────────────────────── */
     #whatsapp-assistant { padding: 110px 0; }
@@ -850,6 +856,7 @@
                 <li><i class="ti ti-minus feat-icon"></i> <span data-i18n="pricing.feat.revenue">Revenue reporting &amp; ROI dashboard</span></li>
               </ul>
               <a href="https://wa.me/523224003407" class="pricing-cta ghost" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="pricing.cta.ghost">Get started</span></a>
+              <a href="tel:+16562210487" class="pricing-call-link"><i class="ti ti-phone"></i> <span data-i18n="pricing.cta.call">or call to try Pulse</span></a>
             </div>
 
             <div class="pricing-card featured reveal reveal-delay-2">
@@ -868,6 +875,7 @@
                 <li><i class="ti ti-minus feat-icon"></i> <span data-i18n="pricing.feat.revenue">Revenue reporting &amp; ROI dashboard</span></li>
               </ul>
               <a href="https://wa.me/523224003407" class="pricing-cta primary" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="pricing.cta.primary">Get Started</span></a>
+              <a href="tel:+16562210487" class="pricing-call-link"><i class="ti ti-phone"></i> <span data-i18n="pricing.cta.call">or call to try Pulse</span></a>
             </div>
 
             <div class="pricing-card reveal reveal-delay-3">
@@ -885,6 +893,7 @@
                 <li class="included"><i class="ti ti-check feat-icon"></i> <span data-i18n="pricing.feat.revenue">Revenue reporting &amp; ROI dashboard</span></li>
               </ul>
               <a href="https://wa.me/523224003407" class="pricing-cta ghost" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="pricing.cta.ghost">Get started</span></a>
+              <a href="tel:+16562210487" class="pricing-call-link"><i class="ti ti-phone"></i> <span data-i18n="pricing.cta.call">or call to try Pulse</span></a>
             </div>
 
           </div>
@@ -958,6 +967,10 @@
             <div class="step-num" aria-hidden="true">01</div>
             <h3 class="step-title" data-i18n="hiw.step1.title">Demo call</h3>
             <p class="step-desc" data-i18n="hiw.step1.desc">Call our Pulse demo line and hear the product in action. No pitch deck. No slides. You'll hear exactly what your customers will hear when Pulse picks up.</p>
+            <a href="tel:+16562210487" class="btn-call" style="margin-top:16px;">
+              <i class="ti ti-phone"></i>
+              <span data-i18n="hiw.step1.cta">Call +1 (656) 221-0487</span>
+            </a>
           </div>
 
           <div class="step reveal reveal-delay-2">
@@ -1112,9 +1125,13 @@
               Start with Pulse, automate WhatsApp, or talk to us about a custom AI solution for your business. We onboard new clients in under a week.
             </p>
             <div class="contact-detail">
-              <a href="https://wa.me/523224003407" class="btn-whatsapp" target="_blank" rel="noopener" style="margin-right:12px;">
+              <a href="https://wa.me/523224003407" class="btn-whatsapp" target="_blank" rel="noopener">
                 <i class="ti ti-brand-whatsapp"></i>
                 <span data-i18n="contact.cta1">Chat on WhatsApp</span>
+              </a>
+              <a href="tel:+16562210487" class="btn-call">
+                <i class="ti ti-phone"></i>
+                <span data-i18n="contact.cta.call">Try Pulse — call us</span>
               </a>
               <a href="#what-we-do" class="btn-ghost" data-i18n="contact.cta2">
                 Explore solutions
@@ -1239,7 +1256,7 @@
         'pricing.feat.calls':'Captures calls your team misses','pricing.feat.calendar':'Books appointments via Google Calendar','pricing.feat.whatsapp':'Instant WhatsApp summaries',
         'pricing.feat.dashboard':'Real-time Pulse Dashboard','pricing.feat.crm':'CRM integration (GHL, HubSpot, Pipedrive, Zoho)',
         'pricing.feat.followups':'Automated follow-ups','pricing.feat.revenue':'Revenue reporting &amp; ROI dashboard',
-        'pricing.cta.ghost':'Get started','pricing.cta.primary':'Get Started',
+        'pricing.cta.ghost':'Get started','pricing.cta.primary':'Get Started','pricing.cta.call':'or call to try Pulse',
         'wa.label':'Second Product · Futura AI Ecosystem','wa.title':'WhatsApp Business Assistant',
         'wa.sub':'Capture leads and book appointments through WhatsApp — no phone calls required. Built for businesses where customers already message first.',
         'wa.feat1.title':'Always in the conversation','wa.feat1.desc':'Responds to WhatsApp messages 24/7 in Spanish, English, or Portuguese. Natural, professional, and on-brand for your business.',
@@ -1262,13 +1279,13 @@
         'dashboard.stat3.label':'Leads captured this month','dashboard.stat3.desc':'New contacts logged from every call and WhatsApp interaction.',
         'dashboard.stat4.label':'Revenue recovered (rolling 30D)','dashboard.stat4.desc':'Estimated revenue from leads and bookings that may have been lost without Pulse.',
         'hiw.label':'Our process','hiw.title':'How It Works',
-        'hiw.step1.title':'Demo call','hiw.step1.desc':'Call our Pulse demo line and hear how Pulse handles what your customers hear when Pulse steps in.',
+        'hiw.step1.title':'Demo call','hiw.step1.desc':'Call our Pulse demo line and hear how Pulse handles what your customers hear when Pulse steps in.','hiw.step1.cta':'Call +1 (656) 221-0487',
         'hiw.step2.title':'Onboarding','hiw.step2.desc':'We configure Pulse with your services, pricing, hours, tone, booking rules, Google Calendar, and WhatsApp notifications.',
         'hiw.step3.title':'Go live','hiw.step3.desc':'Pulse starts protecting your business from missed-call revenue leaks. Every captured call, booked appointment, and WhatsApp summary is tracked live in your Pulse Dashboard.',
         'hiw.step4.title':'Grow','hiw.step4.desc':"Start on Starter and upgrade as your business grows. Add the WhatsApp Assistant, CRM integration, follow-up automation, and custom consulting when you're ready.",
         'contact.label':'Get started','contact.title':'Ready to stop losing leads from missed calls?',
         'contact.sub':'Start with Pulse, automate WhatsApp, or talk to us about a custom AI solution for your business. Pulse helps your team stay focused while making sure missed calls do not become missed revenue.',
-        'contact.cta1':'Chat on WhatsApp','contact.cta2':'Explore solutions',
+        'contact.cta1':'Chat on WhatsApp','contact.cta2':'Explore solutions','contact.cta.call':'Try Pulse — call us',
         'contact.form.name':'Name','contact.form.company':'Company','contact.form.email':'Email',
         'contact.form.message':'What are you working on?','contact.form.message.opt':'(optional)',
         'contact.form.name.ph':'Jane Smith','contact.form.company.ph':'Acme Corp','contact.form.email.ph':'jane@acmecorp.com',
@@ -1303,7 +1320,7 @@
         'pricing.feat.calls':'Captura las llamadas que tu equipo no puede atender','pricing.feat.calendar':'Agenda citas vía Google Calendar','pricing.feat.whatsapp':'Resúmenes instantáneos por WhatsApp',
         'pricing.feat.dashboard':'Dashboard Pulse en tiempo real','pricing.feat.crm':'Integración con CRM (GHL, HubSpot, Pipedrive, Zoho)',
         'pricing.feat.followups':'Seguimientos automáticos','pricing.feat.revenue':'Reportes de ingresos y dashboard de ROI',
-        'pricing.cta.ghost':'Comenzar','pricing.cta.primary':'Comenzar',
+        'pricing.cta.ghost':'Comenzar','pricing.cta.primary':'Comenzar','pricing.cta.call':'o llama para probar Pulse',
         'wa.label':'Segundo Producto · Ecosistema Futura AI','wa.title':'Asistente de WhatsApp Business',
         'wa.sub':'Captura prospectos y agenda citas por WhatsApp — sin llamadas telefónicas. Diseñado para empresas donde los clientes ya escriben primero.',
         'wa.feat1.title':'Siempre en la conversación','wa.feat1.desc':'Responde mensajes de WhatsApp 24/7 en español, inglés o portugués. Natural, profesional y con la voz de tu marca.',
@@ -1326,13 +1343,13 @@
         'dashboard.stat3.label':'Prospectos capturados este mes','dashboard.stat3.desc':'Nuevos contactos registrados de cada llamada e interacción de WhatsApp.',
         'dashboard.stat4.label':'Ingresos recuperados (últimos 30 días)','dashboard.stat4.desc':'Ingresos estimados de prospectos y citas que podrían haberse perdido sin Pulse.',
         'hiw.label':'Nuestro proceso','hiw.title':'Cómo Funciona',
-        'hiw.step1.title':'Llamada de demo','hiw.step1.desc':'Llama a nuestra línea de demo de Pulse y escucha cómo Pulse maneja lo que tus clientes escuchan cuando interviene.',
+        'hiw.step1.title':'Llamada de demo','hiw.step1.desc':'Llama a nuestra línea de demo de Pulse y escucha cómo Pulse maneja lo que tus clientes escuchan cuando interviene.','hiw.step1.cta':'Llama al +1 (656) 221-0487',
         'hiw.step2.title':'Configuración','hiw.step2.desc':'Configuramos Pulse con tus servicios, precios, horarios, tono, reglas de agendamiento, Google Calendar y notificaciones de WhatsApp.',
         'hiw.step3.title':'En vivo','hiw.step3.desc':'Pulse comienza a proteger tu negocio de las pérdidas de ingresos por llamadas no contestadas. Cada llamada capturada, cita agendada y resumen de WhatsApp se rastrea en vivo en tu Dashboard de Pulse.',
         'hiw.step4.title':'Crece','hiw.step4.desc':'Comienza con el plan Básico y mejora a medida que tu negocio crece. Agrega el Asistente de WhatsApp, integración de CRM, automatización de seguimientos y consultoría personalizada cuando estés listo.',
         'contact.label':'Comienza ahora','contact.title':'¿Listo para dejar de perder prospectos por llamadas perdidas?',
         'contact.sub':'Comienza con Pulse, automatiza WhatsApp o habla con nosotros sobre una solución de IA personalizada. Pulse ayuda a tu equipo a mantenerse enfocado mientras se asegura de que las llamadas perdidas no se conviertan en ingresos perdidos.',
-        'contact.cta1':'Escríbenos por WhatsApp','contact.cta2':'Explorar soluciones',
+        'contact.cta1':'Escríbenos por WhatsApp','contact.cta2':'Explorar soluciones','contact.cta.call':'Prueba Pulse — llámanos',
         'contact.form.name':'Nombre','contact.form.company':'Empresa','contact.form.email':'Correo electrónico',
         'contact.form.message':'¿En qué estás trabajando?','contact.form.message.opt':'(opcional)',
         'contact.form.name.ph':'Juan Pérez','contact.form.company.ph':'Mi Empresa S.A.','contact.form.email.ph':'juan@miempresa.com',
@@ -1367,7 +1384,7 @@
         'pricing.feat.calls':'Captura as ligações que sua equipe não consegue atender','pricing.feat.calendar':'Agenda consultas via Google Agenda','pricing.feat.whatsapp':'Resumos instantâneos pelo WhatsApp',
         'pricing.feat.dashboard':'Painel Pulse em tempo real','pricing.feat.crm':'Integração com CRM (GHL, HubSpot, Pipedrive, Zoho)',
         'pricing.feat.followups':'Seguimentos automáticos','pricing.feat.revenue':'Relatórios de receita e painel de ROI',
-        'pricing.cta.ghost':'Começar','pricing.cta.primary':'Começar',
+        'pricing.cta.ghost':'Começar','pricing.cta.primary':'Começar','pricing.cta.call':'ou ligue para experimentar o Pulse',
         'wa.label':'Segundo Produto · Ecossistema Futura AI','wa.title':'Assistente de WhatsApp Business',
         'wa.sub':'Capture leads e agende consultas pelo WhatsApp — sem ligações. Desenvolvido para empresas onde os clientes já enviam mensagens primeiro.',
         'wa.feat1.title':'Sempre na conversa','wa.feat1.desc':'Responde mensagens do WhatsApp 24/7 em espanhol, inglês ou português. Natural, profissional e com a identidade da sua marca.',
@@ -1390,13 +1407,13 @@
         'dashboard.stat3.label':'Leads capturados este mês','dashboard.stat3.desc':'Novos contatos registrados de cada ligação e interação pelo WhatsApp.',
         'dashboard.stat4.label':'Receita recuperada (últimos 30 dias)','dashboard.stat4.desc':'Receita estimada de leads e agendamentos que poderiam ter sido perdidos sem o Pulse.',
         'hiw.label':'Nosso processo','hiw.title':'Como Funciona',
-        'hiw.step1.title':'Ligação de demonstração','hiw.step1.desc':'Ligue para nossa linha de demonstração do Pulse e ouça como o Pulse lida com o que seus clientes ouvem quando ele intervém.',
+        'hiw.step1.title':'Ligação de demonstração','hiw.step1.desc':'Ligue para nossa linha de demonstração do Pulse e ouça como o Pulse lida com o que seus clientes ouvem quando ele intervém.','hiw.step1.cta':'Ligue para +1 (656) 221-0487',
         'hiw.step2.title':'Configuração','hiw.step2.desc':'Configuramos o Pulse com seus serviços, preços, horários, tom, regras de agendamento, Google Agenda e notificações do WhatsApp.',
         'hiw.step3.title':'Ir ao vivo','hiw.step3.desc':'O Pulse começa a proteger seu negócio de perdas de receita por ligações não atendidas. Cada ligação capturada, consulta agendada e resumo do WhatsApp é rastreado ao vivo no seu Painel do Pulse.',
         'hiw.step4.title':'Crescer','hiw.step4.desc':'Comece no plano Básico e faça upgrade à medida que seu negócio cresce. Adicione o Assistente de WhatsApp, integração de CRM, automação de acompanhamento e consultoria personalizada quando estiver pronto.',
         'contact.label':'Comece agora','contact.title':'Pronto para parar de perder leads por ligações perdidas?',
         'contact.sub':'Comece com o Pulse, automatize o WhatsApp ou fale conosco sobre uma solução de IA personalizada. O Pulse ajuda sua equipe a manter o foco enquanto garante que ligações perdidas não se tornem receita perdida.',
-        'contact.cta1':'Falar pelo WhatsApp','contact.cta2':'Explorar soluções',
+        'contact.cta1':'Falar pelo WhatsApp','contact.cta2':'Explorar soluções','contact.cta.call':'Experimente o Pulse — ligue',
         'contact.form.name':'Nome','contact.form.company':'Empresa','contact.form.email':'E-mail',
         'contact.form.message':'Em que você está trabalhando?','contact.form.message.opt':'(opcional)',
         'contact.form.name.ph':'João Silva','contact.form.company.ph':'Minha Empresa Ltda.','contact.form.email.ph':'joao@minhaempresa.com',
