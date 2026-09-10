@@ -570,15 +570,25 @@
     .form-group.invalid textarea { border-color: rgba(248, 113, 113, 0.55); box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.09); }
 
     /* ─── Footer ───────────────────────────────────────────────── */
-    footer { border-top: 1px solid var(--border); padding: 36px 0; }
-    .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    .footer-brand img { height: 49px; width: auto; }
-    .footer-brand { display: flex; flex-direction: column; gap: 4px; }
-    .footer-brand-tagline { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label); }
-    .footer-meta { display: flex; flex-direction: column; gap: 4px; font-size: 0.78rem; font-weight: 300; letter-spacing: 0.06em; color: var(--label); text-align: right; }
-    .footer-meta-row { display: flex; align-items: center; gap: 20px; justify-content: flex-end; }
-    .footer-meta a { color: var(--label); transition: color 0.2s; }
-    .footer-meta a:hover { color: var(--white); }
+    footer { border-top: 1px solid var(--border); background: var(--bg-alt); padding-top: 72px; }
+    .footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 56px; }
+
+    .footer-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
+    .footer-brand img { height: 46px; width: auto; margin-bottom: 18px; }
+    .footer-desc { font-size: 0.85rem; font-weight: 200; color: var(--muted); line-height: 1.75; max-width: 300px; margin-bottom: 22px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social-link { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 8px; background: var(--teal-dim); border: 1px solid var(--border); color: var(--teal); transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+    .footer-social-link:hover { background: var(--teal-glow); transform: translateY(-1px); }
+    .footer-social-link i { font-size: 1.05rem; }
+
+    .footer-col { display: flex; flex-direction: column; gap: 13px; }
+    .footer-col-title { font-family: var(--font-head); font-size: 0.72rem; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); margin-bottom: 4px; }
+    .footer-col a, .footer-col span { font-size: 0.84rem; font-weight: 200; color: var(--muted); transition: color 0.2s; }
+    .footer-col a:hover { color: var(--teal); }
+    .footer-contact-link { display: flex; align-items: center; gap: 9px; }
+    .footer-contact-link i { font-size: 0.95rem; color: var(--teal); flex-shrink: 0; }
+
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0; border-top: 1px solid var(--border); font-size: 0.72rem; font-weight: 300; letter-spacing: 0.05em; color: var(--label); }
 
     /* ─── Responsive ───────────────────────────────────────────── */
     @media (max-width: 900px) {
@@ -608,9 +618,9 @@
       .step-num { left: 0; }
       .contact-grid { grid-template-columns: 1fr; gap: 48px; }
       .form-row { grid-template-columns: 1fr; }
-      .footer-inner { flex-direction: column; }
-      .footer-meta { text-align: left; }
-      .footer-meta-row { justify-content: flex-start; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
     }
 
     @media (max-width: 640px) {
@@ -1181,22 +1191,47 @@
   <!-- FOOTER -->
   <!-- ═══════════════════════════════════════════════════════════ -->
   <footer>
-    <div class="container footer-inner">
+    <div class="container footer-top">
+
       <div class="footer-brand">
         <a href="#" aria-label="Futura AI Solutions">
           <img src="FUTURA_Logo.png" alt="Futura AI Solutions" class="logo-light" />
           <img src="FuturaLogo_White.png" alt="Futura AI Solutions" class="logo-dark" />
         </a>
-        <span class="footer-brand-tagline" data-i18n="footer.tagline">Operational Superintelligence for modern businesses.</span>
-      </div>
-      <div class="footer-meta">
-        <div class="footer-meta-row">
-          <span>&copy; 2026 Futura AI Solutions</span>
-        </div>
-        <div class="footer-meta-row" style="margin-top:4px;">
-          <span>futuraisolutions.com</span>
+        <p class="footer-desc">AI systems, automation workflows, and operational intelligence for small and medium businesses across Mexico, the US, and Venezuela.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/523224003407?text=Hi!%20I%27d%20like%20to%20learn%20more%20about%20Futura%20AI%20Solutions." class="footer-social-link" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i></a>
+          <a href="tel:+16562210487" class="footer-social-link" aria-label="Call Futura AI Solutions"><i class="ti ti-phone"></i></a>
         </div>
       </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Solutions</h4>
+        <a href="#what-we-do">What We Do</a>
+        <a href="#pulse">Pulse</a>
+        <a href="#whatsapp-assistant">WhatsApp Assistant</a>
+        <a href="#consulting">Consulting</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Company</h4>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Get in Touch</h4>
+        <a href="https://wa.me/523224003407?text=Hi!%20I%27d%20like%20to%20learn%20more%20about%20Futura%20AI%20Solutions." class="footer-contact-link" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
+        <a href="tel:+16562210487" class="footer-contact-link"><i class="ti ti-phone"></i> +1 (656) 221-0487</a>
+        <span class="footer-contact-link"><i class="ti ti-map-pin"></i> MX · US · VE</span>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Futura AI Solutions. All rights reserved.</span>
+      <span>Operational Superintelligence</span>
     </div>
   </footer>
 
