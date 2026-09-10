@@ -232,11 +232,11 @@
 
     .hero-content {
       position: relative; z-index: 1;
-      display: grid; grid-template-columns: 1fr minmax(360px, 650px); gap: 64px; align-items: center;
+      display: grid; grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.7fr); gap: 64px; align-items: center;
       width: 100%; padding: 80px 0;
     }
 
-    .hero-left { min-width: 0; }
+    .hero-left { min-width: 0; container-type: inline-size; }
 
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
@@ -247,7 +247,8 @@
 
     .hero-company {
       font-family: var(--font-head);
-      font-size: clamp(3.5rem, 8vw, 7.5rem);
+      font-size: clamp(2.75rem, 16cqw, 7.5rem);
+      overflow-wrap: break-word;
       font-weight: 200; line-height: 1; letter-spacing: 0.06em;
       color: var(--white); margin-bottom: 12px;
     }
